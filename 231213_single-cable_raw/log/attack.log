@@ -40,3 +40,52 @@ PGE MEAN:      18
 PGE MEDIAN:    2
 HD SUM:        19
 
+Starting key enumeration using HEL
+Assuming that we know two plaintext/ciphertext pairs
+nb_bins = 512
+merge_value = 2
+bound_start = 2^0
+bound_end = 2^40
+test_key = 1
+to_bound = 0
+to_real_key = 0
+Starting preprocessing
+current rank : 2^1.584962501
+current rank : 2^2.321928095
+current rank : 2^2.807354922
+current rank : 2^3.169925001
+current rank : 2^4.087462841
+current rank : 2^5.087462841
+current rank : 2^6.266786541
+current rank : 2^7.276124405
+current rank : 2^8.252665432
+current rank : 2^9.136991112
+current rank : 2^10.01959073
+current rank : 2^11.12153352
+current rank : 2^12.17430154
+current rank : 2^13.17913157
+current rank : 2^14.15371035
+current rank : 2^15.09164199
+current rank : 2^16.22035943
+current rank : 2^17.09107376
+current rank : 2^18.14596696
+current rank : 2^19.16498301
+current rank : 2^20.15351616
+current rank : 2^21.11387249
+current rank : 2^22.04807107
+current rank : 2^23.13843228
+current rank : 2^24.02359744
+current rank : 2^25.05987686
+current rank : 2^26.07020054
+current rank : 2^27.05668663
+current rank : 2^28.02121991
+current rank : 2^29.1208168
+current rank : 2^30.04287661
+current rank : 2^31.09651061
+current rank : 2^32.12794391
+current rank : 2^33.13865757
+current rank : 2^34.13000822
+current rank : 2^35.10317164
+current rank : 2^36.05920507
+current rank : 2^37.13205955
+current rank : 2^38.05448045
