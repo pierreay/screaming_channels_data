@@ -1,0 +1,49 @@
+drac in 🌐 Reaper in screaming_channels_ble/src on  main [$] via 🐍 v3.10.12
+at 17:13:08 ❯ ./attack.py --no-plot --norm --dataset-path ~/storage/dataset/231213_single-cable_raw --num-traces 1400 -
+-start-point 73600 --end-point 74000 --bruteforce attack --attack-algo pcc --num-pois 2 --poi-spacing 2 --variable p_xo
+r_k --align
+[2023-12-20 17:13:12,652] [2497160] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/storage/dataset/2312
+13_single-cable_raw/dataset.pyc'
+[2023-12-20 17:13:12,652] [2497160] [MainThread] [load] INFO  - Loading traces...
+[2023-12-20 17:13:12,652] [2497160] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|████████████████████████████████████████████████████████████| 1400/1400 [00:00<00:00, 9354.04it/s]
+[2023-12-20 17:13:12,803] [2497160] [MainThread] [load] INFO  - Done!
+Align: 100%|█████████████████████████████████████████████████████████████████████| 1400/1400 [00:00<00:00, 3930.24it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   fe   7f   9b   40   36   98   e7   e1   a4   cb   5e   d2   7d   71   15   69
+Known Key:        16   7f   99   45   37   9c   e3   e1   1a   c9   5e   d5   7e   74   d5   6c
+PGE:             048  000  006  005  019  006  003  000  017  005  000  024  002  001  007  012
+HD:              004  000  001  002  001  001  001  000  006  001  000  003  002  002  002  002
+SUCCESS:           0    1    0    0    0    0    0    1    0    0    1    0    0    0    0    0
+CORRECT BYTES: 3
+PGE MEAN:      9
+PGE MEDIAN:    5
+PGE MAX:       48
+HD SUM:        28
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^87.05677962
+actual rounded: 2^87.37864915
+max: 2^87.6350799
+time enum: 0.129715 seconds

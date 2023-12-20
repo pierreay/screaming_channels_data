@@ -38,7 +38,20 @@ SUCCESS:           0    1    0    0    1    0    0    0    1    0    1    0    0
 CORRECT BYTES: 5
 PGE MEAN:      18
 PGE MEDIAN:    2
+PGE MAX:       219
 HD SUM:        19
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^91.17435625
+actual rounded: 2^91.48074336
+max: 2^91.72478796
+time enum: 0.129205 seconds
+
 
 Starting key enumeration using HEL
 Assuming that we know two plaintext/ciphertext pairs
