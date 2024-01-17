@@ -1,3 +1,5 @@
+# Attack 1:
+
 drac in 🌐 Reaper in screaming_channels_ble/src on  main [$] via 🐍 v3.10.12 took 11s
 at 13:23:07 ❌1 ❯ ./attack.py --no-log --no-plot --norm --dataset-path /home/drac/storage/dataset/240110_single-leak-pairing-1m-lna_raw --start-point 73837 --end-point 74237 --num-traces 3987 attack --attack-algo pcc --profile /home/drac/git/screaming_channels_ble/data/profiles/231222_single-cable-balanced_raw/ --num-pois 2 --poi-spacing 1 --variable p_xor_k --align
 Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3987/3987 [00:00<00:00, 9986.98it/s]
@@ -40,4 +42,54 @@ min: 2^123.4109391
 actual rounded: 2^123.50438
 max: 2^123.5782019
 time enum: 0.128846 seconds
+
+# Attack 2:
+
+at 16:40:13 ❯ ./attack.py --log --no-plot --norm --dataset-path /home/drac/storage/dataset/240110_single-leak-pairing-1m-lna_raw --start-point 74025 --end-point 74425 --num-traces 16000 attack --attack-algo pcc --profile /home/drac/storage/dataset/240112_multi-leak-insub-1m-lna_avg/profile_pois_2 --num-pois 2 --poi-spacing 1 --variable p_xor_k --align
+[2024-01-17 16:40:26,956] [2496119] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/storage/dataset/240110_single-leak-pairing-1m-lna_raw/dataset.pyc'
+[2024-01-17 16:40:26,956] [2496119] [MainThread] [load] INFO  - Loading traces...
+[2024-01-17 16:40:26,956] [2496119] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|██████████████████████████████████████████████████████████| 16000/16000 [00:01<00:00, 9203.60it/s]
+[2024-01-17 16:40:28,695] [2496119] [MainThread] [load] INFO  - Done!
+[2024-01-17 16:40:28,710] [2496119] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/storage/dataset/240112_multi-leak-insub-1m-lna_avg/profile_pois_2
+Align: 100%|███████████████████████████████████████████████████████████████████| 16000/16000 [00:04<00:00, 3829.81it/s]
+Align: 100%|███████████████████████████████████████████████████████████████████| 16000/16000 [00:04<00:00, 3814.35it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   81   25   99   25   13   eb   dc   85   c4   25   62   80   f2   22   74   18
+Known Key:        b1   d0   93   0f   dc   47   ef   de   f2   9b   23   c2   e2   3a   fc   30
+PGE:             175  015  043  116  066  041  255  161  059  083  033  138  188  052  041  164
+HD:              002  006  002  003  006  004  004  005  004  006  002  002  001  002  002  002
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 0
+PGE MEAN:      101
+PGE MEDIAN:    74
+PGE MAX:       255
+HD SUM:        53
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^126.9033143
+actual rounded: 2^126.9365603
+max: 2^126.9626475
+time enum: 1.52888 seconds
 
