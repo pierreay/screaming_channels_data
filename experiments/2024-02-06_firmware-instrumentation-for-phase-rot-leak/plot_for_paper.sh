@@ -43,8 +43,8 @@ function plot_nf_leak() {
     export DIR=nf; export FC=138e6; export SR=8e6; G=76
     echo DIR=$DIR; echo FC=$FC; echo SR=$SR; echo G=$G
     file=$SCRIPT_WD/$DIR/FC_${FC}_SR_${SR}_${G}db${SUFFIX}.npy
-    outplot="nf_amplitude_and_phase_rotation.pdf"
-    echo "Press 's' to save fig to $outplot"
+    outplot="nf_amplitude_and_phase_rotation"
+    echo "Press 's' to save fig to $outplot{.pdf,.svg}"
     python3 << EOF
 import numpy as np
 import matplotlib.pyplot as plt
@@ -79,7 +79,7 @@ quadplot.plot()
 # savefig doesn't output the same as interactive plot.
 # quadplot.plot(save="$outplot")
 EOF
-    mv "$HOME/$outplot" "$SCRIPT_WD"
+    mv "$HOME/$outplot"* "$SCRIPT_WD"
 }
 
 # DONE: Use a custom Python to plot the NF narrow band, without x axis sync,
@@ -93,8 +93,8 @@ function plot_ff_leak() {
     export DIR=ff; export FC=2.510e9; export SR=8e6; G=76
     echo DIR=$DIR; echo FC=$FC; echo SR=$SR; echo G=$G
     file=$SCRIPT_WD/$DIR/FC_${FC}_SR_${SR}_${G}db${SUFFIX}.npy
-    outplot="ff_amplitude_and_phase_rotation.pdf"
-    echo "Press 's' to save fig to $outplot"
+    outplot="ff_amplitude_and_phase_rotation"
+    echo "Press 's' to save fig to $outplot{.pdf,.svg}"
     python3 << EOF
 import numpy as np
 import matplotlib.pyplot as plt
@@ -126,10 +126,8 @@ quadplot.ax_ampl_freq.set_xlim(left=0.1905, right=0.1940)
 quadplot.ax_phase_freq.set_xlim(left=0.1905, right=0.1940)
 
 quadplot.plot()
-# savefig doesn't output the same as interactive plot.
-# quadplot.plot(save="$outplot")
 EOF
-    mv "$HOME/$outplot" "$SCRIPT_WD"
+    mv "$HOME/$outplot"* "$SCRIPT_WD"
 }
 
 # DONE: Use a custom Python to plot the FF narrow band at 2.510e8, without x
