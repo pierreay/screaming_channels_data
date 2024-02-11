@@ -18,3 +18,7 @@ attack 1000
 attack 2000
 attack 3000
 attack 4000
+attack 5000
+attack 6000
+attack 7000
+attack 8000
