@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dataset=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw
-profile=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_AMPLITUDE
+profile=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_AMPLITUDE_16384
 profile_length=500
 start_point=1000
 end_point=$((start_point + profile_length))
