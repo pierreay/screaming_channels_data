@@ -15,7 +15,7 @@ function profile_comp() {
     mv ~/Figure_2.png $dataset/$profile/plot_poi_1.png
 }
 
-# Profile using amplitude:
-profile_comp AMPLITUDE 16384
-# Profile using phase rotation:
-profile_comp PHASE_ROT 16384
+# DONE: Profile using amplitude:
+# profile_comp AMPLITUDE 16384
+# DONE: Profile using phase rotation:
+# profile_comp PHASE_ROT 16384
