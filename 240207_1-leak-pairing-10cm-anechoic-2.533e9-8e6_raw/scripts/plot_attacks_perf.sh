@@ -80,13 +80,21 @@ function iterate_long() {
     iterate 10000 250 $((16000 + 1))
 }
 
+# 3h version:
+function iterate_very_long() {
+    iterate 10 5 1000
+    iterate 1000 50 10000
+    iterate 10000 125 $((16000 + 1))
+}
+
 function csv_build() {
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV.
-    iterate_very_short
+    # iterate_very_short
     # iterate_short
     # iterate_long
+    iterate_very_long
 }
 
 # PROG:
