@@ -10,15 +10,12 @@ plot=--no-plot
 function attack() {
     trace_nb=$1
     echo "Using $trace_nb traces with 1 POI:"
-    $SC_SRC/attack.py --log $plot --norm --dataset-path $dataset --start-point $start_point --end-point $end_point --num-traces $trace_nb attack --attack-algo pcc --profile ${profile} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
+    $SC_SRC/attack.py --log $plot --norm --dataset-path $dataset --start-point $start_point --end-point $end_point --num-traces $trace_nb $2 attack --attack-algo pcc --profile ${profile} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
 }
 
-attack 500
-attack 1000
-attack 2000
-attack 3000
-attack 4000
-attack 5000
-attack 6000
-attack 7000
-attack 8000
+#attack 500
+#attack 1000
+#attack 2000
+#attack 3000
+#attack 4000
+attack 14900 --bruteforce

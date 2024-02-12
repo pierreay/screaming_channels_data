@@ -1,0 +1,134 @@
+drac in 🌐 Saren in dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw on  master took 1m20s
+at 23:59:47 ❯ dataset=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw
+profile=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_AMPLITUDE
+profile_length=500
+start_point=1000
+end_point=$((start_point + profile_length))
+plot=--no-plot
+
+function attack() {
+    trace_nb=$1
+    echo "Using $trace_nb traces with 1 POI:"
+    $SC_SRC/attack.py --log $plot --norm --dataset-path $dataset --start-point $start_point --end-point $end_point --num-traces $trace_nb --bruteforce attack --attack-algo pcc --profile ${profile} --num-pois 1 --poi-spacing 2 --variable p_
+xor_k --align
+}
+
+
+drac in 🌐 Saren in dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw on  master
+at 00:00:21 ❯ attack 14900
+Using 14900 traces with 1 POI:
+[2024-02-12 00:00:34,141] [955946] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/storage_nvme/dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/dataset.pyc'
+[2024-02-12 00:00:34,141] [955946] [MainThread] [load] INFO  - Loading traces...
+[2024-02-12 00:00:34,141] [955946] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14900/14900 [00:00<00:00, 25637.52it/s]
+[2024-02-12 00:00:34,724] [955946] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14900/14900 [00:00<00:00, 161361.45it/s]
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5704 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5705 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5706 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5707 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5708 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5709 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #5710 filled with zeroes!
+[2024-02-12 00:00:34,817] [955946] [MainThread] [analyze] WARNING - Trace #9030 filled with zeroes!
+[2024-02-12 00:00:34,838] [955946] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/storage_nvme/dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_AMPLITUDE
+[2024-02-12 00:00:34,940] [955946] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14900/14900 [00:05<00:00, 2543.28it/s]
+[2024-02-12 00:00:40,813] [955946] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14900/14900 [00:05<00:00, 2725.37it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   7c   19   67   e4   41   65   da   6d   f5   18   32   f7   c5   f1   13   3e
+Known Key:        7f   18   67   e6   42   65   da   6f   f5   1b   32   f4   c6   f3   10   3e
+PGE:             002  001  000  003  001  000  000  003  000  003  000  003  002  002  001  000
+HD:              002  001  000  001  002  000  000  001  000  002  000  002  002  001  002  000
+SUCCESS:           0    0    1    0    0    1    1    0    1    0    1    0    0    0    0    1
+CORRECT BYTES: 6
+PGE MEAN:      1
+PGE MEDIAN:    1
+PGE MAX:       3
+HD SUM:        16
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^33.79125918
+actual rounded: 2^34.59872304
+max: 2^35.23080812
+time enum: 0.343729 seconds
+
+
+
+Starting key enumeration using HEL
+Assuming that we know two plaintext/ciphertext pairs
+nb_bins = 512
+merge_value = 2
+bound_start = 2^0
+bound_end = 2^40
+test_key = 1
+to_bound = 0
+to_real_key = 0
+Starting preprocessing
+current rank : 2^2.584962501
+current rank : 2^4.459431619
+current rank : 2^5.857980995
+current rank : 2^6.95419631
+current rank : 2^7.851749041
+current rank : 2^8.640244936
+current rank : 2^9.37721053
+current rank : 2^10.0768156
+current rank : 2^10.73724734
+current rank : 2^11.35424938
+current rank : 2^11.94068065
+current rank : 2^12.50407411
+current rank : 2^13.05205853
+current rank : 2^13.57849063
+current rank : 2^14.08472536
+current rank : 2^15.03711793
+current rank : 2^16.35971525
+current rank : 2^17.18111342
+current rank : 2^18.33511989
+current rank : 2^19.05748676
+current rank : 2^20.07923085
+current rank : 2^21.03621185
+current rank : 2^22.22360287
+current rank : 2^23.05537876
+current rank : 2^24.0967593
+current rank : 2^25.07069769
+current rank : 2^26.2079166
+current rank : 2^27.06450833
+current rank : 2^28.08160438
+current rank : 2^29.05154272
+current rank : 2^30.16795692
+current rank : 2^31.06709564
+current rank : 2^32.11464021
+current rank : 2^33.13069245
+current rank : 2^34.11663176
+
+KEY FOUND!!!
+7f 18 67 e6 42 65 da 6f f5 1b 32 f4 c6 f3 10 3e
+
+Clearing memory
+min: 2^33.95434911
+actual rounded: 2^34.59872304
+max: 2^35.23080812
+time enum: 5432.77 seconds
+time preprocessing: 0.241214 seconds
