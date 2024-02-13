@@ -19,5 +19,12 @@ function plot_profile_config() {
     python3 $SCRIPT_WD/plot_profile.py $PROFILE $OUTFILE
 }
 
-plot_profile_config AMPLITUDE_16384
-plot_profile_config PHASE_ROT_16384
+# DONE:
+# plot_profile_config AMPLITUDE_16384
+# DONE:
+# plot_profile_config PHASE_ROT_16384
+
+# DONE:
+# plot_profile_config AMPLITUDE_27900
+# DONE:
+# plot_profile_config PHASE_ROT_27900

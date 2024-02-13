@@ -19,3 +19,8 @@ function profile_comp() {
 # profile_comp AMPLITUDE 16384
 # DONE: Profile using phase rotation:
 # profile_comp PHASE_ROT 16384
+
+# DONE: Profile using amplitude with more traces, while collection is still not complete, but used for the paper:
+# profile_comp AMPLITUDE 27900
+# DONE: Profile using phase with more traces, while collection is still not complete, but used for the paper:
+# profile_comp PHASE_ROT 27900
