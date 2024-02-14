@@ -24,3 +24,8 @@ function profile_comp() {
 # profile_comp AMPLITUDE 27900
 # DONE: Profile using phase with more traces, while collection is still not complete, but used for the paper:
 # profile_comp PHASE_ROT 27900
+
+# DONE: Profile using amplitude at 32k traces:
+# profile_comp AMPLITUDE 32768
+# DONE: Profile using phase at 32k traces:
+# profile_comp PHASE_ROT 32768
