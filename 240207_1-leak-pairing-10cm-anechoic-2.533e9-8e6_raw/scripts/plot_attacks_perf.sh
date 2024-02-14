@@ -4,18 +4,10 @@
 
 # Perform multiple attacks and store the results in a CSV file.
 
-# * Configuration
+# * Global configuration
 
 # Dataset path.
 DATASET=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw
-# Profile configuration.
-PROFILE_CONFIG=AMPLITUDE_16384
-# Profile path.
-PROFILE=$DATASET/profile_${PROFILE_CONFIG}
-# Output CSV file for Python.
-OUTFILE_CSV=$DATASET/log/attack_results_${PROFILE_CONFIG}.csv
-# Output PDF file for Python.
-OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
 # Length of the profile in samples.
 PROFILE_LENGTH=500
@@ -27,7 +19,7 @@ END_POINT=$((START_POINT + PROFILE_LENGTH))
 # Path of script directory.
 SCRIPT_WD="$(dirname $(realpath $0))"
 
-# * CSV building
+# * Functions for CSV building
 
 function iterate() {
     i_start=$1
@@ -97,10 +89,26 @@ function csv_build() {
     iterate_very_long
 }
 
+# * Script
+
+function attack_given_profile() {
+    # Configuration.
+    # Profile configuration.
+    export PROFILE_CONFIG=$1
+    # Profile path.
+    export PROFILE=$DATASET/profile_${PROFILE_CONFIG}
+    # Output CSV file for Python.
+    export OUTFILE_CSV=$DATASET/log/attack_results_${PROFILE_CONFIG}.csv
+    # Output PDF file for Python.
+    export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
+
+    # Script.
+    csv_build
+    $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
+}
+
 # DONE:
-# csv_build
+# attack_given_profile AMPLITUDE_16384
 
-# * Plot data
-
-# PROG:
-$SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
+# DONE:
+# attack_given_profile AMPLITUDE_32768
