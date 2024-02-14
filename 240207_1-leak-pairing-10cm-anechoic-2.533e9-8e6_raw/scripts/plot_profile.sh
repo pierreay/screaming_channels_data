@@ -28,3 +28,8 @@ function plot_profile_config() {
 # plot_profile_config AMPLITUDE_27900
 # DONE:
 # plot_profile_config PHASE_ROT_27900
+
+# DONE:
+# plot_profile_config AMPLITUDE_32768
+# DONE:
+# plot_profile_config PHASE_ROT_32768
