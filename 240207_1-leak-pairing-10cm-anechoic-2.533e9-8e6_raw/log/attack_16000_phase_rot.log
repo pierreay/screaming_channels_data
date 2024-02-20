@@ -1,0 +1,66 @@
+Saren in dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw on  master [!] took 55s
+at 13:18:14 ❌127 ❯ ./scripts/attack.sh
+trace_nb=16000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/storage_nvme/dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_PHASE_ROT_65536
+comptype=PHASE_ROT
+[2024-02-20 13:18:28,552] [3454742] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/storage_nvme/dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/dataset.pyc'
+[2024-02-20 13:18:28,552] [3454742] [MainThread] [load] INFO  - Loading traces...
+[2024-02-20 13:18:28,552] [3454742] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16000/16000 [00:00<00:00, 22648.57it/s]
+[2024-02-20 13:18:29,260] [3454742] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16000/16000 [00:00<00:00, 157190.86it/s]
+[2024-02-20 13:18:29,362] [3454742] [MainThread] [analyze] WARNING - Trace #5704 filled with zeroes!
+[2024-02-20 13:18:29,362] [3454742] [MainThread] [analyze] WARNING - Trace #5705 filled with zeroes!
+[2024-02-20 13:18:29,362] [3454742] [MainThread] [analyze] WARNING - Trace #5706 filled with zeroes!
+[2024-02-20 13:18:29,363] [3454742] [MainThread] [analyze] WARNING - Trace #5707 filled with zeroes!
+[2024-02-20 13:18:29,363] [3454742] [MainThread] [analyze] WARNING - Trace #5708 filled with zeroes!
+[2024-02-20 13:18:29,363] [3454742] [MainThread] [analyze] WARNING - Trace #5709 filled with zeroes!
+[2024-02-20 13:18:29,363] [3454742] [MainThread] [analyze] WARNING - Trace #5710 filled with zeroes!
+[2024-02-20 13:18:29,363] [3454742] [MainThread] [analyze] WARNING - Trace #9030 filled with zeroes!
+[2024-02-20 13:18:29,386] [3454742] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/storage_nvme/dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw/profile_PHASE_ROT_65536
+[2024-02-20 13:18:35,358] [3454742] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16000/16000 [00:06<00:00, 2538.14it/s]
+[2024-02-20 13:18:41,675] [3454742] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16000/16000 [00:05<00:00, 2686.49it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   79   41   6b   73   4b   6c   eb   6c   23   1b   b9   e7   5a   72   04   1f
+Known Key:        7f   18   67   e6   42   65   da   6f   f5   1b   32   f4   c6   f3   10   3e
+PGE:             024  005  008  009  002  009  129  003  120  000  007  183  016  006  075  005
+HD:              002  004  002  004  002  002  003  002  005  000  004  003  004  002  002  002
+SUCCESS:           0    0    0    0    0    0    0    0    0    1    0    0    0    0    0    0
+CORRECT BYTES: 1
+PGE MEAN:      37
+PGE MEDIAN:    8
+PGE MAX:       183
+HD SUM:        43
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^92.93654993
+actual rounded: 2^93.26368474
+max: 2^93.52370443
+time enum: 0.407053 seconds
+
+Saren in dataset/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw on  master [!] took 1m39s
+at 13:20:06 ❯ tmux-capture-pane
