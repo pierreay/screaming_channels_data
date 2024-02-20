@@ -35,7 +35,7 @@ function iterate() {
         # 2) The correct number of bytes.
         # 3) The median of the PGE
         $SC_SRC/attack.py --no-log --no-plot --norm --dataset-path "$DATASET" \
-                    --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces attack \
+                    --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces --comptype $COMPTYPE attack \
                     --attack-algo pcc --profile "$PROFILE" \
                     --num-pois 1 --poi-spacing 2 --variable p_xor_k --align 2>/dev/null \
             | grep -E 'actual rounded|CORRECT|MEDIAN' \
@@ -95,6 +95,8 @@ function attack_given_profile() {
     # Configuration.
     # Profile configuration.
     export PROFILE_CONFIG=$1
+    # Attacked component.
+    export COMPTYPE=$2
     # Profile path.
     export PROFILE=$DATASET/profile_${PROFILE_CONFIG}
     # Output CSV file for Python.
@@ -108,7 +110,13 @@ function attack_given_profile() {
 }
 
 # DONE:
-# attack_given_profile AMPLITUDE_16384
+# attack_given_profile AMPLITUDE_16384 AMPLITUDE
 
 # DONE:
-# attack_given_profile AMPLITUDE_32768
+# attack_given_profile AMPLITUDE_32768 AMPLITUDE
+
+# DONE:
+# attack_given_profile AMPLITUDE_65536 AMPLITUDE
+
+# DONE:
+# attack_given_profile PHASE_ROT_65536 PHASE_ROT
