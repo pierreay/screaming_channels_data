@@ -29,3 +29,8 @@ function profile_comp() {
 # profile_comp AMPLITUDE 32768
 # DONE: Profile using phase at 32k traces:
 # profile_comp PHASE_ROT 32768
+
+# DONE: Profile using amplitude at 64k traces:
+# profile_comp AMPLITUDE 65536
+# DONE: Profile using phase at 64k traces:
+# profile_comp PHASE_ROT 65536
