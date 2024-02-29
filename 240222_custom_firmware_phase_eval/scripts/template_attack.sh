@@ -4,8 +4,8 @@
 
 # Path of dataset used to create the profile.
 TRAIN_SET=$REPO_ROOT/240222_custom_firmware_phase_eval/train
-# Path used to store the created profile.
-PROFILE_PATH=$TRAIN_SET/../profile
+# Base path used to store the created profile.
+PROFILE_PATH_BASE=$TRAIN_SET/../profile
 # Path of dataset used to perform the attack.
 ATTACK_SET=/tmp/collect/500
 
@@ -16,6 +16,24 @@ START_POINT=0
 END_POINT=0
 
 # * Functions
+
+function profile_comp() {
+    # Get parameters.
+    comp=$1
+    # Set global parameters.
+    export PROFILE_PATH=${PROFILE_PATH_BASE}_${comp}_${NUM_TRACES}
+    # Initialize directories.
+    mkdir -p $PROFILE_PATH
+
+    # Create the profile.
+    profile
+
+    # Check result.
+    if [[ ! -f $PROFILE_PATH/PROFILE_MEAN_TRACE.npy ]]; then
+        echo "Profile has not been created! (no file at $PROFILE_PATH/*.npy)"
+        exit 1
+    fi
+}
 
 function profile() {
     echo "Press 's' to save figs to ~/Figure_1.png and ~/Figure_2.png"
@@ -30,18 +48,8 @@ function attack() {
 
 # * Script
 
-# Initialize directories.
-mkdir -p $PROFILE_PATH
+# DONE: Profile the amplitude:
+# profile_comp AMPLITUDE
 
-# Create a profile.
-# DONE:
-# profile
-
-if [[ ! -f $PROFILE_PATH/PROFILE_MEAN_TRACE.npy ]]; then
-    echo "Profile has not been created! (no file at $PROFILE_PATH/*.npy)"
-    exit 1
-fi
-
-# Attack using previously created template.
-# WAIT:
+# WAIT: Attack using previously created template.
 # attack
