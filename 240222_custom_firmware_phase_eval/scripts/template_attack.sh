@@ -37,7 +37,7 @@ function profile_comp() {
 
 function profile() {
     echo "Press 's' to save figs to ~/Figure_1.png and ~/Figure_2.png"
-    sc-attack --plot --norm --data-path $TRAIN_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES profile $PROFILE_PATH --pois-algo r --num-pois 1 --poi-spacing 2 --variable p_xor_k
+    sc-attack --plot --norm --data-path $TRAIN_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES --comp $comp profile $PROFILE_PATH --pois-algo r --num-pois 1 --poi-spacing 2 --variable p_xor_k
     mv ~/Figure_1.png $PROFILE_PATH/plot_mean_trace.png
     mv ~/Figure_2.png $PROFILE_PATH/plot_poi_1.png
 }
@@ -50,6 +50,9 @@ function attack() {
 
 # DONE: Profile the amplitude:
 # profile_comp AMPLITUDE
+
+# DONE: Profile the phase:
+# profile_comp PHASE_ROT
 
 # WAIT: Attack using previously created template.
 # attack
