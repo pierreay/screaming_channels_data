@@ -7,7 +7,7 @@ TRAIN_SET=$REPO_ROOT/240222_custom_firmware_phase_eval/train
 # Base path used to store the created profile.
 PROFILE_PATH_BASE=$TRAIN_SET/../profile
 # Path of dataset used to perform the attack.
-ATTACK_SET=/tmp/collect/500
+ATTACK_SET=$REPO_ROOT/240222_custom_firmware_phase_eval/attack
 
 # Number of traces to use.
 NUM_TRACES=10900
@@ -42,8 +42,17 @@ function profile() {
     mv ~/Figure_2.png $PROFILE_PATH/plot_poi_1.png
 }
 
+function attack_comp() {
+    # Get parameters.
+    comp=$1
+    # Set global parameters.
+    export PROFILE_PATH=${PROFILE_PATH_BASE}_${comp}_${NUM_TRACES}
+    # Perform the attack.
+    attack
+}
+
 function attack() {
-    sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES --bruteforce attack $PROFILE_PATH --attack-algo pcc --variable p_xor_k
+    sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES --bruteforce --comp $comp attack $PROFILE_PATH --attack-algo pcc --variable p_xor_k
 }
 
 # * Script
@@ -54,5 +63,8 @@ function attack() {
 # DONE: Profile the phase:
 # profile_comp PHASE_ROT
 
-# WAIT: Attack using previously created template.
-# attack
+# PROG: Attack amplitude using previously created template.
+attack_comp AMPLITUDE
+
+# WAIT: Attack phase rotation using previously created template.
+# attack_comp PHASE_ROT
