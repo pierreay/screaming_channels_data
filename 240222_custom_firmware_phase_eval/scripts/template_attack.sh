@@ -54,7 +54,8 @@ function attack_comp() {
 function attack() {
     # NOTE: Sampling rate is hardcoded in collect_*.sh scripts.
     fs=8e6
-    sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES --bruteforce --comp $comp \
+    bruteforce="--bruteforce"
+    sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES $bruteforce --comp $comp \
               attack $PROFILE_PATH --attack-algo pcc --variable p_xor_k --align --fs $fs
 }
 
