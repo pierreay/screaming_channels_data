@@ -37,8 +37,6 @@ print("NCOL={}".format(NCOL))
 
 # X-axis, number of traces.
 x_nb = []
-# Y-avis, PGE median.
-y_pge = []
 # Y-axis, log_2(key rank).
 y_kr = []
 
@@ -56,11 +54,9 @@ with open(FILE, 'r') as csvfile:
         # Get data. Index is the column number. Do not index higher than NCOL.
         x_nb.append(int(float(row[0])))
         y_kr.append(int(float(row[1])))
-        y_pge.append(int(float(row[3])))
 
 print("x_nb={}".format(x_nb))
 print("y_kr={}".format(y_kr))
-print("y_pge={}".format(y_pge))
 
 # * Plot
 
@@ -86,7 +82,7 @@ def myplot(x, y, param_dict, smooth=False):
 
 # General:
 
-# plt.title('Key rank and PGE median vs. Trace number')
+# plt.title('Key rank vs. Trace number')
 plt.xlabel('Number of traces')
 
 # Key rank:
@@ -96,14 +92,6 @@ myplot(x_nb, y_kr, {"color": "blue", "label": "Key rank"}, smooth=SMOOTH_PLOT)
 plt.ylabel('Log2(Key rank)')
 # plt.ylim(top=128, bottom=0)
 plt.legend(loc="upper left")
-
-# PGE:
-
-plt.twinx()
-myplot(x_nb, y_pge, {"color": "red", "label": "PGE"}, smooth=SMOOTH_PLOT)
-plt.ylabel('Median(PGE)')
-# plt.ylim(top=256, bottom=0)
-plt.legend(loc="upper right")
 
 # General:
 

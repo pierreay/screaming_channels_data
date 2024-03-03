@@ -7,14 +7,17 @@
 # * Global configuration
 
 # Dataset path.
-DATASET=$REPO_ROOT/240207_1-leak-pairing-10cm-anechoic-2.533e9-8e6_raw
+DATASET=$REPO_ROOT/240222_custom_firmware_phase_eval
+# Attack set path.
+ATTACK_SET=$DATASET/attack
 
 # Length of the profile in samples.
-PROFILE_LENGTH=500
+PROFILE_LENGTH=0
 # Start index for attack traces.
-START_POINT=1000
+START_POINT=0
 # Stop index for attack traces.
-END_POINT=$((START_POINT + PROFILE_LENGTH))
+# END_POINT=$((START_POINT + PROFILE_LENGTH))
+END_POINT=0
 
 # Path of script directory.
 SCRIPT_WD="$(dirname $(realpath $0))"
@@ -33,12 +36,9 @@ function iterate() {
         # Attack and extract:
         # 1) The key rank
         # 2) The correct number of bytes.
-        # 3) The median of the PGE
-        $SC_SRC/attack.py --no-log --no-plot --norm --dataset-path "$DATASET" \
-                    --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces --comptype $COMPTYPE attack \
-                    --attack-algo pcc --profile "$PROFILE" \
-                    --num-pois 1 --poi-spacing 2 --variable p_xor_k --align 2>/dev/null \
-            | grep -E 'actual rounded|CORRECT|MEDIAN' \
+        sc-attack --no-plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces --comp $COMPTYPE \
+                  attack $PROFILE --attack-algo pcc --variable p_xor_k --align --fs 8e6 2>/dev/null \
+            | grep -E 'actual rounded|CORRECT' \
             | cut -f 2 -d ':' \
             | tr -d ' ' \
             | tr '[\n]' '[;]' \
@@ -69,19 +69,19 @@ function iterate_short() {
 function iterate_long() {
     iterate 10 10 1000
     iterate 1000 100 10000
-    iterate 10000 250 $((16000 + 1))
+    iterate 10000 250 $((15000 + 1))
 }
 
 # 3h version:
 function iterate_very_long() {
     iterate 10 5 1000
     iterate 1000 50 10000
-    iterate 10000 125 $((16000 + 1))
+    iterate 10000 125 $((15000 + 1))
 }
 
 function csv_build() {
     # Write CSV header.
-    echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
+    echo "trace_nb;log2(key_rank);correct_bytes" > "$OUTFILE_CSV"
     # Get data into CSV.
     # iterate_very_short
     # iterate_short
@@ -105,18 +105,14 @@ function attack_given_profile() {
     export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
     # Script.
+    mkdir -p $DATASET/log
     csv_build
+    mkdir -p $DATASET/plot
     $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
-# DONE:
-# attack_given_profile AMPLITUDE_16384 AMPLITUDE
+# PROG:
+attack_given_profile AMPLITUDE_10900 AMPLITUDE
 
-# DONE:
-# attack_given_profile AMPLITUDE_32768 AMPLITUDE
-
-# DONE:
-# attack_given_profile AMPLITUDE_65536 AMPLITUDE
-
-# DONE:
-# attack_given_profile PHASE_ROT_65536 PHASE_ROT
+# PROG:
+attack_given_profile PHASE_ROT_10900 PHASE_ROT
