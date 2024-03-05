@@ -7,7 +7,7 @@ LOG_LEVEL=INFO
 # Number of traces.
 NUM_TRACES=16000
 # Temporary collection path.
-TARGET_PATH=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/train
+TARGET_PATH=$REPO_ROOT/240306_custom_firmware_phase_eval_iq_norep/train
 
 # * Functions
 
@@ -90,9 +90,9 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# DONE: Use this once to record a trace. 
-# record --plot
-# DONE: Once the recording is good, use this to configure the analysis.
+# WAIT: Use this once to record a trace. 
+record --plot
+# WAIT: Once the recording is good, use this to configure the analysis.
 # analyze_only
 
 if [[ ! -f $TARGET_PATH/template.npy ]]; then
@@ -105,5 +105,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# DONE: Collect a set of profile traces.
+# WAIT: Collect a set of profile traces.
 # record --no-plot

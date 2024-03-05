@@ -3,11 +3,11 @@
 # * Parameters
 
 # Path of dataset used to create the profile.
-TRAIN_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/train
+TRAIN_SET=$REPO_ROOT/240306_custom_firmware_phase_eval_iq_norep/train
 # Base path used to store the created profile.
 PROFILE_PATH_BASE=$TRAIN_SET/../profile
 # Path of dataset used to perform the attack.
-ATTACK_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/attack
+ATTACK_SET=$REPO_ROOT/240306_custom_firmware_phase_eval_iq_norep/attack
 
 # Number of traces to use for profile creation.
 NUM_TRACES_PROFILE=3200
@@ -69,37 +69,16 @@ function attack() {
 
 # ** Profiles
 
-# DONE: Profile the amplitude:
-# profile_comp amp
-
-# DONE: Profile the phase rotation:
-# profile_comp phr
-
-# DONE: Profile the I component:
-# profile_comp i
-
-# DONE: Profile the Q component:
-# profile_comp q
-
-# DONE: Profile the I augmented component:
-# profile_comp i_augmented
-
-# DONE: Profile the Q augmented component:
-# profile_comp q_augmented
+# WAIT: Profile all available components:
+profile_comp amp
+profile_comp phr
+profile_comp i_augmented
+profile_comp q_augmented
 
 # ** Attacks
 
-# Attack using previously created templates.
-
-# DONE:
-# attack_comp amp
-# DONE:
-# attack_comp phr
-# DONE:
-# attack_comp i
-# DONE:
-# attack_comp q
-# DONE:
-# attack_comp i_augmented
-# DONE:
-# attack_comp q_augmented
+# WAIT: Attack using previously created templates.
+attack_comp amp
+attack_comp phr
+attack_comp i_augmented
+attack_comp q_augmented

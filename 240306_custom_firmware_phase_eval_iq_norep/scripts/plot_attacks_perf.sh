@@ -7,7 +7,7 @@
 # * Global configuration
 
 # Dataset path.
-DATASET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq
+DATASET=$REPO_ROOT/240306_custom_firmware_phase_eval_iq_norep
 # Attack set path.
 ATTACK_SET=$DATASET/attack
 
@@ -111,15 +111,15 @@ function attack_given_profile() {
     export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
     # Script.
-    # PROG:
+    # WAIT:
     mkdir -p $DATASET/log
     csv_build
-    # PROG:
+    # WAIT:
     mkdir -p $DATASET/plot
     $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
-# PROG:
+# WAIT:
 attack_given_profile amp_3200 amp
 attack_given_profile phr_3200 phr
 attack_given_profile i_3200 i
