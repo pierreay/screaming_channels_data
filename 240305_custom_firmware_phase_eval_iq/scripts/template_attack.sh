@@ -12,7 +12,7 @@ ATTACK_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/attack
 # Number of traces to use for profile creation.
 NUM_TRACES_PROFILE=3200
 # Number of traces to use for attack.
-NUM_TRACES_ATTACK=15000
+NUM_TRACES_ATTACK=50
 # Delimiters.
 START_POINT=0
 END_POINT=0
@@ -49,6 +49,9 @@ function attack_comp() {
     comp=$1
     # Set global parameters.
     export PROFILE_PATH=${PROFILE_PATH_BASE}_${comp}_${NUM_TRACES_PROFILE}
+
+    echo "Attack '$comp' with profile: $PROFILE_PATH"
+    
     # Perform the attack.
     attack
 }
@@ -57,7 +60,8 @@ function attack() {
     # NOTE: Sampling rate is hardcoded in collect_*.sh scripts.
     fs=8e6
     # bruteforce="--bruteforce"
-    sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES_ATTACK $bruteforce --comp $comp \
+    # plot="--plot"
+    sc-attack $plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES_ATTACK $bruteforce --comp $comp \
               attack $PROFILE_PATH --attack-algo pcc --variable p_xor_k --align --fs $fs
 }
 
@@ -87,15 +91,15 @@ function attack() {
 
 # Attack using previously created templates.
 
-# WAIT:
+# DONE:
 # attack_comp amp
-# WAIT:
+# DONE:
 # attack_comp phr
-# WAIT:
+# DONE:
 # attack_comp i
-# WAIT:
+# DONE:
 # attack_comp q
-# WAIT:
+# DONE:
 # attack_comp i_augmented
-# WAIT:
+# DONE:
 # attack_comp q_augmented
