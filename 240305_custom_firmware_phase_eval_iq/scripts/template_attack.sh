@@ -10,7 +10,7 @@ PROFILE_PATH_BASE=$TRAIN_SET/../profile
 ATTACK_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/attack
 
 # Number of traces to use for profile creation.
-NUM_TRACES_PROFILE=10900
+NUM_TRACES_PROFILE=3200
 # Number of traces to use for attack.
 NUM_TRACES_ATTACK=15000
 # Delimiters.
@@ -65,22 +65,22 @@ function attack() {
 
 # ** Profiles
 
-# WAIT: Profile the amplitude:
+# DONE: Profile the amplitude:
 # profile_comp amp
 
-# WAIT: Profile the phase rotation:
+# DONE: Profile the phase rotation:
 # profile_comp phr
 
-# WAIT: Profile the I component:
+# DONE: Profile the I component:
 # profile_comp i
 
-# WAIT: Profile the Q component:
+# DONE: Profile the Q component:
 # profile_comp q
 
-# WAIT: Profile the I augmented component:
+# DONE: Profile the I augmented component:
 # profile_comp i_augmented
 
-# WAIT: Profile the Q augmented component:
+# DONE: Profile the Q augmented component:
 # profile_comp q_augmented
 
 # ** Attacks
