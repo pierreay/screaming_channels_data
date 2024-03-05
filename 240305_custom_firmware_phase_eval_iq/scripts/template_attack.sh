@@ -3,11 +3,11 @@
 # * Parameters
 
 # Path of dataset used to create the profile.
-TRAIN_SET=$REPO_ROOT/240222_custom_firmware_phase_eval/train
+TRAIN_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/train
 # Base path used to store the created profile.
 PROFILE_PATH_BASE=$TRAIN_SET/../profile
 # Path of dataset used to perform the attack.
-ATTACK_SET=$REPO_ROOT/240222_custom_firmware_phase_eval/attack
+ATTACK_SET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/attack
 
 # Number of traces to use for profile creation.
 NUM_TRACES_PROFILE=10900
@@ -56,21 +56,46 @@ function attack_comp() {
 function attack() {
     # NOTE: Sampling rate is hardcoded in collect_*.sh scripts.
     fs=8e6
-    bruteforce="--bruteforce"
+    # bruteforce="--bruteforce"
     sc-attack --plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $NUM_TRACES_ATTACK $bruteforce --comp $comp \
               attack $PROFILE_PATH --attack-algo pcc --variable p_xor_k --align --fs $fs
 }
 
 # * Script
 
-# DONE: Profile the amplitude:
-# profile_comp AMPLITUDE
+# ** Profiles
 
-# DONE: Profile the phase:
-# profile_comp PHASE_ROT
+# WAIT: Profile the amplitude:
+# profile_comp amp
 
-# PROG: Attack amplitude using previously created template.
-attack_comp AMPLITUDE
+# WAIT: Profile the phase rotation:
+# profile_comp phr
 
-# WAIT: Attack phase rotation using previously created template.
-# attack_comp PHASE_ROT
+# WAIT: Profile the I component:
+# profile_comp i
+
+# WAIT: Profile the Q component:
+# profile_comp q
+
+# WAIT: Profile the I augmented component:
+# profile_comp i_augmented
+
+# WAIT: Profile the Q augmented component:
+# profile_comp q_augmented
+
+# ** Attacks
+
+# Attack using previously created templates.
+
+# WAIT:
+# attack_comp amp
+# WAIT:
+# attack_comp phr
+# WAIT:
+# attack_comp i
+# WAIT:
+# attack_comp q
+# WAIT:
+# attack_comp i_augmented
+# WAIT:
+# attack_comp q_augmented

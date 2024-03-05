@@ -7,7 +7,7 @@ LOG_LEVEL=INFO
 # Number of traces.
 NUM_TRACES=16000
 # Temporary collection path.
-TARGET_PATH=$REPO_ROOT/240222_custom_firmware_phase_eval/attack
+TARGET_PATH=$REPO_ROOT/240305_custom_firmware_phase_eval_iq/attack
 
 # * Functions
 
@@ -64,11 +64,15 @@ function record() {
     sleep 10
 
     # Start collection and plot result.
-    echo "Press 's' to save figs to ~/Figure_1.png and ~/Figure_2.png" 
+    echo "Press 's' to save figs to ~/Figure_{1,2,3,4,5,6}.png"
     sc-experiment --loglevel=$LOG_LEVEL --radio=USRP --device=$(nrfjprog --com | cut - -d " " -f 5) -o $HOME/storage/tmp/raw_0_0.npy collect $CONFIG_JSON_PATH_DST $TARGET_PATH $plot --average-out=$TARGET_PATH/template.npy
     if [[ "$plot" == "--plot" ]]; then
         mv ~/Figure_1.png $TARGET_PATH/plot_template_amp.png
         mv ~/Figure_2.png $TARGET_PATH/plot_template_phr.png
+        mv ~/Figure_3.png $TARGET_PATH/plot_template_i.png
+        mv ~/Figure_4.png $TARGET_PATH/plot_template_q.png
+        mv ~/Figure_5.png $TARGET_PATH/plot_template_i_augmented.png
+        mv ~/Figure_6.png $TARGET_PATH/plot_template_q_augmented.png
     fi
 }
 
@@ -86,9 +90,9 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# Use this once to record a trace. 
+# PROG: Use this once to record a trace. 
 record --plot
-# Once the recording is good, use this to configure the analysis.
+# PROG: Once the recording is good, use this to configure the analysis.
 # analyze_only
 
 if [[ ! -f $TARGET_PATH/template.npy ]]; then
@@ -101,5 +105,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# Collect a set of attack traces.
+# PROG: Collect a set of attack traces.
 record --no-plot
