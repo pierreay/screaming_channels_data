@@ -7,7 +7,7 @@
 # * Global configuration
 
 # Dataset path.
-DATASET=$REPO_ROOT/240222_custom_firmware_phase_eval
+DATASET=$REPO_ROOT/240305_custom_firmware_phase_eval_iq
 # Attack set path.
 ATTACK_SET=$DATASET/attack
 
@@ -79,14 +79,20 @@ function iterate_very_long() {
     iterate 10000 125 $((15000 + 1))
 }
 
+# All traces
+function iterate_all() {
+    iterate 10 1 200
+}
+
 function csv_build() {
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes" > "$OUTFILE_CSV"
     # Get data into CSV.
+    iterate_all
     # iterate_very_short
     # iterate_short
     # iterate_long
-    iterate_very_long
+    # iterate_very_long
 }
 
 # * Script
@@ -110,11 +116,13 @@ function attack_given_profile() {
     # csv_build
     # DONE:
     mkdir -p $DATASET/plot
-    $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
+    # $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
 # DONE:
-# attack_given_profile AMPLITUDE_10900 AMPLITUDE
-
-# DONE:
-# attack_given_profile PHASE_ROT_10900 PHASE_ROT
+# attack_given_profile amp_3200 amp
+# attack_given_profile phr_3200 phr
+# attack_given_profile i_3200 i
+# attack_given_profile q_3200 q
+# attack_given_profile i_augmented_3200 i_augmented
+# attack_given_profile q_augmented_3200 q_augmented
