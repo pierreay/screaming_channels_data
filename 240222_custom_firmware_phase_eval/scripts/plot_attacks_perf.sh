@@ -105,14 +105,16 @@ function attack_given_profile() {
     export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
     # Script.
+    # DONE:
     mkdir -p $DATASET/log
-    csv_build
+    # csv_build
+    # DONE:
     mkdir -p $DATASET/plot
     $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
-# PROG:
-attack_given_profile AMPLITUDE_10900 AMPLITUDE
+# DONE:
+# attack_given_profile AMPLITUDE_10900 AMPLITUDE
 
-# PROG:
-attack_given_profile PHASE_ROT_10900 PHASE_ROT
+# DONE:
+# attack_given_profile PHASE_ROT_10900 PHASE_ROT

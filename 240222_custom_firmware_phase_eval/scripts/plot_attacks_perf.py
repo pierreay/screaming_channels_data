@@ -90,7 +90,7 @@ plt.xlabel('Number of traces')
 # myplot(x_nb, y_kr, {"color": "blue", "label": "Key rank", "marker": "."}, smooth=SMOOTH_PLOT)
 myplot(x_nb, y_kr, {"color": "blue", "label": "Key rank"}, smooth=SMOOTH_PLOT)
 plt.ylabel('Log2(Key rank)')
-# plt.ylim(top=128, bottom=0)
+plt.ylim(top=128, bottom=0)
 plt.legend(loc="upper left")
 
 # General:
