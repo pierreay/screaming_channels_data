@@ -53,6 +53,8 @@ function configure_json_collect() {
 function record() {
     plot=$1
     echo "plot=$plot"
+    saveplot=$2
+    echo "saveplot=$saveplot"
     
     # Kill previously started radio server.
     pkill radio.py
@@ -68,16 +70,7 @@ function record() {
     sleep 10
 
     # Start collection and plot result.
-    echo "Press 's' to save figs to ~/Figure_{1,2,3,4,5,6}.png"
-    sc-experiment --loglevel=$LOG_LEVEL --radio=USRP --device=$(nrfjprog --com | cut - -d " " -f 5) -o $HOME/storage/tmp/raw_0_0.npy collect $CONFIG_JSON_PATH_DST $TARGET_PATH $plot --average-out=$TARGET_PATH/template.npy
-    if [[ "$plot" == "--plot" ]]; then
-        mv ~/Figure_1.png $TARGET_PATH/plot_template_amp.png
-        mv ~/Figure_2.png $TARGET_PATH/plot_template_phr.png
-        mv ~/Figure_3.png $TARGET_PATH/plot_template_i.png
-        mv ~/Figure_4.png $TARGET_PATH/plot_template_q.png
-        mv ~/Figure_5.png $TARGET_PATH/plot_template_i_augmented.png
-        mv ~/Figure_6.png $TARGET_PATH/plot_template_q_augmented.png
-    fi
+    sc-experiment --loglevel=$LOG_LEVEL --radio=USRP --device=$(nrfjprog --com | cut - -d " " -f 5) -o $HOME/storage/tmp/raw_0_0.npy collect $CONFIG_JSON_PATH_DST $TARGET_PATH $plot $saveplot --average-out=$TARGET_PATH/template.npy
 }
 
 function analyze_only() {
@@ -95,7 +88,7 @@ mkdir -p $TARGET_PATH
 configure_json_plot
 
 # WAIT: Use this once to record a trace. 
-record --plot
+record --no-plot --saveplot
 # WAIT: Once the recording is good, use this to configure the analysis.
 # analyze_only
 
@@ -110,4 +103,4 @@ fi
 configure_json_collect
 
 # WAIT: Collect a set of profile traces.
-# record --no-plot
+record --no-plot --no-saveplot
