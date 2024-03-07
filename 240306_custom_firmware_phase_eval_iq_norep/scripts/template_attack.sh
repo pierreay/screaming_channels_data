@@ -12,7 +12,7 @@ ATTACK_SET=$REPO_ROOT/240306_custom_firmware_phase_eval_iq_norep/attack
 # Number of traces to use for profile creation.
 NUM_TRACES_PROFILE=16000
 # Number of traces to use for attack.
-NUM_TRACES_ATTACK=50
+NUM_TRACES_ATTACK=4100
 # Delimiters. Small window greatly increase profile computation speed.
 START_POINT=0
 END_POINT=0
@@ -60,13 +60,17 @@ function profile() {
 function attack_comp() {
     # Get parameters.
     comp=$1
-    # Set global parameters.
-    export PROFILE_PATH=${PROFILE_PATH_BASE}_${comp}_${NUM_TRACES_PROFILE}
 
-    echo "Attack '$comp' with profile: $PROFILE_PATH"
-    
-    # Perform the attack.
-    attack
+    # Attack only successful profiles (good correlations + good POIs values).
+    for pois_algo in snr corr
+    do
+        echo "pois_algo=$pois_algo"
+        # Set global parameters.
+        export PROFILE_PATH=${PROFILE_PATH_BASE}_${comp}_${NUM_TRACES_PROFILE}_${pois_algo}
+        # Perform the attack.
+        echo "Attack '$comp' with profile: $PROFILE_PATH"
+        attack
+    done
 }
 
 function attack() {
@@ -88,8 +92,8 @@ function attack() {
 
 # ** Attacks
 
-# WAIT: Attack using previously created templates.
-attack_comp amp
-attack_comp phr
-attack_comp i_augmented
-attack_comp q_augmented
+# DONE: Attack using previously created templates.
+# attack_comp amp
+# attack_comp phr
+# attack_comp i_augmented
+# attack_comp q_augmented
