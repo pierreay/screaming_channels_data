@@ -89,7 +89,7 @@ configure_json_plot
 
 # WAIT: Use this once to record a trace. 
 record --no-plot --saveplot
-# WAIT: Once the recording is good, use this to configure the analysis.
+# Once the recording is good, use this to configure the analysis if needed.
 # analyze_only
 
 if [[ ! -f $TARGET_PATH/template.npy ]]; then
