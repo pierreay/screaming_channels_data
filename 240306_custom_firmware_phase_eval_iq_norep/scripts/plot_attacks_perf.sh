@@ -81,7 +81,12 @@ function iterate_very_long() {
 
 # All traces
 function iterate_all() {
-    iterate 10 1 200
+    iterate 10 1 100
+    iterate 100 2 200
+    iterate 200 5 500
+    iterate 500 10 1000
+    iterate 1000 20 2000
+    iterate 2000 40 4000
 }
 
 function csv_build() {
@@ -111,18 +116,16 @@ function attack_given_profile() {
     export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
     # Script.
-    # WAIT:
+    # DONE:
     mkdir -p $DATASET/log
-    csv_build
-    # WAIT:
+    # csv_build
+    # DONE:
     mkdir -p $DATASET/plot
-    $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
+    # $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
-# WAIT:
-attack_given_profile amp_3200 amp
-attack_given_profile phr_3200 phr
-attack_given_profile i_3200 i
-attack_given_profile q_3200 q
-attack_given_profile i_augmented_3200 i_augmented
-attack_given_profile q_augmented_3200 q_augmented
+# DONE:
+# attack_given_profile amp_16000_snr amp
+# attack_given_profile phr_16000_snr phr
+# attack_given_profile i_augmented_16000_snr i_augmented
+# attack_given_profile q_augmented_16000_snr q_augmented
