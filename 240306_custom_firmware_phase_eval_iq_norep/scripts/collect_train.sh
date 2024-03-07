@@ -87,9 +87,9 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# WAIT: Use this once to record a trace. 
-record --no-plot --saveplot
-# WAIT: Once the recording is good, use this to configure the analysis.
+# DONE: Use this once to record a trace. 
+# record --no-plot --saveplot
+# Once the recording is good, use this to configure the analysis if needed.
 # analyze_only
 
 if [[ ! -f $TARGET_PATH/template.npy ]]; then
@@ -102,5 +102,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# WAIT: Collect a set of profile traces.
-record --no-plot --no-saveplot
+# DONE: Collect a set of profile traces.
+# record --no-plot --no-saveplot
