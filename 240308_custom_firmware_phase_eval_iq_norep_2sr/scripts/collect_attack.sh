@@ -34,6 +34,7 @@ function configure_json_plot() {
     configure_param_json $CONFIG_JSON_PATH_DST "trigger_threshold" "90e3"
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
+    configure_param_json $CONFIG_JSON_PATH_DST "trigger_offset" -100e-6
 }
 
 function configure_json_collect() {
@@ -44,6 +45,7 @@ function configure_json_collect() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_points" "$NUM_TRACES"
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
+    configure_param_json $CONFIG_JSON_PATH_DST "trigger_offset" -100e-6
     configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "true"
     configure_param_json $CONFIG_JSON_PATH_DST "template_name" "$(configure_param_json_escape_path $TARGET_PATH/template.npy)"
 }
