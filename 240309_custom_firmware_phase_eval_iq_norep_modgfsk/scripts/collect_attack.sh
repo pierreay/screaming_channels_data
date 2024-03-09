@@ -24,7 +24,13 @@ function configure_param_json() {
     param_name="$2"
     param_value="$3"
     echo "$config_file: $param_name=$param_value"
-    sed -i "s/\"${param_name}\": .*,/\"${param_name}\": ${param_value},/g" "$config_file"
+    # NOTE: Handle special-case where there is no "," at the end.
+    candid=$(cat "$config_file" | grep "$param_name")
+    if [[ ${candid:$((${#candid} - 1)):1} == "," ]]; then
+        sed -i "s/\"${param_name}\": .*,/\"${param_name}\": ${param_value},/g" "$config_file"
+    else
+        sed -i "s/\"${param_name}\": .*/\"${param_name}\": ${param_value}/g" "$config_file"
+    fi
 }
 
 function configure_json_plot() {
@@ -35,6 +41,7 @@ function configure_json_plot() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "2.2e19"
 }
 
 function configure_json_collect() {
@@ -46,6 +53,7 @@ function configure_json_collect() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "2.2e19"
     configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "true"
     configure_param_json $CONFIG_JSON_PATH_DST "template_name" "$(configure_param_json_escape_path $TARGET_PATH/template.npy)"
 }
