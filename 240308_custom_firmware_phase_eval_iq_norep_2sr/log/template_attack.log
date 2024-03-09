@@ -1,0 +1,334 @@
+Saren in dataset/240308_custom_firmware_phase_eval_iq_norep_2sr on  master [!?]
+at 20:46:32 ❯ ./scripts/template_attack.sh
+pois_algo=snr
+Attack 'amp' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_amp_16000_snr
+[2024-03-09 20:46:35,151] [711060] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1814.72it/s]
+[2024-03-09 20:46:37,461] [711060] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1798.43it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   e8   92   59   e7   25   88   08   de   12   8f   a7   06   c2   83   b7   38
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             025  002  018  001  013  001  006  002  001  003  005  003  001  000  004  000
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    1    0    1
+NUMBER OF CORRECT BYTES: 2
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^53.74967797
+actual rounded: 2^54.4586132
+max: 2^55.01623242
+time enum: 0.242892 seconds
+
+
+pois_algo=corr
+Attack 'amp' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_amp_16000_corr
+[2024-03-09 20:46:58,516] [711195] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1819.93it/s]
+[2024-03-09 20:47:00,819] [711195] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1805.56it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   de   b6   0f   ae   e1   fc   c5   c6   d3   d7   58   03   ec   d5   83   29
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             174  107  162  125  047  015  033  048  019  044  018  026  010  042  034  018
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+NUMBER OF CORRECT BYTES: 0
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^114.0144377
+actual rounded: 2^114.1792898
+max: 2^114.3100435
+time enum: 0.208049 seconds
+
+
+pois_algo=snr
+Attack 'phr' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_phr_16000_snr
+[2024-03-09 20:47:21,693] [711420] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1806.59it/s]
+[2024-03-09 20:47:24,013] [711420] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1800.14it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9d   90   0a   fb   42   89   4a   8a   10   d7   ff   05   c3   83   f4   65
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             001  000  001  076  000  004  008  003  001  001  001  000  001  000  009  003
+SUCCESS:           0    1    0    0    1    0    0    0    0    0    0    1    0    1    0    0
+NUMBER OF CORRECT BYTES: 4
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^53.3070495
+actual rounded: 2^54.88417588
+max: 2^56.11408745
+time enum: 0.208975 seconds
+
+
+pois_algo=corr
+Attack 'phr' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_phr_16000_corr
+[2024-03-09 20:47:44,837] [711519] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1840.84it/s]
+[2024-03-09 20:47:47,114] [711519] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1825.23it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9d   90   0a   fb   42   89   4a   8a   10   d7   ff   05   c3   83   f4   65
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             001  000  001  076  000  004  008  003  001  001  001  000  001  000  009  003
+SUCCESS:           0    1    0    0    1    0    0    0    0    0    0    1    0    1    0    0
+NUMBER OF CORRECT BYTES: 4
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^53.3070495
+actual rounded: 2^54.88417588
+max: 2^56.11408745
+time enum: 0.208974 seconds
+
+
+pois_algo=snr
+Attack 'i_augmented' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_i_augmented_16000_snr
+[2024-03-09 20:48:07,951] [711625] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1821.92it/s]
+[2024-03-09 20:48:10,252] [711625] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1809.33it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9f   91   59   e7   41   8b   49   de   12   8d   fd   07   c2   82   f7   3b
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             002  021  005  003  002  003  003  001  002  003  000  001  002  001  000  002
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    1    0    0    0    1    0
+NUMBER OF CORRECT BYTES: 2
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^47.91010647
+actual rounded: 2^49.29187281
+max: 2^50.37233481
+time enum: 0.206634 seconds
+
+
+pois_algo=corr
+Attack 'i_augmented' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_i_augmented_16000_corr
+[2024-03-09 20:48:31,144] [711723] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1778.39it/s]
+[2024-03-09 20:48:33,501] [711723] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1766.83it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9f   9d   59   fb   43   88   49   df   13   8e   fd   05   c1   83   f4   65
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             006  003  005  035  001  001  004  000  002  000  000  000  000  000  033  001
+SUCCESS:           0    0    0    0    0    0    0    1    0    1    1    1    1    1    0    0
+NUMBER OF CORRECT BYTES: 6
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^51.41139682
+actual rounded: 2^53.16538574
+max: 2^54.52889734
+time enum: 0.207594 seconds
+
+
+pois_algo=snr
+Attack 'q_augmented' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_q_augmented_16000_snr
+[2024-03-09 20:48:54,452] [711944] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1829.72it/s]
+[2024-03-09 20:48:56,743] [711944] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1815.02it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9e   90   08   c3   43   88   48   c2   11   8e   fc   05   c1   f3   eb   65
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             003  000  000  030  002  009  000  004  000  000  003  000  000  011  008  002
+SUCCESS:           0    1    1    0    0    0    1    0    1    1    0    1    1    0    0    0
+NUMBER OF CORRECT BYTES: 7
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^44.24344376
+actual rounded: 2^45.90215319
+max: 2^47.19349163
+time enum: 0.211993 seconds
+
+
+pois_algo=corr
+Attack 'q_augmented' with profile: /home/drac/mnt/storage_nvme/dataset/240308_custom_firmware_phase_eval_iq_norep_2sr/train/../profile_q_augmented_16000_corr
+[2024-03-09 20:49:17,966] [712096] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1806.85it/s]
+[2024-03-09 20:49:20,286] [712096] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4172/4172 [00:02<00:00, 1797.55it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   9e   90   08   c3   43   88   48   c2   11   8e   fc   05   c1   f3   8c   65
+Known Key:        9c   90   08   e4   42   8a   48   df   11   8e   fd   05   c1   83   f7   38
+PGE:             003  000  000  030  002  009  000  004  000  000  003  000  000  011  039  002
+SUCCESS:           0    1    1    0    0    0    1    0    1    1    0    1    1    0    0    0
+NUMBER OF CORRECT BYTES: 7
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^48.28776124
+actual rounded: 2^49.79684315
+max: 2^50.97595671
+time enum: 0.212813 seconds
+
+
+
+Saren in dataset/240308_custom_firmware_phase_eval_iq_norep_2sr on  master [!?] took 3m6s
+at 20:49:39 ❯ tmux-capture-pane
+

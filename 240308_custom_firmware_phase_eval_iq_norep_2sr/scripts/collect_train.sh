@@ -104,5 +104,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# PROG: Collect a set of profile traces.
-record --no-plot --no-saveplot
+# DONE: Collect a set of profile traces.
+# record --no-plot --no-saveplot

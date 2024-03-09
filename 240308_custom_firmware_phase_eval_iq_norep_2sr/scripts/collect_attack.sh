@@ -5,7 +5,7 @@
 # Logging level for Python.
 LOG_LEVEL=INFO
 # Number of traces.
-NUM_TRACES=16000
+NUM_TRACES=4200
 # Temporary collection path.
 TARGET_PATH=$REPO_ROOT/240308_custom_firmware_phase_eval_iq_norep_2sr/attack
 
@@ -89,8 +89,8 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# WAIT: Use this once to record a trace. 
-record --no-plot --saveplot
+# DONE: Use this once to record a trace. 
+# record --no-plot --saveplot
 # Once the recording is good, use this to configure the analysis if needed.
 # analyze_only
 
@@ -104,5 +104,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# WAIT: Collect a set of attack traces.
-record --no-plot --no-saveplot
+# DONE: Collect a set of attack traces.
+# record --no-plot --no-saveplot

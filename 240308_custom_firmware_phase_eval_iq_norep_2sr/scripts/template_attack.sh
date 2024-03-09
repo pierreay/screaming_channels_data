@@ -12,7 +12,7 @@ ATTACK_SET=$REPO_ROOT/240308_custom_firmware_phase_eval_iq_norep_2sr/attack
 # Number of traces to use for profile creation.
 NUM_TRACES_PROFILE=16000
 # Number of traces to use for attack.
-NUM_TRACES_ATTACK=4100
+NUM_TRACES_ATTACK=4200
 # Delimiters. Small window greatly increase profile computation speed.
 START_POINT=0
 END_POINT=0
@@ -84,16 +84,16 @@ function attack() {
 
 # ** Profiles
 
-# WAIT: Profile all available components:
-profile_comp amp
-profile_comp phr
-profile_comp i_augmented
-profile_comp q_augmented
+# DONE: Profile all available components:
+# profile_comp amp
+# profile_comp phr
+# profile_comp i_augmented
+# profile_comp q_augmented
 
 # ** Attacks
 
-# WAIT: Attack using previously created templates.
-attack_comp amp
-attack_comp phr
-attack_comp i_augmented
-attack_comp q_augmented
+# DONE: Attack using previously created templates.
+# attack_comp amp
+# attack_comp phr
+# attack_comp i_augmented
+# attack_comp q_augmented
