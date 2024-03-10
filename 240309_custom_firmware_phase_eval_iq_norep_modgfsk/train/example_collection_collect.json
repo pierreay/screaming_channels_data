@@ -1,0 +1,30 @@
+{
+    "firmware": {
+        "mode": "tinyaes",
+        "fixed_key": false,
+        "modulate": true
+    },
+    "collection": {
+        "channel": 0,
+        "hackrf_gain": 0,
+        "hackrf_gain_if": 35,
+        "hackrf_gain_bb": 39,
+        "plutosdr_gain": 35,
+        "usrp_gain": 40,
+        "target_freq": 2.512e9,
+        "sampling_rate": 8e6,
+        "num_points": 16000,
+        "num_traces_per_point": 300,
+        "num_traces_per_point_keep": 1,
+        "bandpass_lower": 1.93e6,
+        "bandpass_upper": 2.18e6,
+        "lowpass_freq": 3e3,
+        "drop_start": 50e-3,
+        "trigger_rising": true,
+        "trigger_offset": 100e-6,
+        "trigger_threshold": 90e3,
+        "signal_length": 300e-6,
+        "template_name": "/home/drac/mnt/storage_nvme/dataset/240309_custom_firmware_phase_eval_iq_norep_modgfsk/train/template.npy",
+        "min_correlation": 2.2e19
+    }
+}
