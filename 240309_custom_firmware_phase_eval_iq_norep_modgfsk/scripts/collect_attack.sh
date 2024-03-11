@@ -41,7 +41,9 @@ function configure_json_plot() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "2.2e19"
+    # NOTE: Lower a bit this value since it was generating a lot of rejected
+    # traces in train set.
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.9e19"
 }
 
 function configure_json_collect() {
@@ -53,7 +55,9 @@ function configure_json_collect() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "2.2e19"
+    # NOTE: Lower a bit this value since it was generating a lot of rejected
+    # traces in train set.
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.9e19"
     configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "true"
     configure_param_json $CONFIG_JSON_PATH_DST "template_name" "$(configure_param_json_escape_path $TARGET_PATH/template.npy)"
 }
@@ -97,8 +101,8 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# WAIT: Use this once to record a trace. 
-record --no-plot --saveplot
+# DONE: Use this once to record a trace. 
+# record --no-plot --saveplot
 # Once the recording is good, use this to configure the analysis if needed.
 # analyze_only
 
@@ -112,5 +116,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# WAIT: Collect a set of attack traces.
-record --no-plot --no-saveplot
+# DONE: Collect a set of attack traces.
+# record --no-plot --no-saveplot

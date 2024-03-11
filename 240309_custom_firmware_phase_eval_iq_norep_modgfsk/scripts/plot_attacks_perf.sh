@@ -116,16 +116,16 @@ function attack_given_profile() {
     export OUTFILE_PDF=$DATASET/plot/attack_results_${PROFILE_CONFIG}.pdf
 
     # Script.
-    # WAIT:
+    # DONE:
     mkdir -p $DATASET/log
-    csv_build
-    # WAIT:
+    # csv_build
+    # DONE:
     mkdir -p $DATASET/plot
-    $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
+    # $SCRIPT_WD/plot_attacks_perf.py $OUTFILE_CSV $OUTFILE_PDF
 }
 
-# WAIT:
-attack_given_profile amp_16000_snr amp
-attack_given_profile phr_16000_snr phr
-attack_given_profile i_augmented_16000_snr i_augmented
-attack_given_profile q_augmented_16000_snr q_augmented
+# DONE:
+# attack_given_profile amp_16000_snr amp
+# attack_given_profile phr_16000_snr phr
+# attack_given_profile i_augmented_16000_snr i_augmented
+# attack_given_profile q_augmented_16000_snr q_augmented

@@ -97,8 +97,8 @@ mkdir -p $TARGET_PATH
 # Set the JSON configuration file for one recording analysis.
 configure_json_plot
 
-# PROG: Use this once to record a trace. 
-record --no-plot --saveplot
+# DONE: Use this once to record a trace. 
+# record --no-plot --saveplot
 # Once the recording is good, use this to configure the analysis if needed.
 # analyze_only
 
@@ -112,5 +112,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# PROG: Collect a set of profile traces.
-record --no-plot --no-saveplot
+# DONE: Collect a set of profile traces.
+# record --no-plot --no-saveplot
