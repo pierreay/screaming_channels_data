@@ -1,11 +1,3 @@
-
-
-drac in 🌐 Saren in dataset/240309_custom_firmware_phase_eval_iq_norep_modgfsk on  master
-at 08:47:36 ❯ ../scripts/
-
-drac in 🌐 Saren in dataset/240309_custom_firmware_phase_eval_iq_norep_modgfsk on  master
-at 08:47:36 ❯ ../scripts/template_attack.sh
-
 drac in 🌐 Saren in dataset/240309_custom_firmware_phase_eval_iq_norep_modgfsk on  master
 at 08:47:36 ❯ ./scripts/template_attack.sh
 pois_algo=snr
@@ -339,17 +331,3 @@ time enum: 0.234438 seconds
 
 drac in 🌐 Saren in dataset/240309_custom_firmware_phase_eval_iq_norep_modgfsk on  master took 3m15s
 at 08:51:17 ❯ tmux-capture-pane
-
-
-
-
-
-
-
-
-
-
-
-
-
-
