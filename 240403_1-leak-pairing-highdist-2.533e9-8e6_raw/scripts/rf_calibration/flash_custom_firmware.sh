@@ -8,3 +8,6 @@ function compile_firmware() {
 
 # DONE:
 # compile_firmware
+
+# NOTE: Then, use minicom, press "a" "02" "ENTER" then alternate "o" and "c"
+# with GQRX opened to find setup increasing SNR at maximum.
