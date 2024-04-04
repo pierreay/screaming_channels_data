@@ -31,8 +31,7 @@ EOF
 
 # * Steps
 
-# DONE:
-# compile_flash_firmware
+compile_flash_firmware
 
 start_tx
 
