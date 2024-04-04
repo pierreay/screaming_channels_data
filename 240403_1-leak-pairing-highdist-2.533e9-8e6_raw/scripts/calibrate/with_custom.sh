@@ -1,6 +1,14 @@
 #!/bin/bash
 
+# * Variables
+
+NRF_PATH="" # NOTE: Initialized by find_nrf().
+
 # * Functions
+
+function find_nrf() {
+    NRF_PATH=$(nrfjprog --com | cut - -d " " -f 5)
+}
 
 function compile_flash_firmware() {
     cd $SC_POC/firmware
@@ -16,7 +24,7 @@ send 02
 send o
 ! killall -9 minicom
 EOF
-    minicom -D /dev/ttyACM0 -S $script >/dev/null 2>/dev/null &
+    minicom -D ${NRF_PATH} -S $script >/dev/null 2>/dev/null &
     
 }
 
@@ -26,13 +34,14 @@ function stop_tx() {
 send e
 ! killall -9 minicom
 EOF
-    minicom -D /dev/ttyACM0 -S $script >/dev/null 2>/dev/null &
+    minicom -D ${NRF_PATH} -S $script >/dev/null 2>/dev/null &
 }
 
 # * Steps
 
+find_nrf
 compile_flash_firmware
-
+sleep 3 # NOTE: Wait firmware initialization.
 start_tx
 
 echo "INFO: Tune to 2.402 GHz and observe modulated carrier"
