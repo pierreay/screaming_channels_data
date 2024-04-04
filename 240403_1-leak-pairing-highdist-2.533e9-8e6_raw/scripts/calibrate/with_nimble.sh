@@ -33,7 +33,13 @@ CONTINUE_FLAG=1
 
 CONFIG_PATH="/tmp/config.toml"
 
+NRF_PATH="" # NOTE: Initialized by find_nrf().
+
 # * Functions
+
+function find_nrf() {
+    NRF_PATH=$(nrfjprog --com | cut - -d " " -f 5)
+}
 
 function compile_firmware() {
     cd $NIMBLE
@@ -77,7 +83,7 @@ function config() {
 }
 
 function instrument() {
-    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train "C0:A5:E8:58:D2:FB" "C2:3E:54:84:5C:4C" /dev/ttyACM0 --idx 0 --config slow)
+    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train "C0:A5:E8:58:D2:FB" "C2:3E:54:84:5C:4C" ${NRF_PATH} --idx 0 --config slow)
     ret=$?
     echo "INFO: ret=$ret?"
     if [[ "$ret" != 0 ]]; then
@@ -121,10 +127,12 @@ function analyze() {
 
 function init_log() {
     clear
+    mkdir -p "$DATASET_PATH/logs"
+    mkdir -p "$DATASET_PATH/plots"
 }
 
 function save_log() {
-    tmux capture-pane -pS - >> "$DATASET_PATH/logs/calibrate_nimble.log"
+    tmux capture-pane -pS - > "$DATASET_PATH/logs/calibrate_nimble.log"
 }
 
 # * Steps
@@ -132,6 +140,8 @@ function save_log() {
 init_log
 
 init_git
+
+find_nrf
 
 capture
 
