@@ -4,10 +4,13 @@
 
 # ** Script configuration
 
-# *** Paths
+# *** Paths and addresses
 
 # Path of current dataset.
 DATASET_PATH="$REPO_ROOT/240403_1-leak-pairing-highdist-2.533e9-8e6_raw"
+
+# Bluetooth address of the Nimble board target.
+NIMBLE_ADDR="C2:3E:54:84:5C:4C"
 
 # *** Parameters
 
@@ -23,8 +26,13 @@ ACCEPT_SNR_MIN=4.9
 
 # *** Actions
 
+# Reflash the firmware at beginning.
 REFLASH=1
+# Reset YKush switch at beginning.
+RESET_YKUSH=1
+# Extract instead of plotting whole capture.
 EXTRACT=1
+# Kill radio already running and at the end.
 KILL_RADIO=1
 
 # ** Internals
@@ -34,11 +42,27 @@ CONTINUE_FLAG=1
 CONFIG_PATH="/tmp/config.toml"
 
 NRF_PATH="" # NOTE: Initialized by find_nrf().
+HCI_ADDR="" # NOTE: Initialized by find_hci().
 
 # * Functions
 
+function find_hci() {
+    HCI_ADDR=$(hciconfig | sed '2q;d' | awk '{print $(3)}')
+    echo "INFO: Found HCI at: $HCI_ADDR"
+}
+
 function find_nrf() {
     NRF_PATH=$(nrfjprog --com | cut - -d " " -f 5)
+    echo "INFO: Found nRF at: $NRF_PATH"
+}
+
+function reset_ykush() {
+    echo "INFO: Shutdown YKush switch..."
+    sudo ykushcmd -d a
+    sleep 1
+    sudo ykushcmd -u a
+    sleep 3
+    echo "DONE!"
 }
 
 function compile_firmware() {
@@ -56,15 +80,19 @@ function init_tmp_dataset() {
 }
 
 function init_radio_if_needed() {
+    if [[ $KILL_RADIO == 1 ]]; then
+        kill_radio
+    fi
     pgrep radio
     if [[ $? == 1 ]]; then
-        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.5 --gain 76 &)
+        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &)
         sleep 3
     fi
 }
 
 function kill_radio() {
     pkill radio.py
+    echo "INFO: Radio killed!"
 }
 
 function init_config() {
@@ -83,7 +111,7 @@ function config() {
 }
 
 function instrument() {
-    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train "C0:A5:E8:58:D2:FB" "C2:3E:54:84:5C:4C" ${NRF_PATH} --idx 0 --config slow)
+    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train ${HCI_ADDR} ${NIMBLE_ADDR} ${NRF_PATH} --idx 0 --config fast)
     ret=$?
     echo "INFO: ret=$ret?"
     if [[ "$ret" != 0 ]]; then
@@ -142,6 +170,11 @@ init_log
 init_git
 
 find_nrf
+find_hci
+
+if [[ $RESET_YKUSH == 1 ]]; then
+    reset_ykush
+fi
 
 capture
 
