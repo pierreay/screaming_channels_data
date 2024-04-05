@@ -8,6 +8,7 @@ NRF_PATH="" # NOTE: Initialized by find_nrf().
 
 function find_nrf() {
     NRF_PATH=$(nrfjprog --com | cut - -d " " -f 5)
+    echo "INFO: Found nRF at: $NRF_PATH"
 }
 
 function compile_flash_firmware() {
