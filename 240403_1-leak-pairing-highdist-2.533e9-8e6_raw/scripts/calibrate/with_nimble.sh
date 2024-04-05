@@ -15,9 +15,9 @@ NIMBLE_ADDR="C2:3E:54:84:5C:4C"
 # *** Parameters
 
 # Center frequency.
-FC=2.533e9
+FC=2.534e9
 # Sampling rate.
-FS=8e6
+FS=16e6
 # Bandpass filter for trigger signal. NOTE: Depends on sampling rate.
 # TRG_BP_LOW="[1.0e6]"
 # TRG_BP_HIGH="[1.9e6]"
@@ -32,6 +32,8 @@ REFLASH=1
 RESET_YKUSH=1
 # Extract instead of plotting whole capture.
 EXTRACT=1
+# Plot extraction result.
+EXTRACT_PLOT=1
 # Kill radio already running and at the end.
 KILL_RADIO=1
 
@@ -82,10 +84,11 @@ function init_tmp_dataset() {
 function init_radio_if_needed() {
     if [[ $KILL_RADIO == 1 ]]; then
         kill_radio
+        sleep 1
     fi
     pgrep radio
     if [[ $? == 1 ]]; then
-        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &)
+        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain 76 &)
         sleep 3
     fi
 }
@@ -124,7 +127,11 @@ function plot() {
 }
 
 function extract() {
-    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH extract ${FC} ${FS} 0 --plot --no-overwrite --no-exit-on-error --config 1_aes_ff_antenna_8msps --save-plot="$DATASET_PATH/plots/calibrate_nimble" )
+    plot_flag="--plot"
+    if [[ $EXTRACT_PLOT == 0 ]]; then
+        plot_flag="--no-plot"
+    fi
+    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH extract ${FC} ${FS} 0 $plot_flag --no-overwrite --no-exit-on-error --config 1_aes_ff_antenna_8msps --save-plot="$DATASET_PATH/plots/calibrate_nimble" )
     echo "INFO: ret=$?"
 }
 
@@ -139,6 +146,8 @@ function capture() {
 
     init_config
     config "$CONFIG_PATH" "accept_snr_min" "${ACCEPT_SNR_MIN}"
+    # config "$CONFIG_PATH" "hop_interval" "16"
+    # config "$CONFIG_PATH" "ll_enc_req_conn_event" "4"
     # config "$CONFIG_PATH" "trg_bp_low" "${TRG_BP_LOW}"
     # config "$CONFIG_PATH" "trg_bp_high" "${TRG_BP_HIGH}"
 
