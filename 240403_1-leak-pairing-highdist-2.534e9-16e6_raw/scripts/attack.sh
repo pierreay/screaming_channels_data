@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DATASET=$REPO_ROOT/240403_1-leak-pairing-highdist-2.534e9-16e6_raw
+LOGFILE_PATH=${DATASET}/logs/attack.log
 
 PROFILE_LENGTH=1000
 START_POINT=2000
@@ -20,8 +21,27 @@ function attack() {
                       attack --attack-algo pcc --profile ${profile_path} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
 }
 
-# WAIT:
-# attack 1000 --no-bruteforce AMPLITUDE_19000_r AMPLITUDE
-# attack 3000 --no-bruteforce AMPLITUDE_19000_r AMPLITUDE
-# attack 1000 --no-bruteforce PHASE_ROT_19000_r PHASE_ROT
-# attack 3000 --no-bruteforce PHASE_ROT_19000_r PHASE_ROT
+if [[ -f ${LOGFILE_PATH} ]]; then
+    echo "[!] Attack had already be executed: ${LOGFILE_PATH}"
+    exit 0
+fi
+
+clear
+mkdir -p "${DATASET}/logs"
+
+# Compare components results:
+for comp in AMPLITUDE PHASE_ROT; do
+    attack 7000 --no-bruteforce ${comp}_19000_r ${comp}
+done
+
+# Compare number of traces results:
+for num_traces in 1000 3000 7000; do
+    attack ${num_traces} --no-bruteforce AMPLITUDE_19000_r AMPLITUDE
+done
+
+# Compare POIS algorithm results:
+for pois_algo in r snr corr; do
+    attack 7000 --no-bruteforce AMPLITUDE_19000_${pois_algo} AMPLITUDE
+done
+
+tmux capture-pane -pS - > ${LOGFILE_PATH}
