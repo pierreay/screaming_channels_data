@@ -20,8 +20,10 @@ function profile_comp() {
     mv $DATASET/profile $DATASET/$profile
 }
 
-# DONE: Compare the impact of the number of traces for both components:
-profile_comp AMPLITUDE 10000 r
-profile_comp AMPLITUDE 19000 r
-profile_comp PHASE_ROT 10000 r
-profile_comp PHASE_ROT 19000 r
+for comp in AMPLITUDE PHASE_ROT; do
+    for num_traces in 10000 19000; do
+        for pois_algo in r snr corr t; do
+            profile_comp $comp $num_traces $pois_algo
+        done
+    done
+done
