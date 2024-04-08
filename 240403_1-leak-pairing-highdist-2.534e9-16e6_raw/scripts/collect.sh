@@ -48,7 +48,7 @@ function config() {
 # * Script
 
 init_config
-config "$ENVRC_CONFIG_FILE" "accept_snr_min" "4.8"
+config "$ENVRC_CONFIG_FILE" "accept_snr_min" "4.7"
 # config "$ENVRC_CONFIG_FILE" "hop_interval" "16"
 # config "$ENVRC_CONFIG_FILE" "ll_enc_req_conn_event" "4"
 # config "$ENVRC_CONFIG_FILE" "trg_bp_low" "${TRG_BP_LOW}"
