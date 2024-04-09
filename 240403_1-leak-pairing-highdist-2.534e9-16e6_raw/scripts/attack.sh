@@ -45,3 +45,5 @@ for pois_algo in r snr corr; do
 done
 
 tmux capture-pane -pS - > ${LOGFILE_PATH}
+
+grep -E "=|actual.rounded" "${LOGFILE_PATH}" > ${LOGFILE_PATH/.log/_summary.log}
