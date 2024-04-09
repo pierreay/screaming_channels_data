@@ -85,7 +85,8 @@ for nb_traces in 10000 19000; do
         export OUTFILE_PDF=$DATASET/plots/attack_results_${comp}_${nb_traces}.pdf
         # Safety-guard.
         if [[ ! -f ${OUTFILE_CSV} ]]; then
-            attack_given_profile ${comp}_${nb_traces} ${comp}
+            # NOTE: Add/remove "&" for parallel/serial execution.
+            attack_given_profile ${comp}_${nb_traces} ${comp} &
         else
             echo "SKIP: File exists: ${OUTFILE_CSV}"
         fi
