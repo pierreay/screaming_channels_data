@@ -51,6 +51,12 @@ function iterate() {
 }
 
 function csv_build() {
+    # Configuration of iterate().
+    # Profile path.
+    export PROFILE=$DATASET/profile_$1_r
+    # Attacked component.
+    export COMPTYPE=$2
+
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV [START STEP END].
@@ -61,34 +67,28 @@ function csv_build() {
 
 # * Script
 
-function attack_given_profile() {
-    # Configuration.
-    # Profile path.
-    export PROFILE=$DATASET/profile_$1_r
-    # Attacked component.
-    export COMPTYPE=$2
-
-    # Generate data.
-    csv_build
-    # Python script name.
-    pyscript=$(basename $0)
-    pyscript=${pyscript/.sh/.py}
-    # Plot.
-    python3 "${SCRIPT_WD}/${pyscript}" $OUTFILE_CSV $OUTFILE_PDF
-}
-
 for nb_traces in 10000 19000; do
     for comp in AMPLITUDE PHASE_ROT; do
         # Output CSV file for Python.
         export OUTFILE_CSV=$DATASET/logs/attack_results_${comp}_${nb_traces}.csv
         # Output PDF file for Python.
         export OUTFILE_PDF=$DATASET/plots/attack_results_${comp}_${nb_traces}.pdf
+        
         # Safety-guard.
         if [[ ! -f ${OUTFILE_CSV} ]]; then
             # NOTE: Add/remove "&" for parallel/serial execution.
-            attack_given_profile ${comp}_${nb_traces} ${comp} &
+            csv_build ${comp}_${nb_traces} ${comp} # &
         else
             echo "SKIP: File exists: ${OUTFILE_CSV}"
+        fi
+
+        # Safety-guard.
+        if [[ ! -f ${OUTFILE_PDF} ]]; then
+            # Plot.
+            basename=$(basename $0)
+            python3 "${SCRIPT_WD}/${basename/.sh/.py}" $OUTFILE_CSV $OUTFILE_PDF
+        else
+            echo "SKIP: File exists: ${OUTFILE_PDF}"
         fi
     done
 done
