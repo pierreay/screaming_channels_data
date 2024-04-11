@@ -17,8 +17,13 @@ function attack() {
     echo bruteforce=$bruteforce
     echo profile_path=$profile_path
     echo comptype=$comptype
-    $SC_SRC/attack.py --log $PLOT --norm --dataset-path $DATASET --start-point $START_POINT --end-point $END_POINT --num-traces $trace_nb $bruteforce --comptype $comptype \
-                      attack --attack-algo pcc --profile ${profile_path} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
+    if [[ "$comptype" == "RECOMBIN" ]]; then
+        $SC_SRC/attack.py --log $PLOT --norm --dataset-path $DATASET --start-point $START_POINT --end-point $END_POINT --num-traces $trace_nb $bruteforce \
+                          attack-recombined --attack-algo pcc --profile ${profile_path} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
+    else
+        $SC_SRC/attack.py --log $PLOT --norm --dataset-path $DATASET --start-point $START_POINT --end-point $END_POINT --num-traces $trace_nb $bruteforce --comptype $comptype \
+                          attack --attack-algo pcc --profile ${profile_path} --num-pois 1 --poi-spacing 2 --variable p_xor_k --align
+    fi
 }
 
 if [[ -f ${LOGFILE_PATH} ]]; then
@@ -29,9 +34,15 @@ fi
 clear
 mkdir -p "${DATASET}/logs"
 
-# Compare components results:
-for comp in AMPLITUDE PHASE_ROT; do
-    attack 7000 --no-bruteforce ${comp}_19000_r ${comp}
+(cd $SC && git checkout feat-recombination)
+
+# Compare components results (including recombination):
+for comp in AMPLITUDE PHASE_ROT RECOMBIN; do
+    if [[ "$comp" != "RECOMBIN" ]]; then
+        attack 7000 --no-bruteforce ${comp}_19000_r ${comp}
+    else
+        attack 7000 --no-bruteforce '{}_19000_r' ${comp}
+    fi
 done
 
 # Compare number of traces results:
