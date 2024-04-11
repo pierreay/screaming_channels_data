@@ -21,7 +21,7 @@ function profile_comp() {
 }
 
 for comp in AMPLITUDE PHASE_ROT; do
-    for num_traces in 10000 19000 30000; do
+    for num_traces in 5000 10000 19000 30000; do
         for pois_algo in r snr corr; do
             profile_comp $comp $num_traces $pois_algo
         done
