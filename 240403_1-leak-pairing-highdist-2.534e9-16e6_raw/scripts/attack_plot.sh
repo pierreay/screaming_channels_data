@@ -34,16 +34,16 @@ function iterate() {
         # 1) The key rank
         # 2) The correct number of bytes.
         # 3) The median of the PGE
-        $SC_SRC/attack.py --no-log --no-plot --norm --dataset-path "$DATASET" \
-                    --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces --comptype $COMPTYPE attack \
-                    --attack-algo pcc --profile "$PROFILE" \
-                    --num-pois 1 --poi-spacing 2 --variable p_xor_k --align 2>/dev/null \
-            | grep -E 'actual rounded|CORRECT|MEDIAN' \
-            | cut -f 2 -d ':' \
-            | tr -d ' ' \
-            | tr '[\n]' '[;]' \
-            | sed 's/2^//' \
-            | sed 's/;$//' \
+        $SC_SRC/attack.py --no-log --no-plot --norm --dataset-path "$DATASET"                                          \
+                          --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces attack-recombined \
+                          --comptype $COMPTYPE --attack-algo pcc --profile "$PROFILE"                                  \
+                          --num-pois $POIS_NB --poi-spacing 1 --variable p_xor_k --align 2>/dev/null                   \
+            | grep -E 'actual rounded|CORRECT|MEDIAN'                                                                  \
+            | cut -f 2 -d ':'                                                                                          \
+            | tr -d ' '                                                                                                \
+            | tr '[\n]' '[;]'                                                                                          \
+            | sed 's/2^//'                                                                                             \
+            | sed 's/;$//'                                                                                             \
             | tee -a "$OUTFILE_CSV"
 
         echo "" | tee -a "$OUTFILE_CSV"
@@ -53,42 +53,51 @@ function iterate() {
 function csv_build() {
     # Configuration of iterate().
     # Profile path.
-    export PROFILE=$DATASET/profile_$1_r
+    export PROFILE=$DATASET/profile_$1_${POIS_ALGO}_${POIS_NB}
     # Attacked component.
     export COMPTYPE=$2
 
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV [START STEP END].
-    iterate 10 5 1000
-    iterate 1000 50 10000
-    iterate 10000 150 $((20000 + 1))
+    iterate 10 125 1000
+    iterate 1000 250 10000
+    iterate 10000 500 $((20000 + 1))
 }
 
 # * Script
 
-for nb_traces in 10000 19000; do
-    for comp in AMPLITUDE PHASE_ROT; do
-        # Output CSV file for Python.
-        export OUTFILE_CSV=$DATASET/logs/attack_results_${comp}_${nb_traces}.csv
-        # Output PDF file for Python.
-        export OUTFILE_PDF=$DATASET/plots/attack_results_${comp}_${nb_traces}.pdf
-        
-        # Safety-guard.
-        if [[ ! -f ${OUTFILE_CSV} ]]; then
-            # NOTE: Add/remove "&" for parallel/serial execution.
-            csv_build ${comp}_${nb_traces} ${comp} # &
-        else
-            echo "SKIP: File exists: ${OUTFILE_CSV}"
-        fi
+for nb_traces in 10000 30000; do
+    for comp in AMPLITUDE RECOMBIN; do
+        for pois_algo in corr r; do
+            for pois_nb in 1 2; do
+                # POIs algorithm.
+                export POIS_ALGO=$pois_algo
+                # POIs number.
+                export POIS_NB=$pois_nb
+                
+                # Output CSV file for Python.
+                export OUTFILE_CSV=$DATASET/logs/attack_results_${comp}_${nb_traces}_${POIS_ALGO}_${POIS_NB}.csv
+                # Output PDF file for Python.
+                export OUTFILE_PDF=$DATASET/plots/attack_results_${comp}_${nb_traces}_${POIS_ALGO}_${POIS_NB}.pdf
+                
+                # Safety-guard.
+                if [[ ! -f ${OUTFILE_CSV} ]]; then
+                    # NOTE: Add/remove "&" for parallel/serial execution.
+                    csv_build '{}'_${nb_traces} ${comp} &
+                else
+                    echo "SKIP: File exists: ${OUTFILE_CSV}"
+                fi
 
-        # Safety-guard.
-        if [[ ! -f ${OUTFILE_PDF} ]]; then
-            # Plot.
-            basename=$(basename $0)
-            python3 "${SCRIPT_WD}/${basename/.sh/.py}" $OUTFILE_CSV $OUTFILE_PDF
-        else
-            echo "SKIP: File exists: ${OUTFILE_PDF}"
-        fi
+                # Safety-guard.
+                if [[ ! -f ${OUTFILE_PDF} ]]; then
+                    # Plot.
+                    basename=$(basename $0)
+                    python3 "${SCRIPT_WD}/${basename/.sh/.py}" $OUTFILE_CSV $OUTFILE_PDF
+                else
+                    echo "SKIP: File exists: ${OUTFILE_PDF}"
+                fi
+            done
+        done
     done
 done
