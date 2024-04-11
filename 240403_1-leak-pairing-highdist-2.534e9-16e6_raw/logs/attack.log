@@ -1,19 +1,21 @@
+M       src/attack.py
+Déjà sur 'feat-recombination'
 trace_nb=7000
 bruteforce=--no-bruteforce
-profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_{}_19000_r
 comptype=AMPLITUDE
-[2024-04-11 19:21:42,522] [1034136] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:21:42,522] [1034136] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:21:42,522] [1034136] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52214.91it/s]
-[2024-04-11 19:21:42,657] [1034136] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 184536.51it/s]
-[2024-04-11 19:21:42,695] [1034136] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:21:42,711] [1034136] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:21:42,785] [1034136] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1470.39it/s]
-[2024-04-11 19:21:47,554] [1034136] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1442.97it/s]
+[2024-04-11 19:51:33,731] [1049776] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:51:33,731] [1049776] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:51:33,731] [1049776] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52167.96it/s]
+[2024-04-11 19:51:33,866] [1049776] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 186101.57it/s]
+[2024-04-11 19:51:33,904] [1049776] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:51:33,921] [1049776] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:51:33,997] [1049776] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1434.42it/s]
+[2024-04-11 19:51:38,886] [1049776] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1469.34it/s]
 
 Subkey  0
 Subkey  1
@@ -51,29 +53,29 @@ Clearing memory
 min: 2^58.91401224
 actual rounded: 2^62.24774529
 max: 2^63.49045883
-time enum: 0.138321 seconds
+time enum: 0.158636 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
-profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
+profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_{}_19000_r
 comptype=PHASE_ROT
-[2024-04-11 19:22:09,804] [1034264] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:22:09,804] [1034264] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:22:09,804] [1034264] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52382.68it/s]
-[2024-04-11 19:22:09,938] [1034264] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 178291.35it/s]
-[2024-04-11 19:22:09,978] [1034264] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:22:09,994] [1034264] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
-[2024-04-11 19:22:11,673] [1034264] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:06<00:00, 1065.79it/s]
-[2024-04-11 19:22:18,257] [1034264] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:06<00:00, 1034.00it/s]
+[2024-04-11 19:52:01,138] [1049908] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:52:01,138] [1049908] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:52:01,138] [1049908] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52424.77it/s]
+[2024-04-11 19:52:01,273] [1049908] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 185798.90it/s]
+[2024-04-11 19:52:01,311] [1049908] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:52:01,326] [1049908] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
+[2024-04-11 19:52:02,983] [1049908] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1483.20it/s]
+[2024-04-11 19:52:07,712] [1049908] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1451.63it/s]
 
 Subkey  0
 Subkey  1
-Subkey  2
+zSubkey  2
 Subkey  3
 Subkey  4
 Subkey  5
@@ -107,25 +109,25 @@ Clearing memory
 min: 2^73.82164502
 actual rounded: 2^74.40677573
 max: 2^74.86783209
-time enum: 0.186856 seconds
+time enum: 0.137182 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_{}_19000_r
 comptype=RECOMBIN
-[2024-04-11 19:22:46,911] [1034763] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:22:46,911] [1034763] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:22:46,911] [1034763] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 38713.20it/s]
-[2024-04-11 19:22:47,093] [1034763] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 128843.69it/s]
-[2024-04-11 19:22:47,148] [1034763] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:22:47,168] [1034763] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:22:47,274] [1034763] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:06<00:00, 1105.68it/s]
-[2024-04-11 19:22:53,618] [1034763] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:05<00:00, 1391.07it/s]
+[2024-04-11 19:52:29,594] [1050030] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:52:29,595] [1050030] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:52:29,595] [1050030] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 51727.52it/s]
+[2024-04-11 19:52:29,731] [1050030] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 182964.49it/s]
+[2024-04-11 19:52:29,770] [1050030] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:52:29,786] [1050030] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:52:29,863] [1050030] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1473.95it/s]
+[2024-04-11 19:52:34,622] [1050030] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1484.23it/s]
 
 Subkey  0
 Subkey  1
@@ -143,18 +145,18 @@ Subkey 12
 Subkey 13
 Subkey 14
 Subkey 15
-[2024-04-11 19:23:17,993] [1034763] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:23:17,993] [1034763] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:23:17,993] [1034763] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52666.74it/s]
-[2024-04-11 19:23:18,127] [1034763] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 160479.07it/s]
-[2024-04-11 19:23:18,171] [1034763] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:23:18,185] [1034763] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
-[2024-04-11 19:23:19,960] [1034763] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1451.72it/s]
-[2024-04-11 19:23:24,791] [1034763] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1463.70it/s]
+[2024-04-11 19:52:54,698] [1050030] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:52:54,698] [1050030] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:52:54,698] [1050030] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 61577.32it/s]
+[2024-04-11 19:52:54,812] [1050030] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 183570.79it/s]
+[2024-04-11 19:52:54,850] [1050030] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:52:54,865] [1050030] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
+[2024-04-11 19:52:56,452] [1050030] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1503.37it/s]
+[2024-04-11 19:53:01,117] [1050030] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1480.80it/s]
 
 Subkey  0
 Subkey  1
@@ -192,24 +194,24 @@ Clearing memory
 min: 2^59.82457755
 actual rounded: 2^61.63074471
 max: 2^62.62827427
-time enum: 0.152321 seconds
+time enum: 0.137124 seconds
 
 
 trace_nb=1000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
 comptype=AMPLITUDE
-[2024-04-11 19:23:48,504] [1035384] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:23:48,504] [1035384] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:23:48,504] [1035384] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 50109.36it/s]
-[2024-04-11 19:23:48,525] [1035384] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 173598.11it/s]
-[2024-04-11 19:23:48,534] [1035384] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:23:48,569] [1035384] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 1492.73it/s]
-[2024-04-11 19:23:49,240] [1035384] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 1485.47it/s]
+[2024-04-11 19:53:22,644] [1050248] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:53:22,644] [1050248] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:53:22,644] [1050248] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 50351.18it/s]
+[2024-04-11 19:53:22,665] [1050248] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 169919.95it/s]
+[2024-04-11 19:53:22,674] [1050248] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:53:22,711] [1050248] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 1483.41it/s]
+[2024-04-11 19:53:23,387] [1050248] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 1480.44it/s]
 
 Subkey  0
 Subkey  1
@@ -247,25 +249,25 @@ Clearing memory
 min: 2^61.75267355
 actual rounded: 2^62.8856242
 max: 2^63.68105855
-time enum: 0.14953 seconds
+time enum: 0.138439 seconds
 
 
 trace_nb=3000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
 comptype=AMPLITUDE
-[2024-04-11 19:23:55,680] [1035513] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:23:55,680] [1035513] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:23:55,680] [1035513] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 53350.88it/s]
-[2024-04-11 19:23:55,737] [1035513] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 186154.27it/s]
-[2024-04-11 19:23:55,754] [1035513] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:23:55,761] [1035513] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:23:55,808] [1035513] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:02<00:00, 1316.87it/s]
-[2024-04-11 19:23:58,091] [1035513] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:02<00:00, 1462.49it/s]
+[2024-04-11 19:53:29,116] [1050281] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:53:29,116] [1050281] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:53:29,116] [1050281] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 51698.56it/s]
+[2024-04-11 19:53:29,175] [1050281] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 183229.39it/s]
+[2024-04-11 19:53:29,192] [1050281] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:53:29,199] [1050281] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:53:29,247] [1050281] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:02<00:00, 1494.83it/s]
+[2024-04-11 19:53:31,258] [1050281] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:02<00:00, 1473.86it/s]
 
 Subkey  0
 Subkey  1
@@ -303,25 +305,25 @@ Clearing memory
 min: 2^59.01163748
 actual rounded: 2^61.55812795
 max: 2^62.84088905
-time enum: 0.179704 seconds
+time enum: 0.137975 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
 comptype=AMPLITUDE
-[2024-04-11 19:24:10,998] [1035581] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:24:10,998] [1035581] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:24:10,998] [1035581] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 46470.02it/s]
-[2024-04-11 19:24:11,149] [1035581] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 166168.40it/s]
-[2024-04-11 19:24:11,192] [1035581] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:24:11,209] [1035581] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:24:11,291] [1035581] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:05<00:00, 1289.55it/s]
-[2024-04-11 19:24:16,728] [1035581] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1477.06it/s]
+[2024-04-11 19:53:42,242] [1050369] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:53:42,242] [1050369] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:53:42,242] [1050369] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52155.54it/s]
+[2024-04-11 19:53:42,378] [1050369] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 182653.74it/s]
+[2024-04-11 19:53:42,417] [1050369] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:53:42,433] [1050369] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:53:42,510] [1050369] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1488.05it/s]
+[2024-04-11 19:53:47,223] [1050369] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1486.79it/s]
 
 Subkey  0
 Subkey  1
@@ -359,25 +361,25 @@ Clearing memory
 min: 2^58.91401224
 actual rounded: 2^62.24774529
 max: 2^63.49045883
-time enum: 0.166974 seconds
+time enum: 0.137362 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
 comptype=AMPLITUDE
-[2024-04-11 19:24:41,131] [1035717] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:24:41,131] [1035717] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:24:41,131] [1035717] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 52536.78it/s]
-[2024-04-11 19:24:41,265] [1035717] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 183357.55it/s]
-[2024-04-11 19:24:41,304] [1035717] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:24:41,320] [1035717] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
-[2024-04-11 19:24:41,396] [1035717] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1485.47it/s]
-[2024-04-11 19:24:46,117] [1035717] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1491.30it/s]
+[2024-04-11 19:54:09,019] [1050492] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:54:09,020] [1050492] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:54:09,020] [1050492] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 51644.27it/s]
+[2024-04-11 19:54:09,156] [1050492] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 173418.67it/s]
+[2024-04-11 19:54:09,197] [1050492] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:54:09,215] [1050492] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+[2024-04-11 19:54:09,292] [1050492] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1477.14it/s]
+[2024-04-11 19:54:14,040] [1050492] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1479.23it/s]
 
 Subkey  0
 Subkey  1
@@ -415,25 +417,25 @@ Clearing memory
 min: 2^58.91401224
 actual rounded: 2^62.24774529
 max: 2^63.49045883
-time enum: 0.153935 seconds
+time enum: 0.138231 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_snr
 comptype=AMPLITUDE
-[2024-04-11 19:25:09,306] [1035838] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:25:09,306] [1035838] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:25:09,306] [1035838] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 48582.78it/s]
-[2024-04-11 19:25:09,451] [1035838] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 170160.24it/s]
-[2024-04-11 19:25:09,493] [1035838] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:25:09,510] [1035838] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_snr
-[2024-04-11 19:25:09,590] [1035838] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1428.94it/s]
-[2024-04-11 19:25:14,497] [1035838] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:05<00:00, 1367.89it/s]
+[2024-04-11 19:54:35,779] [1050605] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:54:35,779] [1050605] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:54:35,780] [1050605] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 51089.79it/s]
+[2024-04-11 19:54:35,918] [1050605] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 183102.55it/s]
+[2024-04-11 19:54:35,956] [1050605] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:54:35,973] [1050605] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_snr
+[2024-04-11 19:54:36,051] [1050605] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1496.63it/s]
+[2024-04-11 19:54:40,738] [1050605] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1483.17it/s]
 
 Subkey  0
 Subkey  1
@@ -471,25 +473,25 @@ Clearing memory
 min: 2^58.91401224
 actual rounded: 2^62.24774529
 max: 2^63.49045883
-time enum: 0.154077 seconds
+time enum: 0.13909 seconds
 
 
 trace_nb=7000
 bruteforce=--no-bruteforce
 profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_corr
 comptype=AMPLITUDE
-[2024-04-11 19:25:39,123] [1035980] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
-[2024-04-11 19:25:39,123] [1035980] [MainThread] [load] INFO  - Loading traces...
-[2024-04-11 19:25:39,123] [1035980] [MainThread] [load] WARNING - No loaded NF traces!
-Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 49777.44it/s]
-[2024-04-11 19:25:39,265] [1035980] [MainThread] [load] INFO  - Done!
-find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 174501.95it/s]
-[2024-04-11 19:25:39,305] [1035980] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
-[2024-04-11 19:25:39,322] [1035980] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_corr
-[2024-04-11 19:25:39,399] [1035980] [MainThread] [attack] INFO  - Align attack traces with themselves...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1455.38it/s]
-[2024-04-11 19:25:44,217] [1035980] [MainThread] [attack] INFO  - Align attack traces with the profile...
-Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1418.06it/s]
+[2024-04-11 19:55:02,672] [1050731] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/dataset.pyc'
+[2024-04-11 19:55:02,672] [1050731] [MainThread] [load] INFO  - Loading traces...
+[2024-04-11 19:55:02,672] [1050731] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 48004.89it/s]
+[2024-04-11 19:55:02,819] [1050731] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:00<00:00, 176196.36it/s]
+[2024-04-11 19:55:02,859] [1050731] [MainThread] [analyze] WARNING - Trace #1236 filled with zeroes!
+[2024-04-11 19:55:02,877] [1050731] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_corr
+[2024-04-11 19:55:02,957] [1050731] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1486.06it/s]
+[2024-04-11 19:55:07,677] [1050731] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7000/7000 [00:04<00:00, 1476.71it/s]
 
 Subkey  0
 Subkey  1
@@ -527,7 +529,7 @@ Clearing memory
 min: 2^63.45234514
 actual rounded: 2^64.92204815
 max: 2^66.23603452
-time enum: 0.165954 seconds
+time enum: 0.137272 seconds
 
 
 

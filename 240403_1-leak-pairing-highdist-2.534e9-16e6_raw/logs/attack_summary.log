@@ -1,13 +1,13 @@
 trace_nb=7000
 bruteforce=--no-bruteforce
-profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_AMPLITUDE_19000_r
+profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_{}_19000_r
 comptype=AMPLITUDE
 nb_bins = 512
 merge = 2
 actual rounded: 2^62.24774529
 trace_nb=7000
 bruteforce=--no-bruteforce
-profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_PHASE_ROT_19000_r
+profile_path=/home/drac/pro_storage/dataset/240403_1-leak-pairing-highdist-2.534e9-16e6_raw/profile_{}_19000_r
 comptype=PHASE_ROT
 nb_bins = 512
 merge = 2
