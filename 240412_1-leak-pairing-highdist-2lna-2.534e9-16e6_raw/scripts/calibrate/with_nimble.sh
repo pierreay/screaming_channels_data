@@ -7,7 +7,7 @@
 # *** Paths and addresses
 
 # Path of current dataset.
-DATASET_PATH="$REPO_ROOT/240403_1-leak-pairing-highdist-2.534e9-16e6_raw"
+DATASET_PATH="$REPO_ROOT/240412_1-leak-pairing-highdist-2lna-2.534e9-16e6_raw"
 
 # Bluetooth address of the Nimble board target.
 NIMBLE_ADDR="C2:3E:54:84:5C:4C"
