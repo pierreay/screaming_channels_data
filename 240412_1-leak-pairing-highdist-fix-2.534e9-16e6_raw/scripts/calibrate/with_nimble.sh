@@ -18,6 +18,8 @@ NIMBLE_ADDR="C2:3E:54:84:5C:4C"
 FC=2.534e9
 # Sampling rate.
 FS=16e6
+# Gain [dB].
+GAIN=53
 # Bandpass filter for trigger signal. NOTE: Depends on sampling rate.
 # TRG_BP_LOW="[1.0e6]"
 # TRG_BP_HIGH="[1.9e6]"
@@ -90,7 +92,7 @@ function init_radio_if_needed() {
     fi
     pgrep radio
     if [[ $? == 1 ]]; then
-        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain 53 &)
+        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain $GAIN &)
         sleep 3
     fi
 }
