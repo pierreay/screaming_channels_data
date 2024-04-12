@@ -39,7 +39,7 @@ function profile_comp_resamp() {
     comp=$1
     nt=$2
     resamp_to=$3
-    profile=profile_${comp}_${nt}
+    profile=profile_${comp}_${nt}_resamp_${resamp_to}
     echo "[?] Save plots using 's' to Figure_1.png and Figure_2.png"
     $SC_SRC/attack.py --plot --norm --dataset-path $dataset --num-traces $nt --start-point $sp --end-point $ep --comptype $comp \
                       profile --pois-algo r --num-pois 1 --poi-spacing 2 --variable p_xor_k --align --resamp-to ${resamp_to}
@@ -48,4 +48,5 @@ function profile_comp_resamp() {
     mv ~/Figure_2.png $dataset/$profile/plot_poi_1.png
 }
 
-profile_comp_resamp AMPLITUDE 65536 16e6
+# DONE:
+# profile_comp_resamp AMPLITUDE 65536 16e6
