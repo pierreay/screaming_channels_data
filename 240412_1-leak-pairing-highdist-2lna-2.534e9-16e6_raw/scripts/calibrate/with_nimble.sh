@@ -22,7 +22,7 @@ FS=16e6
 # TRG_BP_LOW="[1.0e6]"
 # TRG_BP_HIGH="[1.9e6]"
 # Minimum accepted SNR.
-ACCEPT_SNR_MIN=4.9
+ACCEPT_SNR_MIN=11.0
 
 # *** Actions
 
