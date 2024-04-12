@@ -5,12 +5,10 @@
 # ** Screaming Channels .envrc
 
 export ENVRC_VICTIM_PORT="$(nrfjprog --com | cut - -d " " -f 5)"
-export ENVRC_SAMP_RATE=16000000 # 30e6
+export ENVRC_SAMP_RATE=16000000 # 16e6
 export ENVRC_DURATION=0.2
-export ENVRC_WANTED_TRACE_TRAIN=65536
-#export ENVRC_WANTED_TRACE_TRAIN=19000
-#export ENVRC_WANTED_TRACE_ATTACK=32768
-export ENVRC_WANTED_TRACE_ATTACK=21200
+export ENVRC_WANTED_TRACE_TRAIN=16384
+export ENVRC_WANTED_TRACE_ATTACK=16384
 export ENVRC_NF_FREQ=128000000 # 128e6
 export ENVRC_FF_FREQ=2534000000 # 2.534e9
 export ENVRC_RADIO_DIR="$HOME/storage/tmp"
@@ -49,9 +47,11 @@ function config() {
 # * Script
 
 init_config
-config "$ENVRC_CONFIG_FILE" "accept_snr_min" "4.7"
-# config "$ENVRC_CONFIG_FILE" "hop_interval" "16"
-# config "$ENVRC_CONFIG_FILE" "ll_enc_req_conn_event" "4"
+config "$ENVRC_CONFIG_FILE" "accept_snr_min" "11.0"
+config "$ENVRC_CONFIG_FILE" "more_data_bit" "1"
+config "$ENVRC_CONFIG_FILE" "hop_interval" "15"
+config "$ENVRC_CONFIG_FILE" "procedure_interleaving" "false"
+config "$ENVRC_CONFIG_FILE" "ll_enc_req_conn_event" "4"
 # config "$ENVRC_CONFIG_FILE" "trg_bp_low" "${TRG_BP_LOW}"
 # config "$ENVRC_CONFIG_FILE" "trg_bp_high" "${TRG_BP_HIGH}"
 
