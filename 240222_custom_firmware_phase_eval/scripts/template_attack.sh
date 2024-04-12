@@ -69,8 +69,8 @@ function attack() {
 # DONE: Profile the phase:
 # profile_comp PHASE_ROT
 
-# PROG: Attack amplitude using previously created template.
-attack_comp AMPLITUDE
+# DONE: Attack amplitude using previously created template.
+# attack_comp AMPLITUDE
 
-# WAIT: Attack phase rotation using previously created template.
+# DONE: Attack phase rotation using previously created template.
 # attack_comp PHASE_ROT

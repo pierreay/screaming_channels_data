@@ -15,9 +15,9 @@ function plot_display() {
 # plot_display nf 128e6 30e6 76 &
 # plot_display nf 138e6 8e6 76
 
-# TODO: Use a custom Python to plot the NF narrow band, without x axis sync,
-# and show how the full AES looks like in amplitude and phase for both time and
-# frequency.
+# NOTE of todo: Use a custom Python to plot the NF narrow band, without x axis
+# sync, and show how the full AES looks like in amplitude and phase for both
+# time and frequency.
 
 # * Compare FF wide-band
 
@@ -25,9 +25,10 @@ function plot_display() {
 # plot_display ff 2.500e9 56e6 76 &
 # plot_display ff 2.545e9 56e6 76
 
-# TODO: Use a custom Python to plot the FF wide band at 2.500e9, keeping only
-# the specgram of the amplitude, and show how we can observe the 3rd harmonic of
-# the 32 MHz sub-clock at 2.496e9 by looking at the mirror-looking AES signal.
+# NOTE of todo: Use a custom Python to plot the FF wide band at 2.500e9,
+# keeping only the specgram of the amplitude, and show how we can observe the
+# 3rd harmonic of the 32 MHz sub-clock at 2.496e9 by looking at the
+# mirror-looking AES signal.
 
 echo Subclocks at 16 MHz harmonics:
 echo "2.400e9 + (3 * 16e6) = 2448000000."
@@ -56,9 +57,9 @@ echo "2.400e9 + (6 * 32e6) = 2592000000."
 # plot_display ff 2.510e9 8e6 76 &
 # plot_display ff 2.512e9 8e6 76
 
-# TODO: Use a custom Python to plot the FF narrow band at 2.510e8, without x
-# axis sync, and show how the full AES looks like in amplitude and phase for
-# both time and frequency.
+# NOTE of todo: Use a custom Python to plot the FF narrow band at 2.510e8,
+# without x axis sync, and show how the full AES looks like in amplitude and
+# phase for both time and frequency.
 
 # * Compare DCDC register
 
