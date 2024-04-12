@@ -148,8 +148,10 @@ function capture() {
 
     init_config
     config "$CONFIG_PATH" "accept_snr_min" "${ACCEPT_SNR_MIN}"
-    # config "$CONFIG_PATH" "hop_interval" "16"
-    # config "$CONFIG_PATH" "ll_enc_req_conn_event" "4"
+    config "$CONFIG_PATH" "more_data_bit" "1"
+    config "$CONFIG_PATH" "hop_interval" "15"
+    config "$CONFIG_PATH" "procedure_interleaving" "false"
+    config "$CONFIG_PATH" "ll_enc_req_conn_event" "4"
     # config "$CONFIG_PATH" "trg_bp_low" "${TRG_BP_LOW}"
     # config "$CONFIG_PATH" "trg_bp_high" "${TRG_BP_HIGH}"
 
