@@ -1,0 +1,93 @@
+HEAD est maintenant sur afc99e7 Properly handle interactive show and save for plot_sync and SignalQuadPlot
+INFO: Found nRF at: /dev/ttyACM1
+INFO: Found HCI at: 00:19:0E:19:79:D8
+INFO: Shutdown YKush switch...
+DONE!
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-05 18:25:32,631] [85093] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+68589
+/tmp/config.toml: accept_snr_min=4.9
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-05 18:25:34,013] [85137] [MainThread] [dataset] INFO  - Dataset loaded from '/tmp/dataset.pyc'
+[2024-04-05 18:25:34,013] [85137] [MainThread] [soapysdr] INFO  - Initialize a SoapySDR client... (enabled=True)
+[2024-04-05 18:25:34,013] [85137] [MainThread] [device] INFO  - Instantiate Central using dongle on UART0
+[2024-04-05 18:25:34,040] [85137] [MainThread] [device] INFO  - Instantiate Central using dongle on HCI0
+[2024-04-05 18:25:34,133] [85137] [MainThread] [device] INFO  - Spoof bluetooth address: 00:19:0E:19:79:D8
+[2024-04-05 18:25:34,137] [85137] [MainThread] [device] INFO  - Configure device for recording index #0
+[2024-04-05 18:25:34,137] [85137] [MainThread] [device] INFO  - Pair with target device...
+[2024-04-05 18:25:34,137] [85137] [MainThread] [device] DEBUG - Connect...
+[2024-04-05 18:25:34,240] [85137] [MainThread] [device] DEBUG - Pair...
+set_encryption True 9a85a8e221316d2b6cd2561f1befc13d 0091cb3000000000 c6c9c7ccef21514ada27b66df428d8b8 0 0
+HCI devices cannot send control PDU.
+Marked as encrypted
+CryptographicDatabase()
+CryptographicDatabase(
+CryptographicMaterial(address = 00:19:0e:19:79:d8, authenticated = no, ltk = LTK('752e881310655c477ad2f1724c2ac5fc' - 128 bits / rand = bb091a828c76a111 / ediv = 0x6508)),
+CryptographicMaterial(address = c2:3e:54:84:5c:4c, authenticated = no, ltk = LTK('eb98acc3968cb484d2e49a9c2703c117' - 128 bits / rand = a12842ccaac15fac / ediv = 0x8fce))
+)
+[2024-04-05 18:25:36,829] [85137] [MainThread] [device] DEBUG - Pairing successfull!
+[2024-04-05 18:25:36,829] [85137] [MainThread] [device] DEBUG - CryptographicMaterial(address = c2:3e:54:84:5c:4c, authenticated = no, ltk = LTK('eb98acc3968cb484d2e49a9c2703c117' - 128 bits / rand = a12842ccaac15fac / ediv = 0x8fce))
+[2024-04-05 18:25:36,829] [85137] [MainThread] [device] DEBUG - Disconnect...
+[2024-04-05 18:25:36,931] [85137] [MainThread] [device] INFO  - Pairing done!
+[2024-04-05 18:25:36,931] [85137] [MainThread] [device] DEBUG - Generated SKDM=0x7f4aad9c23c86ae6
+[2024-04-05 18:25:36,931] [85137] [MainThread] [device] DEBUG - Start preparing WHAD's sequences...
+[2024-04-05 18:25:36,931] [85137] [MainThread] [device] INFO  - Connection event for starting the recording: 1
+[2024-04-05 18:25:36,937] [85137] [MainThread] [device] INFO  - Connection event for sending the LL_ENC_REQ request: 3
+[2024-04-05 18:25:36,943] [85137] [MainThread] [device] DEBUG - central.prepare(LL_ENC_REQ[rand=0xa12842ccaac15fac, ediv=0x8fce, skdm=0x7f4aad9c23c86ae6, ivm=0x0])
+[2024-04-05 18:25:36,956] [85137] [MainThread] [device] INFO  - Connect to target device...
+[2024-04-05 18:25:36,956] [85137] [MainThread] [device] DEBUG - Connection parameters: address=C2:3E:54:84:5C:4C, random=False, hop_interval=15, channel_map=0x300, timeout=20
+[2024-04-05 18:25:37,065] [85137] [MainThread] [device] DEBUG - WHAD's central is connected to target device!
+[2024-04-05 18:25:37,065] [85137] [MainThread] [soapysdr] DEBUG - [client] FIFO <- record
+[2024-04-05 18:25:37,065] [68589] [MainThread] [soapysdr] DEBUG - [server] FIFO -> record
+[2024-04-05 18:25:37,065] [68589] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).enter
+[2024-04-05 18:25:37,065] [68589] [MainThread] [soapysdr] INFO  - Radio #0 start recording for 0.2s...
+[2024-04-05 18:25:37,065] [68589] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+O[2024-04-05 18:25:37,067] [68589] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-05 18:25:37,067] [68589] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-05 18:25:37,080] [85137] [Thread-2] [device] DEBUG - Save the received LL_ENC_RSP packet!
+[2024-04-05 18:25:37,165] [85137] [MainThread] [soapysdr] DEBUG - [client] Waiting...
+[2024-04-05 18:25:37,280] [68589] [MainThread] [soapysdr] INFO  - Radio #0 finished recording!
+[2024-04-05 18:25:37,280] [68589] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).exit
+[2024-04-05 18:25:37,280] [85137] [MainThread] [soapysdr] DEBUG - [client] Wait completed!
+[2024-04-05 18:25:37,280] [85137] [MainThread] [soapysdr] DEBUG - [client] FIFO <- accept
+[2024-04-05 18:25:37,280] [68589] [MainThread] [soapysdr] DEBUG - [server] FIFO -> accept
+[2024-04-05 18:25:37,281] [68589] [MainThread] [soapysdr] DEBUG - MySoapySDRs.accept()
+[2024-04-05 18:25:37,281] [68589] [MainThread] [soapysdr] DEBUG - MySoapySDR(idx=0).accept()
+[2024-04-05 18:25:37,381] [85137] [MainThread] [device] INFO  - Disconnect from the target device
+[2024-04-05 18:25:37,386] [85137] [MainThread] [device] DEBUG - Received SKDS=0x2a1c7676e21dff74
+[2024-04-05 18:25:37,386] [85137] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN ks index #0: 0xeb98acc3968cb484d2e49a9c2703c117 / [235 152 172 195 150 140 180 132 210 228 154 156  39   3 193  23]
+[2024-04-05 18:25:37,387] [85137] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN pt index #0: 0x2a1c7676e21dff747f4aad9c23c86ae6 / [ 42  28 118 118 226  29 255 116 127  74 173 156  35 200 106 230]
+[2024-04-05 18:25:37,387] [85137] [MainThread] [device] DEBUG - Stop and close UART0 dongle...
+[2024-04-05 18:25:38,411] [85137] [MainThread] [device] DEBUG - Stop and close HCI dongle...
+[2024-04-05 18:25:38,842] [85137] [MainThread] [soapysdr] DEBUG - [client] FIFO <- save
+[2024-04-05 18:25:38,842] [68589] [MainThread] [soapysdr] DEBUG - [server] FIFO -> save
+[2024-04-05 18:25:38,842] [68589] [MainThread] [soapysdr] DEBUG - MySoapySDRs.save(dir=None)
+[2024-04-05 18:25:38,842] [68589] [MainThread] [soapysdr] INFO  - save recording of radio #0 into directory /tmp
+[2024-04-05 18:25:38,870] [68589] [MainThread] [soapysdr] DEBUG - re-initialization
+[2024-04-05 18:25:38,943] [85137] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+INFO: ret=0?
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-05 18:25:40,514] [85248] [MainThread] [radio] INFO  - Extract RAW trace using ID #0
+[2024-04-05 18:25:40,514] [85248] [MainThread] [radio] DEBUG - Configuration: 1_aes_ff_antenna_8msps
+[2024-04-05 18:25:40,515] [85248] [MainThread] [radio] DEBUG - Peak search prominence=0.4
+[2024-04-05 18:25:40,515] [85248] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+[2024-04-05 18:25:40,588] [85248] [MainThread] [radio] DEBUG - name=trigger
+- bandpass_low=2.00e+06
+- bandpass_high=3.00e+06
+- lowpass=1.00e+04
+[2024-04-05 18:25:40,603] [85248] [MainThread] [radio] INFO  - Number of detected peaks=1
+[2024-04-05 18:25:40,604] [85248] [MainThread] [radio] INFO  - Peak: Position=15.14% ; SNR=5.0 ; Avg=4528
+[2024-04-05 18:25:40,604] [85248] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+qt.qpa.xcb: XKeyboard extension not present on the X server
+[2024-04-05 18:26:19,103] [85248] [MainThread] [radio] INFO  - ignore overwrite for extracted signal(s)
+INFO: ret=0
+
