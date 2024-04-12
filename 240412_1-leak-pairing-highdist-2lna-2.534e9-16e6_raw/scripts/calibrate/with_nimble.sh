@@ -68,12 +68,14 @@ function reset_ykush() {
 }
 
 function compile_firmware() {
+    echo "INFO: Checkout f879eff -> $NIMBLE"
     cd $NIMBLE
     git checkout f879eff
     make all
 }
 
 function init_git() {
+    echo "INFO: Checkout afc99e7 -> $SC_SRC"
     (cd $SC_SRC && git checkout afc99e7)
 }
 
@@ -88,7 +90,7 @@ function init_radio_if_needed() {
     fi
     pgrep radio
     if [[ $? == 1 ]]; then
-        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain 76 &)
+        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain 53 &)
         sleep 3
     fi
 }
@@ -99,7 +101,7 @@ function kill_radio() {
 }
 
 function init_config() {
-    rm $CONFIG_PATH
+    rm -f $CONFIG_PATH
     cp $SC_SRC/config.toml $CONFIG_PATH
 }
 
