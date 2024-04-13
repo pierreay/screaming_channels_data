@@ -21,11 +21,18 @@ function profile_comp() {
     mv $DATASET/profile $DATASET/$profile
 }
 
-for comp in AMPLITUDE PHASE_ROT; do
-    for num_traces in 5000 10000 19000 30000; do
-        for pois_algo in r snr corr; do
-            for pois_nb in 1 2 3; do
-                profile_comp $comp $num_traces $pois_algo $pois_nb
+comp_list=(AMPLITUDE PHASE_ROT)
+# num_traces_list=(5000 10000 19000 30000)
+num_traces_list=(5000)
+# pois_algo_list=(r snr corr)
+pois_algo_list=(r snr)
+pois_nb_list=(1 2)
+
+for comp in "${comp_list[@]}"; do
+    for num_traces in "${num_traces_list[@]}"; do
+        for pois_algo in "${pois_algo_list[@]}"; do
+            for pois_nb in "${pois_nb_list[@]}"; do
+                echo profile_comp $comp $num_traces $pois_algo $pois_nb
             done
         done
     done
