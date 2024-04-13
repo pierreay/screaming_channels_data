@@ -50,36 +50,36 @@ mkdir -p "${DATASET}/logs"
 
 # Compare number of traces for profile:
 if [[ $COMPARE_PNB == 1 ]]; then
-    for num_traces in 5000 10000 19000 30000; do
-        attack 3000 --no-bruteforce AMPLITUDE_${num_traces}_corr AMPLITUDE 1
+    for num_traces in 5000; do
+        attack 500 --no-bruteforce AMPLITUDE_${num_traces}_r AMPLITUDE 1
     done
 fi
 
 # Compare number of traces for attacks:
 if [[ $COMPARE_ANB == 1 ]]; then
-    for num_traces in 1000 3000 7000 20000; do
-        attack ${num_traces} --no-bruteforce AMPLITUDE_10000_corr AMPLITUDE 1
+    for num_traces in 100 300 500 700 1000; do
+        attack ${num_traces} --no-bruteforce AMPLITUDE_5000_r AMPLITUDE 1
     done
 fi
 
 # Compare POIS algorithm:
 if [[ $COMPARE_ALGO == 1 ]]; then
-    for pois_algo in r snr corr; do
-        attack 3000 --no-bruteforce AMPLITUDE_10000_${pois_algo} AMPLITUDE 1
+    for pois_algo in r snr; do
+        attack 1000 --no-bruteforce AMPLITUDE_5000_${pois_algo} AMPLITUDE 1
     done
 fi
 
 # Compare POIS number:
 if [[ $COMPARE_POINB == 1 ]]; then
-    for pois_nb in 1 2 3; do
-        attack 3000 --no-bruteforce AMPLITUDE_10000_corr AMPLITUDE ${pois_nb}
+    for pois_nb in 1 2; do
+        attack 1000 --no-bruteforce AMPLITUDE_5000_r AMPLITUDE ${pois_nb}
     done
 fi
 
 # Compare components results (including recombination):
 if [[ $COMPARE_COMP == 1 ]]; then
     for comp in AMPLITUDE PHASE_ROT RECOMBIN; do
-        attack 3000 --no-bruteforce '{}_10000_corr' ${comp} 1
+        attack 1000 --no-bruteforce '{}_5000_r' ${comp} 1
     done
 fi
 
