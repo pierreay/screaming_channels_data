@@ -1,0 +1,104 @@
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^62.425763
+trace_nb=100
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^70.40075111
+trace_nb=300
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^63.19646364
+trace_nb=500
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^63.18755322
+trace_nb=700
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^61.59696338
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^62.425763
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^62.425763
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_snr_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^62.425763
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+nb_bins = 512
+merge = 2
+actual rounded: 2^62.425763
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_AMPLITUDE_5000_r_2
+comptype=AMPLITUDE
+pois_nb=2
+nb_bins = 512
+merge = 2
+actual rounded: 2^61.33518541
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_{}_5000_r_2
+comptype=AMPLITUDE
+pois_nb=2
+nb_bins = 512
+merge = 2
+actual rounded: 2^61.33518541
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_{}_5000_r_2
+comptype=PHASE_ROT
+pois_nb=2
+nb_bins = 512
+merge = 2
+actual rounded: 2^121.3261502
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240412_1-leak-pairing-highdist-fix-2.534e9-16e6_raw/profile_{}_5000_r_2
+comptype=RECOMBIN
+pois_nb=2
+nb_bins = 512
+merge = 2
+actual rounded: 2^70.58277973
