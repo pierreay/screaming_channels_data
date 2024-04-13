@@ -32,7 +32,7 @@ for comp in "${comp_list[@]}"; do
     for num_traces in "${num_traces_list[@]}"; do
         for pois_algo in "${pois_algo_list[@]}"; do
             for pois_nb in "${pois_nb_list[@]}"; do
-                echo profile_comp $comp $num_traces $pois_algo $pois_nb
+                profile_comp $comp $num_traces $pois_algo $pois_nb
             done
         done
     done
