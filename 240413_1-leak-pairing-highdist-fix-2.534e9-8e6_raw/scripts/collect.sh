@@ -49,6 +49,9 @@ function config() {
 
 # * Script
 
+echo "INFO: Checkout main -> $SC_SRC"
+(cd $SC_SRC && git checkout main)
+
 init_config
 config "$ENVRC_CONFIG_FILE" "accept_snr_min" "11.0"
 config "$ENVRC_CONFIG_FILE" "more_data_bit" "1"
