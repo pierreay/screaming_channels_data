@@ -22,9 +22,7 @@ function profile_comp() {
 }
 
 comp_list=(AMPLITUDE PHASE_ROT)
-# num_traces_list=(5000 10000 19000 30000)
 num_traces_list=(5000)
-# pois_algo_list=(r snr corr)
 pois_algo_list=(r snr)
 pois_nb_list=(1 2)
 

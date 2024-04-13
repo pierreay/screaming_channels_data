@@ -48,38 +48,48 @@ mkdir -p "${DATASET}/logs"
 
 (cd $SC && git checkout feat-recombination)
 
+num_traces_train_default=5000
+num_traces_attack_default=1000
+pois_algo_default=r
+pois_nb_default=1
+
 # Compare number of traces for profile:
 if [[ $COMPARE_PNB == 1 ]]; then
-    for num_traces in 5000; do
-        attack 500 --no-bruteforce AMPLITUDE_${num_traces}_r AMPLITUDE 1
+    num_traces_train_list=(5000)
+    for num_traces_train in "${num_traces_train_list[@]}"; do
+        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
     done
 fi
 
 # Compare number of traces for attacks:
 if [[ $COMPARE_ANB == 1 ]]; then
-    for num_traces in 100 300 500 700 1000; do
-        attack ${num_traces} --no-bruteforce AMPLITUDE_5000_r AMPLITUDE 1
+    num_traces_attack_list=(100 300 500 700 1000)
+    for num_traces_attack in "${num_traces_attack_list[@]}"; do
+        attack ${num_traces_attack} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
     done
 fi
 
 # Compare POIS algorithm:
 if [[ $COMPARE_ALGO == 1 ]]; then
-    for pois_algo in r snr; do
-        attack 1000 --no-bruteforce AMPLITUDE_5000_${pois_algo} AMPLITUDE 1
+    pois_algo_list=(r snr)
+    for pois_algo in "${pois_algo_list[@]}"; do
+        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo} AMPLITUDE ${pois_nb_default}
     done
 fi
 
 # Compare POIS number:
 if [[ $COMPARE_POINB == 1 ]]; then
-    for pois_nb in 1 2; do
-        attack 1000 --no-bruteforce AMPLITUDE_5000_r AMPLITUDE ${pois_nb}
+    pois_nb_list=(1 2)
+    for pois_nb in "${pois_nb_list[@]}"; do
+        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb}
     done
 fi
 
 # Compare components results (including recombination):
 if [[ $COMPARE_COMP == 1 ]]; then
-    for comp in AMPLITUDE PHASE_ROT RECOMBIN; do
-        attack 1000 --no-bruteforce '{}_5000_r' ${comp} 1
+    comp_list=(AMPLITUDE PHASE_ROT RECOMBIN)
+    for comp in "${comp_list[@]}"; do
+        attack ${num_traces_attack_default} --no-bruteforce '{}'"_${num_traces_train_default}_${pois_algo_default}" ${comp} ${pois_nb}
     done
 fi
 

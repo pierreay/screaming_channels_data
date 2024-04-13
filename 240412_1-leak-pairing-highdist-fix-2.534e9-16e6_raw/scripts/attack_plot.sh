@@ -60,17 +60,23 @@ function csv_build() {
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV [START STEP END].
-    iterate 10 125 1000
-    iterate 1000 250 10000
-    iterate 10000 500 $((20000 + 1))
+    iterate 10 100 1500
+    # iterate 10 125 1000
+    # iterate 1000 250 10000
+    # iterate 10000 500 $((20000 + 1))
 }
 
 # * Script
 
-for nb_traces in 10000 30000; do
-    for comp in AMPLITUDE RECOMBIN; do
-        for pois_algo in corr r; do
-            for pois_nb in 1 2; do
+nb_traces_list=(5000)
+comp_list=(AMPLITUDE RECOMBIN)
+pois_algo_list=(r snr)
+pois_nb_list=(1)
+
+for nb_traces in "${nb_traces_list[@]}"; do
+    for comp in "${comp_list[@]}"; do
+        for pois_algo in "${pois_algo_list[@]}"; do
+            for pois_nb in "${pois_nb_list[@]}"; do
                 # POIs algorithm.
                 export POIS_ALGO=$pois_algo
                 # POIs number.
@@ -84,7 +90,7 @@ for nb_traces in 10000 30000; do
                 # Safety-guard.
                 if [[ ! -f ${OUTFILE_CSV} ]]; then
                     # NOTE: Add/remove "&" for parallel/serial execution.
-                    csv_build '{}'_${nb_traces} ${comp} &
+                    csv_build '{}'_${nb_traces} ${comp} # &
                 else
                     echo "SKIP: File exists: ${OUTFILE_CSV}"
                 fi
