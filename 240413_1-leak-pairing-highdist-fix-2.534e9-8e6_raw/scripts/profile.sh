@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DATASET=$REPO_ROOT/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw
-SP=2000
-EP=3000
+SP=1000 # NOTE: Depends on current sampling rate at 8e6.
+EP=1500 # NOTE: Depends on current sampling rate at 8e6.
 
 function profile_comp() {
     comp=$1

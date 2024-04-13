@@ -12,7 +12,7 @@ DATASET=$REPO_ROOT/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw
 # Length of the profile in samples.
 PROFILE_LENGTH=1000
 # Start index for attack traces.
-START_POINT=2000
+START_POINT=1000 # NOTE: Depends on current sampling rate at 8e6.
 # Stop index for attack traces.
 END_POINT=$((START_POINT + PROFILE_LENGTH))
 
