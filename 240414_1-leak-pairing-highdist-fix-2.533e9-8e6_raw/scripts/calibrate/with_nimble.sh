@@ -19,7 +19,7 @@ FC=2.533e9
 # Sampling rate.
 FS=8e6
 # Gain [dB].
-GAIN=53
+GAIN=66
 # Bandpass filter for trigger signal. NOTE: Depends on sampling rate.
 # TRG_BP_LOW="[1.0e6]"
 # TRG_BP_HIGH="[1.9e6]"
