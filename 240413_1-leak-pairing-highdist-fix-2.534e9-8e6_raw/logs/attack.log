@@ -1,0 +1,664 @@
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:02:24,575] [3243484] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:02:24,575] [3243484] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:02:24,575] [3243484] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 68131.75it/s]
+[2024-04-14 14:02:24,620] [3243484] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 244827.55it/s]
+[2024-04-14 14:02:24,635] [3243484] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:02:24,673] [3243484] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3798.38it/s]
+[2024-04-14 14:02:25,465] [3243484] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3694.78it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   14   ea   2b   4c   21   70   06   73   8c   93   b7   9c   da   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  001  011  010  013  005  021  012  000  005  004  010  004  007  013  005
+HD:              000  002  001  001  001  004  003  002  000  004  003  001  003  001  002  003
+SUCCESS:           1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        31
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^65.8274932
+actual rounded: 2^67.30031089
+max: 2^68.41401649
+time enum: 0.128782 seconds
+
+
+=================================================
+trace_nb=1000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:02:34,441] [3243554] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:02:34,441] [3243554] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:02:34,441] [3243554] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 69362.88it/s]
+[2024-04-14 14:02:34,456] [3243554] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 242165.36it/s]
+[2024-04-14 14:02:34,462] [3243554] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:02:34,494] [3243554] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 3816.90it/s]
+[2024-04-14 14:02:34,756] [3243554] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 3721.74it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   1a   ed   2a   4d   24   7a   2f   70   88   9d   b8   98   dd   e0
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  010  016  019  009  010  016  006  016  012  003  010  002  009  007  001
+HD:              000  002  004  004  002  003  003  002  003  002  002  002  001  002  003  002
+SUCCESS:           1    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 1
+PGE MEAN:      9
+PGE MEDIAN:    9
+PGE MAX:       19
+HD SUM:        37
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^72.77018041
+actual rounded: 2^73.76013662
+max: 2^74.5272872
+time enum: 0.128277 seconds
+
+
+=================================================
+trace_nb=2000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:02:38,902] [3243603] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:02:38,902] [3243603] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:02:38,902] [3243603] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [00:00<00:00, 69715.09it/s]
+[2024-04-14 14:02:38,931] [3243603] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [00:00<00:00, 236478.67it/s]
+[2024-04-14 14:02:38,942] [3243603] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:02:38,977] [3243603] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [00:00<00:00, 3782.43it/s]
+[2024-04-14 14:02:39,507] [3243603] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [00:00<00:00, 3689.14it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   de   93   14   ee   29   46   24   70   2f   70   88   99   b7   96   de   e0
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             001  007  013  015  009  006  021  005  003  003  003  009  004  010  013  003
+HD:              003  002  001  002  002  002  003  002  003  002  002  001  003  001  003  002
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 0
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        34
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^68.44343725
+actual rounded: 2^69.6952999
+max: 2^70.65596403
+time enum: 0.128879 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:02:46,010] [3243662] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:02:46,010] [3243662] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:02:46,010] [3243662] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 69609.23it/s]
+[2024-04-14 14:02:46,054] [3243662] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 244932.40it/s]
+[2024-04-14 14:02:46,069] [3243662] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:02:46,106] [3243662] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3828.93it/s]
+[2024-04-14 14:02:46,892] [3243662] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3760.55it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   14   ea   2b   4c   21   70   06   73   8c   93   b7   9c   da   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  001  011  010  013  005  021  012  000  005  004  010  004  007  013  005
+HD:              000  002  001  001  001  004  003  002  000  004  003  001  003  001  002  003
+SUCCESS:           1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        31
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^65.8274932
+actual rounded: 2^67.30031089
+max: 2^68.41401649
+time enum: 0.129779 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:02:55,825] [3243730] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:02:55,825] [3243730] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:02:55,825] [3243730] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67802.80it/s]
+[2024-04-14 14:02:55,870] [3243730] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 232779.80it/s]
+[2024-04-14 14:02:55,887] [3243730] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:02:55,923] [3243730] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3836.42it/s]
+[2024-04-14 14:02:56,707] [3243730] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3736.05it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   14   ea   2b   4c   21   70   06   73   8c   93   b7   9c   da   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  001  011  010  013  005  021  012  000  005  004  010  004  007  013  005
+HD:              000  002  001  001  001  004  003  002  000  004  003  001  003  001  002  003
+SUCCESS:           1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        31
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^65.8274932
+actual rounded: 2^67.30031089
+max: 2^68.41401649
+time enum: 0.129523 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_snr_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:03:05,752] [3243795] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:05,752] [3243795] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:05,752] [3243795] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67983.40it/s]
+[2024-04-14 14:03:05,797] [3243795] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 238529.57it/s]
+[2024-04-14 14:03:05,812] [3243795] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_snr_1
+[2024-04-14 14:03:05,849] [3243795] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3853.43it/s]
+[2024-04-14 14:03:06,630] [3243795] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3755.87it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   14   ea   2b   4c   21   70   06   73   8c   93   b7   9c   da   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  001  011  010  013  005  021  012  000  005  004  010  004  007  013  005
+HD:              000  002  001  001  001  004  003  002  000  004  003  001  003  001  002  003
+SUCCESS:           1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        31
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^65.8274932
+actual rounded: 2^67.30031089
+max: 2^68.41401649
+time enum: 0.129257 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+comptype=AMPLITUDE
+pois_nb=1
+[2024-04-14 14:03:15,596] [3243863] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:15,597] [3243863] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:15,597] [3243863] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67470.51it/s]
+[2024-04-14 14:03:15,642] [3243863] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 235084.76it/s]
+[2024-04-14 14:03:15,658] [3243863] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_1
+[2024-04-14 14:03:15,695] [3243863] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3793.46it/s]
+[2024-04-14 14:03:16,488] [3243863] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3698.16it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   93   14   ea   2b   4c   21   70   06   73   8c   93   b7   9c   da   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  001  011  010  013  005  021  012  000  005  004  010  004  007  013  005
+HD:              000  002  001  001  001  004  003  002  000  004  003  001  003  001  002  003
+SUCCESS:           1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      7
+PGE MEDIAN:    6
+PGE MAX:       21
+HD SUM:        31
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^65.8274932
+actual rounded: 2^67.30031089
+max: 2^68.41401649
+time enum: 0.13014 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_2
+comptype=AMPLITUDE
+pois_nb=2
+[2024-04-14 14:03:25,596] [3243933] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:25,596] [3243933] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:25,596] [3243933] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 68128.06it/s]
+[2024-04-14 14:03:25,641] [3243933] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 242974.34it/s]
+[2024-04-14 14:03:25,657] [3243933] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_2
+[2024-04-14 14:03:25,694] [3243933] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3835.78it/s]
+[2024-04-14 14:03:26,478] [3243933] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3738.30it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+/home/drac/.local/lib/python3.10/site-packages/scipy/stats/_stats_py.py:4424: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  warnings.warn(stats.ConstantInputWarning(msg))
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   90   00   00   2b   4b   2c   00   05   73   84   00   b9   93   d9   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  000  074  190  019  010  011  042  009  005  016  207  000  004  009  006
+HD:              000  000  003  004  001  001  002  005  002  004  002  003  000  003  002  003
+SUCCESS:           1    1    0    0    0    0    0    0    0    0    0    0    1    0    0    0
+CORRECT BYTES: 3
+PGE MEAN:      37
+PGE MEDIAN:    9
+PGE MAX:       207
+HD SUM:        35
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^82.0708516
+actual rounded: 2^83.17991277
+max: 2^84.03413808
+time enum: 0.122877 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_{}_5000_r_2
+comptype=AMPLITUDE
+pois_nb=2
+[2024-04-14 14:03:35,898] [3244004] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:35,898] [3244004] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:35,898] [3244004] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67593.74it/s]
+[2024-04-14 14:03:35,943] [3244004] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 233631.25it/s]
+[2024-04-14 14:03:35,959] [3244004] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_2
+[2024-04-14 14:03:35,996] [3244004] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3796.97it/s]
+[2024-04-14 14:03:36,788] [3244004] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3688.31it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+/home/drac/.local/lib/python3.10/site-packages/scipy/stats/_stats_py.py:4424: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  warnings.warn(stats.ConstantInputWarning(msg))
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   d9   90   00   00   2b   4b   2c   00   05   73   84   00   b9   93   d9   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             000  000  074  190  019  010  011  042  009  005  016  207  000  004  009  006
+HD:              000  000  003  004  001  001  002  005  002  004  002  003  000  003  002  003
+SUCCESS:           1    1    0    0    0    0    0    0    0    0    0    0    1    0    0    0
+CORRECT BYTES: 3
+PGE MEAN:      37
+PGE MEDIAN:    9
+PGE MAX:       207
+HD SUM:        35
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^82.0708516
+actual rounded: 2^83.17991277
+max: 2^84.03413808
+time enum: 0.124546 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_{}_5000_r_2
+comptype=PHASE_ROT
+pois_nb=2
+[2024-04-14 14:03:46,218] [3244074] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:46,218] [3244074] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:46,218] [3244074] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 69212.56it/s]
+[2024-04-14 14:03:46,262] [3244074] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 238118.80it/s]
+[2024-04-14 14:03:46,277] [3244074] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_PHASE_ROT_5000_r_2
+[2024-04-14 14:03:46,686] [3244074] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3799.18it/s]
+[2024-04-14 14:03:47,478] [3244074] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3693.33it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   eb   9c   aa   37   20   cf   24   cf   0b   d0   7c   09   b8   1a   d5   25
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             194  161  182  043  072  155  081  194  048  168  069  199  243  139  142  202
+HD:              003  002  007  005  002  003  003  005  003  004  007  003  001  002  002  002
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 0
+PGE MEAN:      143
+PGE MEDIAN:    158
+PGE MAX:       243
+HD SUM:        54
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^127.6192047
+actual rounded: 2^127.637984
+max: 2^127.6525002
+time enum: 0.130332 seconds
+
+
+=================================================
+trace_nb=3000
+bruteforce=--no-bruteforce
+profile_path=/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_{}_5000_r_2
+comptype=RECOMBIN
+pois_nb=2
+[2024-04-14 14:03:56,966] [3244142] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:03:56,967] [3244142] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:03:56,967] [3244142] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67307.02it/s]
+[2024-04-14 14:03:57,012] [3244142] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 246424.19it/s]
+[2024-04-14 14:03:57,027] [3244142] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_AMPLITUDE_5000_r_2
+[2024-04-14 14:03:57,065] [3244142] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3830.13it/s]
+[2024-04-14 14:03:57,850] [3244142] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3723.77it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+/home/drac/.local/lib/python3.10/site-packages/scipy/stats/_stats_py.py:4424: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  warnings.warn(stats.ConstantInputWarning(msg))
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+[2024-04-14 14:04:05,877] [3244142] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/dataset.pyc'
+[2024-04-14 14:04:05,877] [3244142] [MainThread] [load] INFO  - Loading traces...
+[2024-04-14 14:04:05,877] [3244142] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 67305.94it/s]
+[2024-04-14 14:04:05,922] [3244142] [MainThread] [load] INFO  - Done!
+find_bad_entry(): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 235988.60it/s]
+[2024-04-14 14:04:05,938] [3244142] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw/profile_PHASE_ROT_5000_r_2
+[2024-04-14 14:04:06,320] [3244142] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3844.90it/s]
+[2024-04-14 14:04:07,102] [3244142] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3000/3000 [00:00<00:00, 3747.68it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   dc   9c   00   00   20   4b   24   00   05   70   84   00   8d   93   d5   e8
+Known Key:        d9   90   15   e2   23   43   2f   76   06   7c   82   91   b9   9e   d3   e5
+PGE:             008  002  074  190  012  014  013  042  006  008  019  207  015  005  016  023
+HD:              002  002  003  004  002  001  003  005  002  002  002  003  003  003  002  003
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 0
+PGE MEAN:      40
+PGE MEDIAN:    14
+PGE MAX:       207
+HD SUM:        42
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^91.68271707
+actual rounded: 2^92.28895873
+max: 2^92.76061436
+time enum: 0.12457 seconds
+
+
+
