@@ -46,7 +46,7 @@ fi
 clear
 mkdir -p "${DATASET}/logs"
 
-(cd $SC && git checkout feat-recombination)
+(cd $SC && git checkout main)
 
 num_traces_train_default=5000
 num_traces_attack_default=1000
