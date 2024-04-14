@@ -10,7 +10,7 @@
 DATASET=$REPO_ROOT/240413_1-leak-pairing-highdist-fix-2.534e9-8e6_raw
 
 # Length of the profile in samples.
-PROFILE_LENGTH=1000
+PROFILE_LENGTH=500
 # Start index for attack traces.
 START_POINT=1000 # NOTE: Depends on current sampling rate at 8e6.
 # Stop index for attack traces.
@@ -60,7 +60,7 @@ function csv_build() {
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV [START STEP END].
-    iterate 10 100 1500
+    iterate 10 40 1500
     # iterate 10 125 1000
     # iterate 1000 250 10000
     # iterate 10000 500 $((20000 + 1))

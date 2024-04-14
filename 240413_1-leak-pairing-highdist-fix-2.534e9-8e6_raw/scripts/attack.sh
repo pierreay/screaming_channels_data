@@ -63,7 +63,7 @@ fi
 
 # Compare number of traces for attacks:
 if [[ $COMPARE_ANB == 1 ]]; then
-    num_traces_attack_list=(100 300 500 700 1000)
+    num_traces_attack_list=(100 500 1000 1500)
     for num_traces_attack in "${num_traces_attack_list[@]}"; do
         attack ${num_traces_attack} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
     done
