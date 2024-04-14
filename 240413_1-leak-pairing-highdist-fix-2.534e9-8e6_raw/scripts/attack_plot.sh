@@ -60,7 +60,7 @@ function csv_build() {
     # Write CSV header.
     echo "trace_nb;log2(key_rank);correct_bytes;pge_median" > "$OUTFILE_CSV"
     # Get data into CSV [START STEP END].
-    iterate 10 40 1500
+    iterate 10 50 5200
     # iterate 10 125 1000
     # iterate 1000 250 10000
     # iterate 10000 500 $((20000 + 1))
@@ -69,8 +69,8 @@ function csv_build() {
 # * Script
 
 nb_traces_list=(5000)
-comp_list=(AMPLITUDE RECOMBIN)
-pois_algo_list=(r snr)
+comp_list=(AMPLITUDE)
+pois_algo_list=(r)
 pois_nb_list=(1)
 
 for nb_traces in "${nb_traces_list[@]}"; do

@@ -27,6 +27,7 @@ function attack() {
     profile_path=$DATASET/profile_$3_$5
     comptype=$4
     pois_nb=$5
+    echo "================================================="
     echo trace_nb=$trace_nb
     echo bruteforce=$bruteforce
     echo profile_path=$profile_path
@@ -49,7 +50,7 @@ mkdir -p "${DATASET}/logs"
 (cd $SC && git checkout main)
 
 num_traces_train_default=5000
-num_traces_attack_default=1000
+num_traces_attack_default=3000
 pois_algo_default=r
 pois_nb_default=1
 
@@ -63,7 +64,7 @@ fi
 
 # Compare number of traces for attacks:
 if [[ $COMPARE_ANB == 1 ]]; then
-    num_traces_attack_list=(100 500 1000 1500)
+    num_traces_attack_list=(1000 2000 3000)
     for num_traces_attack in "${num_traces_attack_list[@]}"; do
         attack ${num_traces_attack} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
     done
