@@ -1,13 +1,19 @@
 #!/bin/bash
 
-# * Parameters
+# * Configuration
 
 # Logging level for Python.
 LOG_LEVEL=INFO
+
 # Number of traces.
 NUM_TRACES=16000
+
+# If we are collecting a train set or an attack set.
+MODE="train"
+# MODE="attack"
+
 # Temporary collection path.
-TARGET_PATH=$REPO_DATASET_PATH/poc/240415_custom_firmware_highdist/attack
+TARGET_PATH="${REPO_DATASET_PATH}/poc/240415_custom_firmware_highdist/${MODE}"
 
 # * Functions
 
@@ -41,8 +47,6 @@ function configure_json_plot() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    # NOTE: Lower a bit this value since it was generating a lot of rejected
-    # traces in train set.
     configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.9e19"
 }
 
@@ -55,10 +59,12 @@ function configure_json_collect() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    # NOTE: Lower a bit this value since it was generating a lot of rejected
-    # traces in train set.
     configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.9e19"
-    configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "true"
+    if [[ $MODE == "train" ]]; then
+        configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "false"
+    elif [[ $MODE == "attack" ]]; then
+        configure_param_json $CONFIG_JSON_PATH_DST "fixed_key" "true"
+    fi
     configure_param_json $CONFIG_JSON_PATH_DST "template_name" "$(configure_param_json_escape_path $TARGET_PATH/template.npy)"
 }
 
@@ -116,5 +122,5 @@ fi
 # Set the JSON configuration file for collection.
 configure_json_collect
 
-# DONE: Collect a set of attack traces.
+# DONE: Collect a set of traces.
 # record --no-plot --no-saveplot
