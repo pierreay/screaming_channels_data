@@ -7,7 +7,7 @@
 # * Global configuration
 
 # Dataset path.
-DATASET=$REPO_ROOT/240309_custom_firmware_phase_eval_iq_norep_modgfsk
+DATASET=$REPO_DATASET_PATH/240309_custom_firmware_phase_eval_iq_norep_modgfsk
 # Attack set path.
 ATTACK_SET=$DATASET/attack
 
