@@ -1,7 +1,7 @@
 # Exclude the temporary datasets.
 tmp_*
 # Exclude the large number of traces.
-*/train*/*.npy
-*/attack*/*.npy
+**/train*/*.npy
+**/attack*/*.npy
 **/key_.txt
 **/pt_.txt
