@@ -110,6 +110,9 @@ function attack_given_profile() {
 }
 
 # DONE:
+# attack_given_profile AMPLITUDE_5000 AMPLITUDE
+
+# DONE:
 # attack_given_profile AMPLITUDE_16384 AMPLITUDE
 
 # DONE:

@@ -20,6 +20,11 @@ function plot_profile_config() {
 }
 
 # DONE:
+# plot_profile_config AMPLITUDE_5000
+# DONE:
+# plot_profile_config PHASE_ROT_5000
+
+# DONE:
 # plot_profile_config AMPLITUDE_16384
 # DONE:
 # plot_profile_config PHASE_ROT_16384

@@ -16,6 +16,11 @@ function profile_comp() {
 }
 
 # DONE: Profile using amplitude:
+# profile_comp AMPLITUDE 5000
+# DONE: Profile using phase rotation:
+# profile_comp PHASE_ROT 5000
+
+# DONE: Profile using amplitude:
 # profile_comp AMPLITUDE 16384
 # DONE: Profile using phase rotation:
 # profile_comp PHASE_ROT 16384
