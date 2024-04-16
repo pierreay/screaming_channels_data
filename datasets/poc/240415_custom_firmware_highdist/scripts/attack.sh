@@ -84,11 +84,8 @@ function attack() {
 
 # ** Profiles
 
-# DONE: Profile all available components:
-# profile_comp amp
-# profile_comp phr
-# profile_comp i_augmented
-# profile_comp q_augmented
+profile_comp amp
+profile_comp phr
 
 # ** Attacks
 
