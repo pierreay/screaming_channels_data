@@ -35,7 +35,7 @@ TARGET_PATH="${DATASET_PATH}/${MODE}"
 REFLASH_FIRMWARE=1
 # Calibration mode ["analyze" | "snr"].
 CALIBRATION_MODE="analyze"
-#CALIBRATION_MODE="snr"
+# CALIBRATION_MODE="snr"
 
 # ** Internals
 
@@ -96,7 +96,7 @@ function configure_json_common() {
     configure_param_json $CONFIG_JSON_PATH_DST "bandpass_lower" "2.10e6"
     configure_param_json $CONFIG_JSON_PATH_DST "bandpass_upper" "2.30e6"
     configure_param_json $CONFIG_JSON_PATH_DST "drop_start" "2e-1"
-    configure_param_json $CONFIG_JSON_PATH_DST "trigger_threshold" "190e3"
+    configure_param_json $CONFIG_JSON_PATH_DST "trigger_threshold" "40e3"
     # Shift right -> increase offset / Shift left -> decrease offset.
     configure_param_json $CONFIG_JSON_PATH_DST "trigger_offset" "0e-6"
     configure_param_json $CONFIG_JSON_PATH_DST "trigger_rising" "true"
@@ -104,7 +104,7 @@ function configure_json_common() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.4e20"
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.2e17"
 }
 
 function configure_json_plot() {
