@@ -104,7 +104,7 @@ function configure_json_common() {
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "1.2e17"
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "3.5e17"
 }
 
 function configure_json_plot() {
