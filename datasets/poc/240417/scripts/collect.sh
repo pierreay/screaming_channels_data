@@ -93,18 +93,19 @@ function configure_json_common() {
     export CONFIG_JSON_PATH_SRC=$SC_POC/experiments/config/example_collection_collect_plot.json
     cp $CONFIG_JSON_PATH_SRC $CONFIG_JSON_PATH_DST
     configure_param_json $CONFIG_JSON_PATH_DST "channel" "20"
-    configure_param_json $CONFIG_JSON_PATH_DST "bandpass_lower" "2.10e6"
-    configure_param_json $CONFIG_JSON_PATH_DST "bandpass_upper" "2.30e6"
+    configure_param_json $CONFIG_JSON_PATH_DST "bandpass_lower" "1.35e6"
+    configure_param_json $CONFIG_JSON_PATH_DST "bandpass_upper" "1.50e6"
     configure_param_json $CONFIG_JSON_PATH_DST "drop_start" "2e-1"
     configure_param_json $CONFIG_JSON_PATH_DST "trigger_threshold" "40e3"
-    # Shift right -> increase offset / Shift left -> decrease offset.
-    configure_param_json $CONFIG_JSON_PATH_DST "trigger_offset" "0e-6"
+    # Shift signal left  = Shift window right -> decrease offset.
+    # Shift signal right = Shift window left  -> increase offset.
+    configure_param_json $CONFIG_JSON_PATH_DST "trigger_offset" "100e-6"
     configure_param_json $CONFIG_JSON_PATH_DST "trigger_rising" "true"
     configure_param_json $CONFIG_JSON_PATH_DST "signal_length" "200e-6"
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point" 300
     configure_param_json $CONFIG_JSON_PATH_DST "num_traces_per_point_keep" 1
     configure_param_json $CONFIG_JSON_PATH_DST "modulate" "true"
-    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "3.5e17"
+    configure_param_json $CONFIG_JSON_PATH_DST "min_correlation" "4.9e17"
 }
 
 function configure_json_plot() {
@@ -143,7 +144,7 @@ function experiment() {
 
     # Start SDR server.
     # NOTE: Make sure the JSON config file is configured accordingly to the SDR server here.
-    $SC_SRC/radio.py --config $SC_SRC/config.toml --dir $HOME/storage/tmp --loglevel $LOG_LEVEL listen 128e6 2.533e9 $FS --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &
+    $SC_SRC/radio.py --config $SC_SRC/config.toml --dir $HOME/storage/tmp --loglevel $LOG_LEVEL listen 128e6 2.530e9 $FS --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &
     sleep 10
 
     # Start collection and plot result.
