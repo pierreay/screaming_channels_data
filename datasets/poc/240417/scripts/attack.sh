@@ -26,9 +26,6 @@ POIS_NB_LIST=(1)
 START_POINT=0
 END_POINT=0
 
-# NOTE: Sampling rate is hardcoded in collect_*.sh scripts.
-FS=8e6
-
 # ** Configuration specific to the attack
 
 NUM_TRACES_ATTACK_LIST=(250 500 1000 2000 4000 6000 12000 16000)

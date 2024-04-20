@@ -26,9 +26,6 @@ POIS_NB_LIST=(1)
 START_POINT=0
 END_POINT=0
 
-# NOTE: Sampling rate is hardcoded in collect_*.sh scripts.
-FS=8e6
-
 # ** Internals
 
 # Path of dataset used for the attack.

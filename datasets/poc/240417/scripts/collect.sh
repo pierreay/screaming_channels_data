@@ -143,7 +143,7 @@ function experiment() {
 
     # Start SDR server.
     # NOTE: Make sure the JSON config file is configured accordingly to the SDR server here.
-    $SC_SRC/radio.py --config $SC_SRC/config.toml --dir $HOME/storage/tmp --loglevel $LOG_LEVEL listen 128e6 2.533e9 8e6 --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &
+    $SC_SRC/radio.py --config $SC_SRC/config.toml --dir $HOME/storage/tmp --loglevel $LOG_LEVEL listen 128e6 2.533e9 $FS --nf-id -1 --ff-id 0 --duration=0.3 --gain 76 &
     sleep 10
 
     # Start collection and plot result.
