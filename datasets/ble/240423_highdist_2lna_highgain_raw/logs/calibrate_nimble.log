@@ -1,0 +1,182 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_ble/src
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+INFO: Found nRF at: /dev/ttyACM1
+INFO: Found HCI at: 00:19:0E:19:79:D8
+INFO: Shutdown YKush switch...
+DONE!
+INFO: Checkout main -> /home/drac/git/screaming_channels_nimble
+Déjà sur 'master'
+Votre branche est à jour avec 'origin/master'.
+Déjà sur 'master'
+Votre branche est à jour avec 'origin/master'.
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+INFO: Compile and flash Nimble firmware...
+./compile.sh bleprph
+Building target targets/nrf52_boot
+Target successfully built: targets/nrf52_boot
+Building target targets/nrf52_bleprph
+Compiling bin/targets/nrf52_bleprph/generated/src/nrf52_bleprph-sysinit-app.c
+Archiving nrf52_bleprph-sysinit-app.a
+Linking /home/drac/git/screaming_channels_nimble/bin/targets/nrf52_bleprph/app/apps/bleprph/bleprph.elf
+/usr/local/stow/arm-gnu-toolchain-12.2.mpacbti-bet1-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld: warning: /home/drac/git/screaming_channels_nimble/bin/targets/nrf52_bleprph/app/apps/bleprph/ble
+prph.elf has a LOAD segment with RWX permissions
+Target successfully built: targets/nrf52_bleprph
+Compiling bin/targets/nrf52_bleprph/generated/src/nrf52_bleprph-sysinit-app.c
+App image successfully generated: /home/drac/git/screaming_channels_nimble/bin/targets/nrf52_bleprph/app/apps/bleprph/bleprph.img
+./flash.sh bleprph
+BTLDR=./bin/targets/nrf52_boot/app/@mcuboot/boot/mynewt/mynewt.elf.bin
+APP=./bin/targets/nrf52_bleprph/app/apps/bleprph/bleprph.hex
+Done! Created hex file: /tmp/mynewt-bootloader.hex
+Parsing input files.
+Merging file "mynewt-bootloader.hex" into output.
+Merging file "bleprph.hex" into output.
+Storing merged file.
+Parsing image file.
+Applying system reset.
+Verified OK.
+Applying system reset.
+Run.
+INFO: Save firmware: /tmp/mynewt-firmware.hex -> /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain_raw/bin/nimble.hex
+DONE!
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-23 21:26:40,634] [2177023] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+INFO: Radio killed!
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-23 21:26:44,012] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.__init__()
+[2024-04-23 21:26:44,012] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDR.__init__(fs=8000000.0,freq=2533000000.0,idx=0,enabled=True,duration=2.0,dir=/tmp,gain=70)
+[INFO] [UHD] linux; GNU C++ version 11.2.0; Boost_107400; UHD_4.1.0.5-3
+[INFO] [b200_impl.cpp:422] [B200] Detected Device: B200mini
+[INFO] [B200] Detected Device: B200mini
+[INFO] [b200_impl.cpp:469] [B200] Operating over USB 3.
+[INFO] [B200] Operating over USB 3.
+[INFO] [b200_impl.cpp:620] [B200] Initialize CODEC control...
+[INFO] [B200] Initialize CODEC control...
+[INFO] [b200_impl.cpp:689] [B200] Initialize Radio control...
+[INFO] [B200] Initialize Radio control...
+[INFO] [b200_impl.cpp:1100] [B200] Performing register loopback test...
+[INFO] [B200] Performing register loopback test...
+[INFO] [b200_impl.cpp:1109] [B200] Register loopback test passed
+[INFO] [B200] Register loopback test passed
+[INFO] [b200_impl.cpp:816] [B200] Setting master clock rate selection to 'automatic'.
+[INFO] [B200] Setting master clock rate selection to 'automatic'.
+[INFO] [b200_impl.cpp:1150] [B200] Asking for clock rate 16.000000 MHz...
+[INFO] [B200] Asking for clock rate 16.000000 MHz...
+[INFO] [b200_impl.cpp:1163] [B200] Actually got clock rate 16.000000 MHz.
+[INFO] [B200] Actually got clock rate 16.000000 MHz.
+[INFO] [b200_impl.cpp:1150] [B200] Asking for clock rate 32.000000 MHz...
+[INFO] [B200] Asking for clock rate 32.000000 MHz...
+[INFO] [b200_impl.cpp:1163] [B200] Actually got clock rate 32.000000 MHz.
+[INFO] [B200] Actually got clock rate 32.000000 MHz.
+/tmp/config.toml: accept_snr_min=2.0
+/tmp/config.toml: more_data_bit=1
+/tmp/config.toml: hop_interval=15
+/tmp/config.toml: procedure_interleaving=false
+/tmp/config.toml: ll_enc_req_conn_event=4
+/tmp/config.toml: trg_bp_low=[1.0e6]
+/tmp/config.toml: trg_bp_high=[1.9e6]
+[2024-04-23 21:26:45,925] [2177073] [MainThread] [soapysdr] DEBUG - Allocate 2^24 dtype-elements in memory for RX buffer...
+[2024-04-23 21:26:46,802] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.register(idx=0)
+[2024-04-23 21:26:46,802] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.open()
+[2024-04-23 21:26:46,802] [2177073] [MainThread] [soapysdr] INFO  - initialize streams for radio #0
+[2024-04-23 21:26:46,803] [2177073] [MainThread] [soapysdr] DEBUG - re-initialization
+[2024-04-23 21:26:46,804] [2177073] [MainThread] [soapysdr] INFO  - SDR process #2177073 ready for listening!
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-23 21:26:48,000] [2177167] [MainThread] [dataset] INFO  - Dataset loaded from '/tmp/dataset.pyc'
+[2024-04-23 21:26:48,000] [2177167] [MainThread] [soapysdr] INFO  - Initialize a SoapySDR client... (enabled=True)
+[2024-04-23 21:26:48,000] [2177167] [MainThread] [device] INFO  - Instantiate Central using dongle on UART0
+[2024-04-23 21:26:48,028] [2177167] [MainThread] [device] INFO  - Spoof bluetooth address: 00:19:0E:19:79:D8
+[2024-04-23 21:26:48,033] [2177167] [MainThread] [device] INFO  - Configure device for recording index #0
+[2024-04-23 21:26:48,033] [2177167] [MainThread] [device] INFO  - Get p and k from serial port...
+[2024-04-23 21:26:48,034] [2177167] [MainThread] [device] DEBUG - ser <- k?
+[2024-04-23 21:26:48,134] [2177167] [MainThread] [device] DEBUG - ser -> b'f6dcedb4f24703c2df638bb287d3675d'
+[2024-04-23 21:26:48,136] [2177167] [MainThread] [device] INFO  - Got k=b'f6dcedb4f24703c2df638bb287d3675d'
+[2024-04-23 21:26:48,137] [2177167] [MainThread] [device] DEBUG - ser <- p?
+[2024-04-23 21:26:48,237] [2177167] [MainThread] [device] DEBUG - ser -> b'3da73d5a6318ae8cbe87dbc498c4ee9f'
+[2024-04-23 21:26:48,239] [2177167] [MainThread] [device] INFO  - Got p=b'3da73d5a6318ae8cbe87dbc498c4ee9f'
+[2024-04-23 21:26:48,242] [2177167] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN ks index #0: 0xf6dcedb4f24703c2df638bb287d3675d / [246 220 237 180 242  71   3 194 223  99 139 178 135 211 103  93]
+[2024-04-23 21:26:48,243] [2177167] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN pt index #0: 0x3da73d5a6318ae8cbe87dbc498c4ee9f / [ 61 167  61  90  99  24 174 140 190 135 219 196 152 196 238 159]
+[2024-04-23 21:26:48,243] [2177167] [MainThread] [device] INFO  - Send p and k on serial port...
+[2024-04-23 21:26:48,244] [2177167] [MainThread] [device] INFO  - Send k=f6dcedb4f24703c2df638bb287d3675d
+[2024-04-23 21:26:48,244] [2177167] [MainThread] [device] DEBUG - ser <- k:f6dcedb4f24703c2df638bb287d3675d
+[2024-04-23 21:26:48,345] [2177167] [MainThread] [device] INFO  - Send p=3da73d5a6318ae8cbe87dbc498c4ee9f
+[2024-04-23 21:26:48,345] [2177167] [MainThread] [device] DEBUG - ser <- p:3da73d5a6318ae8cbe87dbc498c4ee9f
+[2024-04-23 21:26:48,446] [2177167] [MainThread] [device] DEBUG - ser <- input_sub
+[2024-04-23 21:26:48,547] [2177167] [MainThread] [device] DEBUG - ser <- input_dump
+[2024-04-23 21:26:48,650] [2177167] [MainThread] [device] DEBUG - Start preparing WHAD's sequences...
+[2024-04-23 21:26:48,650] [2177167] [MainThread] [device] INFO  - Connection event for starting the recording: 6
+[2024-04-23 21:26:48,657] [2177167] [MainThread] [device] INFO  - Connection event for sending the LL_ENC_REQ request: 4
+[2024-04-23 21:26:48,666] [2177167] [MainThread] [device] DEBUG - central.prepare(LL_ENC_REQ[rand=0xdeadbeefdeadbeef, ediv=0xdead, skdm=0x0, ivm=0x0])
+[2024-04-23 21:26:48,685] [2177167] [MainThread] [device] INFO  - Connect to target device...
+[2024-04-23 21:26:48,685] [2177167] [MainThread] [device] DEBUG - Connection parameters: address=C2:3E:54:84:5C:4C, random=False, hop_interval=15, channel_map=0x300, timeout=20
+[2024-04-23 21:26:48,797] [2177167] [MainThread] [device] DEBUG - WHAD's central is connected to target device!
+[2024-04-23 21:26:48,841] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO <- record
+[2024-04-23 21:26:48,841] [2177073] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO at /tmp/soapysdr.fifo
+[2024-04-23 21:26:48,841] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO -> record
+[2024-04-23 21:26:48,841] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).enter
+[2024-04-23 21:26:48,841] [2177073] [MainThread] [soapysdr] INFO  - Radio #0 start recording for 2.0s...
+[2024-04-23 21:26:48,841] [2177073] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+O[2024-04-23 21:26:48,843] [2177073] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-23 21:26:48,843] [2177073] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-23 21:26:48,855] [2177167] [Thread-2] [device] DEBUG - Save the received LL_ENC_RSP packet!
+[2024-04-23 21:26:48,941] [2177167] [MainThread] [soapysdr] DEBUG - [client] Waiting for: record
+[2024-04-23 21:26:50,900] [2177073] [MainThread] [soapysdr] INFO  - Radio #0 finished recording!
+[2024-04-23 21:26:50,900] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).exit
+[2024-04-23 21:26:50,900] [2177073] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-23 21:26:50,900] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:record
+[2024-04-23 21:26:50,900] [2177167] [MainThread] [soapysdr] DEBUG - [client] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-23 21:26:50,905] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:record
+[2024-04-23 21:26:50,905] [2177167] [MainThread] [soapysdr] DEBUG - [client] Wait completed!
+[2024-04-23 21:26:50,905] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO <- accept
+[2024-04-23 21:26:50,905] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO -> accept
+[2024-04-23 21:26:50,905] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.accept()
+[2024-04-23 21:26:50,905] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDR(idx=0).accept()
+[2024-04-23 21:26:51,005] [2177167] [MainThread] [device] INFO  - Disconnect from the target device
+[2024-04-23 21:26:51,012] [2177167] [MainThread] [device] DEBUG - Stop and close UART0 dongle...
+[2024-04-23 21:26:52,030] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO <- save
+[2024-04-23 21:26:52,130] [2177167] [MainThread] [soapysdr] DEBUG - [client] Waiting for: save
+[2024-04-23 21:26:52,131] [2177167] [MainThread] [soapysdr] DEBUG - [client] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-23 21:26:52,131] [2177073] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-23 21:26:52,132] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:accept
+[2024-04-23 21:26:52,132] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:accept
+[2024-04-23 21:26:52,132] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO -> save
+[2024-04-23 21:26:52,133] [2177073] [MainThread] [soapysdr] DEBUG - MySoapySDRs.save(dir=None)
+[2024-04-23 21:26:52,133] [2177073] [MainThread] [soapysdr] INFO  - save recording of radio #0 into directory /tmp
+[2024-04-23 21:26:52,167] [2177073] [MainThread] [soapysdr] DEBUG - re-initialization
+[2024-04-23 21:26:52,167] [2177073] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-23 21:26:52,168] [2177073] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:save
+[2024-04-23 21:26:52,168] [2177167] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:save
+[2024-04-23 21:26:52,168] [2177167] [MainThread] [soapysdr] DEBUG - [client] Wait completed!
+[2024-04-23 21:26:52,168] [2177167] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+INFO: ret=0?
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-23 21:26:54,620] [2177251] [MainThread] [radio] INFO  - Extract RAW trace using ID #0
+[2024-04-23 21:26:54,620] [2177251] [MainThread] [radio] DEBUG - Configuration: 300_aes
+[2024-04-23 21:26:54,620] [2177251] [MainThread] [radio] DEBUG - Peak search prominence=0.75
+[2024-04-23 21:26:54,620] [2177251] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+[2024-04-23 21:26:54,951] [2177251] [MainThread] [radio] DEBUG - name=trigger
+- bandpass_low=1.00e+06
+- bandpass_high=1.90e+06
+- lowpass=1.00e+03
+[2024-04-23 21:26:55,053] [2177251] [MainThread] [radio] INFO  - Number of detected peaks=1
+[2024-04-23 21:26:55,056] [2177251] [MainThread] [radio] INFO  - Peak: Position=5.53% ; SNR=5.8 ; Avg=19541
+[2024-04-23 21:26:55,056] [2177251] [MainThread] [radio] WARNING - Peak is located at recording's boundaries, bad connection event?
+[2024-04-23 21:26:55,056] [2177251] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+qt.qpa.xcb: XKeyboard extension not present on the X server
+[2024-04-23 21:30:02,439] [2177251] [MainThread] [radio] INFO  - ignore overwrite for extracted signal(s)
+INFO: ret=0
+INFO: Radio killed!
+
