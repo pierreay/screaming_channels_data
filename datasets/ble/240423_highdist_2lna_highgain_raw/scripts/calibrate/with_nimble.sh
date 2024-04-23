@@ -23,11 +23,8 @@ NIMBLE_ADDR="C2:3E:54:84:5C:4C"
 
 # *** Parameters
 
-# Bandpass filter for trigger signal. NOTE: Depends on sampling rate.
-# TRG_BP_LOW="[1.0e6]"
-# TRG_BP_HIGH="[1.9e6]"
-# Minimum accepted SNR.
-ACCEPT_SNR_MIN=11.0
+# Should we enable AES repetitions?
+AES_REPETITIONS=1
 
 # *** Actions
 
@@ -48,6 +45,8 @@ CONFIG_PATH="/tmp/config.toml"
 
 NRF_PATH="" # NOTE: Initialized by find_nrf().
 HCI_ADDR="" # NOTE: Initialized by find_hci().
+
+LOG_PATH="$DATASET_PATH/logs/calibrate_nimble.log"
 
 # * Functions
 
@@ -77,13 +76,21 @@ function flash_firmware_once() {
         echo "SKIP: Flash firmware: File exists: ${firmware_dst}"
         return 0
     fi
-    
-    echo "INFO: Checkout f879eff -> $NIMBLE"
-    cd $NIMBLE
-    git checkout f879eff
+
+    if [[ ${AES_REPETITIONS} -eq 0 ]]; then
+        checkout_root="light"
+        checkout_sub="light"
+    else
+        checkout_root="main"
+        checkout_sub="master"
+    fi
+    echo "INFO: Checkout ${checkout_root} -> $NIMBLE"
+    cd $NIMBLE/repos/apache-mynewt-core && git checkout ${checkout_sub}
+    cd $NIMBLE/repos/apache-mynewt-nimble && git checkout ${checkout_sub}
+    cd $NIMBLE && git checkout ${checkout_root}
 
     echo "INFO: Compile and flash Nimble firmware..."
-    make all
+    cd $NIMBLE && make all
 
     echo "INFO: Save firmware: ${firmware_src} -> ${firmware_dst}"
     mkdir -p "$(dirname "$firmware_dst")" && cp "${firmware_src}" "${firmware_dst}"
@@ -91,12 +98,16 @@ function flash_firmware_once() {
 }
 
 function init_git() {
-    echo "INFO: Checkout afc99e7 -> $SC_SRC"
-    (cd $SC_SRC && git checkout afc99e7)
+    echo "INFO: Checkout main -> $SC_SRC"
+    (cd $SC_SRC && git checkout main)
 }
 
 function init_tmp_dataset() {
-    (cd $SC_SRC && ./dataset.py init /tmp ${FS} --input-gen-run --input-src-pairing --nb-trace-wanted-train 10 --nb-trace-wanted-attack 5 --force)
+    if [[ ${AES_REPETITIONS} -eq 0 ]]; then
+        (cd $SC_SRC && ./dataset.py init /tmp ${FS} --input-gen-run --input-src-pairing --nb-trace-wanted-train 10 --nb-trace-wanted-attack 5 --force)
+    else
+        (cd $SC_SRC && ./dataset.py init /tmp ${FS} --input-gen-run --input-src-serial --nb-trace-wanted-train 10 --nb-trace-wanted-attack 5 --force)
+    fi
 }
 
 function init_radio_if_needed() {
@@ -106,8 +117,8 @@ function init_radio_if_needed() {
     fi
     pgrep radio
     if [[ $? == 1 ]]; then
-        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=0.2 --gain $GAIN &)
-        sleep 3
+        (cd $SC_SRC && ./radio.py --dir /tmp --loglevel DEBUG listen 128e6 ${FC} ${FS} --nf-id -1 --ff-id 0 --duration=2 --gain $GAIN &)
+        sleep 4
     fi
 }
 
@@ -132,7 +143,12 @@ function config() {
 }
 
 function instrument() {
-    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train ${HCI_ADDR} ${NIMBLE_ADDR} ${NRF_PATH} --idx 0 --config fast)
+    if [[ ${AES_REPETITIONS} -eq 0 ]]; then
+        config="fast"
+    else
+        config="slow"
+    fi
+    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH instrument /tmp train ${HCI_ADDR} ${NIMBLE_ADDR} ${NRF_PATH} --idx 0 --config ${config})
     ret=$?
     echo "INFO: ret=$ret?"
     if [[ "$ret" != 0 ]]; then
@@ -149,7 +165,12 @@ function extract() {
     if [[ $EXTRACT_PLOT == 0 ]]; then
         plot_flag="--no-plot"
     fi
-    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH extract ${FC} ${FS} 0 $plot_flag --no-overwrite --no-exit-on-error --config 1_aes_ff_antenna_8msps --save-plot="$DATASET_PATH/plots/calibrate_nimble" )
+    if [[ ${AES_REPETITIONS} -eq 0 ]]; then
+        config="1_aes_ff_antenna_8msps"
+    else
+        config="300_aes"
+    fi
+    (cd $SC_SRC && ./radio.py --dir /tmp --config $CONFIG_PATH extract ${FC} ${FS} 0 $plot_flag --no-overwrite --no-exit-on-error --config ${config} --save-plot="$DATASET_PATH/plots/calibrate_nimble" )
     echo "INFO: ret=$?"
 }
 
@@ -161,13 +182,14 @@ function capture() {
     init_radio_if_needed
 
     init_config
-    config "$CONFIG_PATH" "accept_snr_min" "${ACCEPT_SNR_MIN}"
+
+    config "$CONFIG_PATH" "accept_snr_min" "5.0"
     config "$CONFIG_PATH" "more_data_bit" "1"
     config "$CONFIG_PATH" "hop_interval" "15"
     config "$CONFIG_PATH" "procedure_interleaving" "false"
     config "$CONFIG_PATH" "ll_enc_req_conn_event" "4"
-    # config "$CONFIG_PATH" "trg_bp_low" "${TRG_BP_LOW}"
-    # config "$CONFIG_PATH" "trg_bp_high" "${TRG_BP_HIGH}"
+    config "$CONFIG_PATH" "trg_bp_low" "[1.0e6]"
+    config "$CONFIG_PATH" "trg_bp_high" "[1.9e6]"
 
     instrument
 }
@@ -182,15 +204,21 @@ function analyze() {
 
 function init_log() {
     clear
-    mkdir -p "$DATASET_PATH/logs"
+    mkdir -p "$(dirname ${LOG_PATH})"
     mkdir -p "$DATASET_PATH/plots"
 }
 
 function save_log() {
-    tmux capture-pane -pS - > "$DATASET_PATH/logs/calibrate_nimble.log"
+    tmux capture-pane -pS - > "${LOG_PATH}"
 }
 
 # * Steps
+
+# Safety-guard.
+if [[ -f "${LOG_PATH}" ]]; then
+    echo "SKIP: Log file exist: ${LOG_PATH}"
+    exit 0
+fi
 
 init_log
 
