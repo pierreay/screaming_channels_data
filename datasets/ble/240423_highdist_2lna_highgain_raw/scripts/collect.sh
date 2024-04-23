@@ -14,16 +14,19 @@ fi
 
 # * Variables
 
+# Should we enable AES repetitions?
+AES_REPETITIONS=1
+
 # ** Screaming Channels .envrc
 
 export ENVRC_VICTIM_PORT="$(nrfjprog --com | cut - -d " " -f 5)"
-export ENVRC_SAMP_RATE=08000000 # 8e6
+export ENVRC_SAMP_RATE=${FS}
 export ENVRC_DURATION=0.2
-export ENVRC_GAIN=66
+export ENVRC_GAIN=${GAIN}
 export ENVRC_WANTED_TRACE_TRAIN=16000
 export ENVRC_WANTED_TRACE_ATTACK=16000
 export ENVRC_NF_FREQ=128000000 # 128e6
-export ENVRC_FF_FREQ=2533000000 # 2.533e9
+export ENVRC_FF_FREQ=${FC}
 export ENVRC_RADIO_DIR="$HOME/storage/tmp"
 # export ENVRC_DATASET_PATH="$HOME/storage/dataset"
 export ENVRC_DATASET_RAW_PATH="${DATASET_PATH}"
@@ -31,14 +34,19 @@ export ENVRC_DATASET_RAW_PATH="${DATASET_PATH}"
 # export ENVRC_DATASET_EXT_PATH="$ENVRC_DATASET_PATH/tmp_ext"
 export ENVRC_NIMBLE_PATH="$HOME/git/screaming_channels_nimble"
 export ENVRC_CONFIG_FILE="$ENVRC_DATASET_RAW_PATH/config.toml"
-export ENVRC_DURATION=0.1
 export ENVRC_VICTIM_ADDR="C2:3E:54:84:5C:4C"
 export ENVRC_ATTACKER_ADDR="00:19:0E:19:79:D8"
 export ENVRC_NF_ID=-1
 export ENVRC_FF_ID=0
-export ENVRC_EXTRACT_CONFIG="1_aes_ff_antenna_8msps"
-export ENVRC_DEVICE_CONFIG="fast"
-export ENVRC_DATASET_INPUT="PAIRING"
+if [[ ${AES_REPETITIONS} -eq 0 ]]; then
+    export ENVRC_EXTRACT_CONFIG="1_aes_ff_antenna_8msps"
+    export ENVRC_DEVICE_CONFIG="fast"
+    export ENVRC_DATASET_INPUT="PAIRING"
+else
+    export ENVRC_EXTRACT_CONFIG="300_aes"
+    export ENVRC_DEVICE_CONFIG="slow"
+    export ENVRC_DATASET_INPUT="SERIAL"
+fi
 
 # * Functions
 
@@ -63,12 +71,13 @@ echo "INFO: Checkout main -> $SC_SRC"
 (cd $SC_SRC && git checkout main)
 
 init_config
-config "$ENVRC_CONFIG_FILE" "accept_snr_min" "11.0"
+
+config "$ENVRC_CONFIG_FILE" "accept_snr_min" "5.0"
 config "$ENVRC_CONFIG_FILE" "more_data_bit" "1"
 config "$ENVRC_CONFIG_FILE" "hop_interval" "15"
 config "$ENVRC_CONFIG_FILE" "procedure_interleaving" "false"
 config "$ENVRC_CONFIG_FILE" "ll_enc_req_conn_event" "4"
-# config "$ENVRC_CONFIG_FILE" "trg_bp_low" "${TRG_BP_LOW}"
-# config "$ENVRC_CONFIG_FILE" "trg_bp_high" "${TRG_BP_HIGH}"
+config "$ENVRC_CONFIG_FILE" "trg_bp_low" "[1.0e6]"
+config "$ENVRC_CONFIG_FILE" "trg_bp_high" "[1.9e6]"
 
 (cd $SC_SRC && ./collect.sh -l INFO -y)
