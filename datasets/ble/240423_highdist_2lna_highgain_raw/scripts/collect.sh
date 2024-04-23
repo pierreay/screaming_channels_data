@@ -72,7 +72,7 @@ echo "INFO: Checkout main -> $SC_SRC"
 
 init_config
 
-config "$ENVRC_CONFIG_FILE" "accept_snr_min" "5.0"
+config "$ENVRC_CONFIG_FILE" "accept_snr_min" "2.0"
 config "$ENVRC_CONFIG_FILE" "more_data_bit" "1"
 config "$ENVRC_CONFIG_FILE" "hop_interval" "15"
 config "$ENVRC_CONFIG_FILE" "procedure_interleaving" "false"
