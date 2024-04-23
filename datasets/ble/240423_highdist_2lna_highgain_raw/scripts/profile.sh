@@ -1,6 +1,20 @@
 #!/bin/bash
 
-DATASET=$REPO_DATASET_PATH/ble/240414_1-leak-pairing-highdist-fix-2.533e9-8e6_raw
+# * Environment
+
+env="$(realpath $(dirname $0))/env.sh"
+echo "INFO: Source file: $env"
+source "$env"
+
+# Safety-guard.
+if [[ -z $ENV_FLAG ]]; then
+    echo "ERROR: Environment can't been sourced!"
+    exit 1
+fi
+
+# * Script
+
+DATASET=${DATASET_PATH}
 SP=1000 # NOTE: Depends on current sampling rate at 8e6.
 EP=1500 # NOTE: Depends on current sampling rate at 8e6.
 

@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# * Environment
+
+env="$(realpath $(dirname $0))/env.sh"
+echo "INFO: Source file: $env"
+source "$env"
+
+# Safety-guard.
+if [[ -z $ENV_FLAG ]]; then
+    echo "ERROR: Environment can't been sourced!"
+    exit 1
+fi
+
 # * Variables
 
 # ** Screaming Channels .envrc
@@ -8,16 +20,15 @@ export ENVRC_VICTIM_PORT="$(nrfjprog --com | cut - -d " " -f 5)"
 export ENVRC_SAMP_RATE=08000000 # 8e6
 export ENVRC_DURATION=0.2
 export ENVRC_GAIN=66
-#export ENVRC_WANTED_TRACE_TRAIN=16384
-export ENVRC_WANTED_TRACE_TRAIN=5000
-export ENVRC_WANTED_TRACE_ATTACK=16384
+export ENVRC_WANTED_TRACE_TRAIN=16000
+export ENVRC_WANTED_TRACE_ATTACK=16000
 export ENVRC_NF_FREQ=128000000 # 128e6
 export ENVRC_FF_FREQ=2533000000 # 2.533e9
 export ENVRC_RADIO_DIR="$HOME/storage/tmp"
-export ENVRC_DATASET_PATH="$HOME/storage/dataset"
-export ENVRC_DATASET_RAW_PATH="$ENVRC_DATASET_PATH/240414_1-leak-pairing-highdist-fix-2.533e9-8e6_raw"
-export ENVRC_DATASET_AVG_PATH="$ENVRC_DATASET_PATH/tmp_avg"
-export ENVRC_DATASET_EXT_PATH="$ENVRC_DATASET_PATH/tmp_ext"
+# export ENVRC_DATASET_PATH="$HOME/storage/dataset"
+export ENVRC_DATASET_RAW_PATH="${DATASET_PATH}"
+# export ENVRC_DATASET_AVG_PATH="$ENVRC_DATASET_PATH/tmp_avg"
+# export ENVRC_DATASET_EXT_PATH="$ENVRC_DATASET_PATH/tmp_ext"
 export ENVRC_NIMBLE_PATH="$HOME/git/screaming_channels_nimble"
 export ENVRC_CONFIG_FILE="$ENVRC_DATASET_RAW_PATH/config.toml"
 export ENVRC_DURATION=0.1

@@ -1,13 +1,21 @@
 #!/bin/bash
 
-# * About
+# * Environment
 
-# Perform multiple attacks and store the results in a CSV file.
+env="$(realpath $(dirname $0))/env.sh"
+echo "INFO: Source file: $env"
+source "$env"
+
+# Safety-guard.
+if [[ -z $ENV_FLAG ]]; then
+    echo "ERROR: Environment can't been sourced!"
+    exit 1
+fi
 
 # * Global configuration
 
 # Dataset path.
-DATASET=$REPO_DATASET_PATH/ble/240414_1-leak-pairing-highdist-fix-2.533e9-8e6_raw
+DATASET=${DATASET_PATH}
 
 # Length of the profile in samples.
 PROFILE_LENGTH=500

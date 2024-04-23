@@ -1,25 +1,28 @@
 #!/bin/bash
 
+# * Environment
+
+env="$(realpath $(dirname $0))/env.sh"
+echo "INFO: Source file: $env"
+source "$env"
+
+# Safety-guard.
+if [[ -z $ENV_FLAG ]]; then
+    echo "ERROR: Environment can't been sourced!"
+    exit 1
+fi
+
 # * Global variables
 
 # ** Script configuration
 
 # *** Paths and addresses
 
-# Path of current dataset.
-DATASET_PATH="$REPO_DATASET_PATH/ble/240414_1-leak-pairing-highdist-fix-2.533e9-8e6_raw"
-
 # Bluetooth address of the Nimble board target.
 NIMBLE_ADDR="C2:3E:54:84:5C:4C"
 
 # *** Parameters
 
-# Center frequency.
-FC=2.533e9
-# Sampling rate.
-FS=8e6
-# Gain [dB].
-GAIN=66
 # Bandpass filter for trigger signal. NOTE: Depends on sampling rate.
 # TRG_BP_LOW="[1.0e6]"
 # TRG_BP_HIGH="[1.9e6]"
