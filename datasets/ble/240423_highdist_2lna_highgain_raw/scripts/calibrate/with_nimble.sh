@@ -2,7 +2,7 @@
 
 # * Environment
 
-env="$(realpath $(dirname $0))/env.sh"
+env="$(realpath $(dirname $0))/../env.sh"
 echo "INFO: Source file: $env"
 source "$env"
 
@@ -31,8 +31,6 @@ ACCEPT_SNR_MIN=11.0
 
 # *** Actions
 
-# Reflash the firmware at beginning.
-REFLASH=1
 # Reset YKush switch at beginning.
 RESET_YKUSH=1
 # Extract instead of plotting whole capture.
@@ -72,11 +70,24 @@ function reset_ykush() {
     echo "DONE!"
 }
 
-function compile_firmware() {
+function flash_firmware_once() {
+    firmware_src="/tmp/mynewt-firmware.hex"
+    firmware_dst="${DATASET_PATH}/bin/nimble.hex"
+    if [[ -f "${firmware_dst}" ]]; then
+        echo "SKIP: Flash firmware: File exists: ${firmware_dst}"
+        return 0
+    fi
+    
     echo "INFO: Checkout f879eff -> $NIMBLE"
     cd $NIMBLE
     git checkout f879eff
+
+    echo "INFO: Compile and flash Nimble firmware..."
     make all
+
+    echo "INFO: Save firmware: ${firmware_src} -> ${firmware_dst}"
+    mkdir -p "$(dirname "$firmware_dst")" && cp "${firmware_src}" "${firmware_dst}"
+    echo "DONE!"    
 }
 
 function init_git() {
@@ -143,9 +154,7 @@ function extract() {
 }
 
 function capture() {
-    if [[ $REFLASH == 1 ]]; then
-        compile_firmware
-    fi
+    flash_firmware_once
 
     init_tmp_dataset
 
