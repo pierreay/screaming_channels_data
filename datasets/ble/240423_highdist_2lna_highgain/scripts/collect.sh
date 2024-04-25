@@ -93,17 +93,18 @@ fi
 
 function average_subset() {
     subset="$1"
+    force="$2"
     flag_path="${ENVRC_DATASET_AVG_PATH}/.average_${subset}_done"
     if [[ -f "$flag_path" ]]; then
         echo "SKIP: Averaging: File exists: $flag_path"
     else
-        (cd $SC_SRC && ./dataset.py --loglevel INFO average --nb-aes 300 ${ENVRC_DATASET_RAW_PATH} ${ENVRC_DATASET_AVG_PATH} ${subset} --template 1 --plot --stop -1 --no-force --jobs=-1)
+        (cd $SC_SRC && ./dataset.py --loglevel INFO average --nb-aes 300 ${ENVRC_DATASET_RAW_PATH} ${ENVRC_DATASET_AVG_PATH} ${subset} --template 1 --no-plot --stop -1 ${force} --jobs=-1)
         touch "${flag_path}"
     fi    
 }
 
 if [[ ${AES_REPETITIONS} -eq 1 ]]; then
     mkdir -p ${ENVRC_DATASET_AVG_PATH}
-    average_subset train
-    average_subset attack
+    average_subset train --no-force
+    average_subset attack --force
 fi
