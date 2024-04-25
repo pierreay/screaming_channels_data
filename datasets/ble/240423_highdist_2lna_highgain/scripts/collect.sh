@@ -66,6 +66,8 @@ function config() {
 
 # * Script
 
+# ** Collection
+
 echo "INFO: Checkout main -> $SC_SRC"
 (cd $SC_SRC && git checkout main)
 
@@ -80,6 +82,28 @@ config "$ENVRC_CONFIG_FILE" "trg_bp_low" "[1.0e6]"
 config "$ENVRC_CONFIG_FILE" "trg_bp_high" "[1.9e6]"
 
 mkdir -p ${ENVRC_DATASET_RAW_PATH}
-mkdir -p ${ENVRC_DATASET_AVG_PATH}
-mkdir -p ${ENVRC_DATASET_EXT_PATH}
-(cd $SC_SRC && ./collect.sh -l INFO -y)
+if [[ -f ${ENVRC_DATASET_RAW_PATH}/.collect_done ]]; then
+    echo "SKIP: Collection: File exists: ${ENVRC_DATASET_RAW_PATH}/.collect_done"
+else
+    (cd $SC_SRC && ./collect.sh -l INFO -y)
+    touch ${ENVRC_DATASET_RAW_PATH}/.collect_done
+fi
+
+# ** Post-processing
+
+function average_subset() {
+    subset="$1"
+    flag_path="${ENVRC_DATASET_AVG_PATH}/.average_${subset}_done"
+    if [[ -f "$flag_path" ]]; then
+        echo "SKIP: Averaging: File exists: $flag_path"
+    else
+        (cd $SC_SRC && ./dataset.py --loglevel INFO average --nb-aes 300 ${ENVRC_DATASET_RAW_PATH} ${ENVRC_DATASET_AVG_PATH} ${subset} --template 1 --plot --stop -1 --no-force --jobs=-1)
+        touch "${flag_path}"
+    fi    
+}
+
+if [[ ${AES_REPETITIONS} -eq 1 ]]; then
+    mkdir -p ${ENVRC_DATASET_AVG_PATH}
+    average_subset train
+    average_subset attack
+fi
