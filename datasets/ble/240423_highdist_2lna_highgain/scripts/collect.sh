@@ -28,12 +28,11 @@ export ENVRC_WANTED_TRACE_ATTACK=16000
 export ENVRC_NF_FREQ=128000000 # 128e6
 export ENVRC_FF_FREQ=${FC}
 export ENVRC_RADIO_DIR="$HOME/storage/tmp"
-# export ENVRC_DATASET_PATH="$HOME/storage/dataset"
-export ENVRC_DATASET_RAW_PATH="${DATASET_PATH}"
-# export ENVRC_DATASET_AVG_PATH="$ENVRC_DATASET_PATH/tmp_avg"
-# export ENVRC_DATASET_EXT_PATH="$ENVRC_DATASET_PATH/tmp_ext"
+export ENVRC_DATASET_RAW_PATH="${DATASET_PATH}/raw"
+export ENVRC_DATASET_AVG_PATH="${DATASET_PATH}/avg"
+export ENVRC_DATASET_EXT_PATH="${DATASET_PATH}/ext"
 export ENVRC_NIMBLE_PATH="$HOME/git/screaming_channels_nimble"
-export ENVRC_CONFIG_FILE="$ENVRC_DATASET_RAW_PATH/config.toml"
+export ENVRC_CONFIG_FILE="${DATASET_PATH}/config.toml"
 export ENVRC_VICTIM_ADDR="C2:3E:54:84:5C:4C"
 export ENVRC_ATTACKER_ADDR="00:19:0E:19:79:D8"
 export ENVRC_NF_ID=-1
@@ -80,4 +79,7 @@ config "$ENVRC_CONFIG_FILE" "ll_enc_req_conn_event" "4"
 config "$ENVRC_CONFIG_FILE" "trg_bp_low" "[1.0e6]"
 config "$ENVRC_CONFIG_FILE" "trg_bp_high" "[1.9e6]"
 
+mkdir -p ${ENVRC_DATASET_RAW_PATH}
+mkdir -p ${ENVRC_DATASET_AVG_PATH}
+mkdir -p ${ENVRC_DATASET_EXT_PATH}
 (cd $SC_SRC && ./collect.sh -l INFO -y)
