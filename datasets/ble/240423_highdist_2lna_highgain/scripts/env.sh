@@ -1,5 +1,5 @@
 # Current dataset path.
-export DATASET_PATH="${REPO_DATASET_PATH}/ble/240423_highdist_2lna_highgain_raw"
+export DATASET_PATH="${REPO_DATASET_PATH}/ble/240423_highdist_2lna_highgain"
 
 # Recording center frequency.
 export FC="2.533e9"
