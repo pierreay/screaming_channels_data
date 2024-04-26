@@ -54,7 +54,9 @@ function profile() {
     # Create the profile and save it.
     $SC_SRC/attack.py ${plot} ${save_images} --norm --dataset-path ${DATASET} --num-traces ${nt} --start-point ${SP} --end-point ${EP} --comptype ${comp} \
                       profile --pois-algo ${pois_algo} --num-pois ${pois_nb} --poi-spacing 1 --variable p_xor_k --align
-    mv "${DATASET_PATH}/profile" "$DATASET/${profile}"
+
+    echo "INFO: Save profile: $DATASET/${profile}"
+    mv "${DATASET}/profile" "$DATASET/${profile}"
 }
 
 # * Script
