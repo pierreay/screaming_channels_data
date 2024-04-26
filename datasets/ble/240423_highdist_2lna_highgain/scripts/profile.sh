@@ -12,39 +12,60 @@ if [[ -z $ENV_FLAG ]]; then
     exit 1
 fi
 
-# * Script
+# * Variables
 
-DATASET=${DATASET_PATH}
-SP=1000 # NOTE: Depends on current sampling rate at 8e6.
-EP=1500 # NOTE: Depends on current sampling rate at 8e6.
+# ** Configuration
 
-function profile_comp() {
+COMP_LIST=(AMPLITUDE PHASE_ROT)
+NUM_TRACES_LIST=(4000 8000 12000 16000)
+POIS_ALGO_LIST=(r snr)
+POIS_NB_LIST=(1 2)
+
+PROFILE_LENGTH=400
+SP=300
+EP=$(( SP + PROFILE_LENGTH ))
+
+# ** Internals
+
+DATASET="${DATASET_PATH}/avg"
+
+# * Functions
+
+function profile() {
+    # Get parameters.
     comp=$1
     nt=$2
     pois_algo=$3
     pois_nb=$4
-    profile=profile_${comp}_${nt}_${pois_algo}_${pois_nb}
-    if [[ -d "${DATASET}/${profile}" ]]; then
-        echo "[!] Profile already created: ${profile}"
-        return 0
-    fi
-    
+    # Set parameters.
+    profile="profiles/${comp}_${nt}_${pois_algo}_${pois_nb}"
     plot=--no-plot
     save_images=--save-images
-    $SC_SRC/attack.py ${plot} ${save_images} --norm --dataset-path ${DATASET} --num-traces ${nt} --start-point ${SP} --end-point ${EP} --comptype ${comp} profile --pois-algo ${pois_algo} --num-pois ${pois_nb} --poi-spacing 1 --variable p_xor_k --align
-    mv $DATASET/profile $DATASET/$profile
+
+    # Safety-guard.
+    if [[ -d "${DATASET}/${profile}" ]]; then
+        echo "SKIP: Profile creation: Existing directory: ${profile}"
+        return 0
+    elif [[ $(ls -alh "${DATASET}/train" | grep -E "*_trace_ff.npy" | wc -l) -lt ${nt} ]]; then
+        echo "SKIP: Profile creation: Not enough traces: < ${nt}"
+        return 0
+    fi
+
+    # Create the profile and save it.
+    $SC_SRC/attack.py ${plot} ${save_images} --norm --dataset-path ${DATASET} --num-traces ${nt} --start-point ${SP} --end-point ${EP} --comptype ${comp} \
+                      profile --pois-algo ${pois_algo} --num-pois ${pois_nb} --poi-spacing 1 --variable p_xor_k --align
+    mv "${DATASET_PATH}/profile" "$DATASET/${profile}"
 }
 
-comp_list=(AMPLITUDE PHASE_ROT)
-num_traces_list=(5000)
-pois_algo_list=(r snr)
-pois_nb_list=(1 2)
+# * Script
 
-for comp in "${comp_list[@]}"; do
-    for num_traces in "${num_traces_list[@]}"; do
-        for pois_algo in "${pois_algo_list[@]}"; do
-            for pois_nb in "${pois_nb_list[@]}"; do
-                profile_comp $comp $num_traces $pois_algo $pois_nb
+mkdir -p "${DATASET}/profiles"
+
+for comp in "${COMP_LIST[@]}"; do
+    for num_traces in "${NUM_TRACES_LIST[@]}"; do
+        for pois_algo in "${POIS_ALGO_LIST[@]}"; do
+            for pois_nb in "${POIS_NB_LIST[@]}"; do
+                profile $comp $num_traces $pois_algo $pois_nb
             done
         done
     done
