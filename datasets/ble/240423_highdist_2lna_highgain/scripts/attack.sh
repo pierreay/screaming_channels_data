@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -u
 
 # * Environment
 
@@ -14,98 +14,88 @@ fi
 
 # * Variables
 
+# ** Profile configuration
+
+# List of parameters for the used profiles.
+readonly COMP_LIST=(AMPLITUDE) # AMPLITUDE PHASE_ROT RECOMBIN
+readonly NUM_TRACES_LIST=(4000 16000)
+readonly POIS_ALGO_LIST=(r)
+readonly POIS_NB_LIST=(1 2)
+
+# Delimiters.
+readonly PROFILE_LENGTH=400
+readonly START_POINT=300
+readonly END_POINT=$((START_POINT + PROFILE_LENGTH))
+
+# ** Attack configuration
+
+readonly PLOT=--plot
+# Number of traces for the attack.
+readonly NUM_TRACES_ATTACK_LIST=(200 700 2500 4000 10000 16000)
+
+# ** Internals
+
 # Paths.
-DATASET=${DATASET_PATH}
-LOGFILE_PATH=${DATASET}/logs/attack.log
-
-# Parameters.
-PROFILE_LENGTH=500
-START_POINT=1000 # NOTE: Depends on current sampling rate at 8e6.
-END_POINT=$((START_POINT + PROFILE_LENGTH))
-PLOT=--no-plot
-
-# Actions.
-COMPARE_PNB=1
-COMPARE_ANB=1
-COMPARE_ALGO=1
-COMPARE_POINB=1
-COMPARE_COMP=1
+readonly DATASET="${DATASET_PATH}/avg"
+readonly LOG_PATH_BASE="${DATASET_PATH}/logs"
+readonly PROFILE_PATH_BASE="${DATASET}/profiles"
 
 # * Functions
 
 function attack() {
-    trace_nb=$1
-    bruteforce=$2
-    profile_path=$DATASET/profile_$3_$5
-    comptype=$4
-    pois_nb=$5
-    echo "================================================="
-    echo trace_nb=$trace_nb
-    echo bruteforce=$bruteforce
-    echo profile_path=$profile_path
-    echo comptype=$comptype
-    echo pois_nb=$pois_nb
-    $SC_SRC/attack.py --log $PLOT --norm --dataset-path $DATASET --start-point $START_POINT --end-point $END_POINT --num-traces $trace_nb $bruteforce \
-                      attack-recombined --comptype $comptype --attack-algo pcc --profile ${profile_path} --num-pois ${pois_nb} --poi-spacing 1 --variable p_xor_k --align
+    # Get parameters.
+    local num_traces="${1}"
+    local comp="${2}"
+    local pois_algo="${3}"
+    local pois_nb="${4}"
+    local num_traces_attack="${5}"
+    # Set parameters.
+    local profile_path="${PROFILE_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}"
+    if [[ "${comp}" == "RECOMBIN" ]]; then
+        profile_path="${PROFILE_PATH_BASE}/"'{}'"_${num_traces}_${pois_algo}_${pois_nb}"
+    fi
+    local log_path="${LOG_PATH_BASE}/attack_${comp}_${num_traces}_${pois_algo}_${pois_nb}_${num_traces_attack}.log"
+    local bruteforce="--no-bruteforce"
+
+    # Safety-guard.
+    if [[ -f "${log_path}" ]]; then
+        echo "SKIP: Attack: File exists: ${log_path}"
+        return 0
+    elif [[ $(ls -alh "${DATASET}/attack" | grep -E "*_trace_ff.npy" | wc -l) -lt "${num_traces_attack}" ]]; then
+        echo "SKIP: Attack: Not enough traces: < ${num_traces_attack}"
+        return 0
+    fi
+
+    # Initialize log.
+    mkdir -p "$LOG_PATH_BASE"
+    # Perform the attack.
+    "${SC_SRC}"/attack.py --log "${PLOT}" --norm --dataset-path "${DATASET}" --start-point "${START_POINT}" --end-point "${END_POINT}" --num-traces "${num_traces_attack}" "${bruteforce}" \
+               attack-recombined --comptype "${comp}" --attack-algo pcc --profile "${profile_path}" --num-pois "${pois_nb}" --poi-spacing 1 --variable p_xor_k --align
+    # Finalize log.
+    tmux capture-pane -pS - > "${log_path}"
+    clear
+}
+
+function git_checkout() {
+    local branch="${1}"
+    local path="${2}"
+    printf "INFO: Checkout ${branch} -> ${path}"
+    (cd "${path}" && git checkout "${branch}")
 }
 
 # * Script
 
-if [[ -f ${LOGFILE_PATH} ]]; then
-    echo "[!] Attack had already be executed: ${LOGFILE_PATH}"
-    exit 0
-fi
-
 clear
-mkdir -p "${DATASET}/logs"
+git_checkout main "${SC}"
 
-(cd $SC && git checkout main)
-
-num_traces_train_default=5000
-num_traces_attack_default=3000
-pois_algo_default=r
-pois_nb_default=1
-
-# Compare number of traces for profile:
-if [[ $COMPARE_PNB == 1 ]]; then
-    num_traces_train_list=(5000)
-    for num_traces_train in "${num_traces_train_list[@]}"; do
-        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
+for comp in "${COMP_LIST[@]}"; do
+    for num_traces in "${NUM_TRACES_LIST[@]}"; do
+        for pois_algo in "${POIS_ALGO_LIST[@]}"; do
+            for pois_nb in "${POIS_NB_LIST[@]}"; do
+                for num_traces_attack in "${NUM_TRACES_ATTACK_LIST[@]}"; do
+                    attack "${num_traces}" "${comp}" "${pois_algo}" "${pois_nb}" "${num_traces_attack}"
+                done
+            done
+        done
     done
-fi
-
-# Compare number of traces for attacks:
-if [[ $COMPARE_ANB == 1 ]]; then
-    num_traces_attack_list=(1000 2000 3000)
-    for num_traces_attack in "${num_traces_attack_list[@]}"; do
-        attack ${num_traces_attack} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb_default}
-    done
-fi
-
-# Compare POIS algorithm:
-if [[ $COMPARE_ALGO == 1 ]]; then
-    pois_algo_list=(r snr)
-    for pois_algo in "${pois_algo_list[@]}"; do
-        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo} AMPLITUDE ${pois_nb_default}
-    done
-fi
-
-# Compare POIS number:
-if [[ $COMPARE_POINB == 1 ]]; then
-    pois_nb_list=(1 2)
-    for pois_nb in "${pois_nb_list[@]}"; do
-        attack ${num_traces_attack_default} --no-bruteforce AMPLITUDE_${num_traces_train_default}_${pois_algo_default} AMPLITUDE ${pois_nb}
-    done
-fi
-
-# Compare components results (including recombination):
-if [[ $COMPARE_COMP == 1 ]]; then
-    comp_list=(AMPLITUDE PHASE_ROT RECOMBIN)
-    for comp in "${comp_list[@]}"; do
-        attack ${num_traces_attack_default} --no-bruteforce '{}'"_${num_traces_train_default}_${pois_algo_default}" ${comp} ${pois_nb}
-    done
-fi
-
-tmux capture-pane -pS - > ${LOGFILE_PATH}
-
-grep -E "=|actual.rounded" "${LOGFILE_PATH}" > ${LOGFILE_PATH/.log/_summary.log}
+done
