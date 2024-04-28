@@ -40,6 +40,8 @@ readonly DATASET="${DATASET_PATH}/avg"
 readonly LOG_PATH_BASE="${DATASET_PATH}/logs"
 readonly PROFILE_PATH_BASE="${DATASET}/profiles"
 
+TMUX_PANE_CAPTURE=""
+
 # * Functions
 
 function attack() {
@@ -72,7 +74,7 @@ function attack() {
     "${SC_SRC}"/attack.py --log "${PLOT}" --norm --dataset-path "${DATASET}" --start-point "${START_POINT}" --end-point "${END_POINT}" --num-traces "${num_traces_attack}" "${bruteforce}" \
                attack-recombined --comptype "${comp}" --attack-algo pcc --profile "${profile_path}" --num-pois "${pois_nb}" --poi-spacing 1 --variable p_xor_k --align
     # Finalize log.
-    tmux capture-pane -pS - > "${log_path}"
+    tmux capture-pane -t "${TMUX_PANE_CAPTURE}" -pS - > "${log_path}"
     clear
 }
 
@@ -83,9 +85,14 @@ function git_checkout() {
     (cd "${path}" && git checkout "${branch}")
 }
 
+function tmux-get-pane() {
+    printf "$(tmux list-sessions | grep "attached" | cut -d ":" -f 1):$(tmux list-windows | grep "active" | cut -d ":" -f 1).$(tmux list-panes | grep "active" | cut -d ":" -f 1)"
+}
+
 # * Script
 
 clear
+TMUX_PANE_CAPTURE="$(tmux-get-pane)"
 git_checkout main "${SC}"
 
 for comp in "${COMP_LIST[@]}"; do
