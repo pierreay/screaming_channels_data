@@ -54,14 +54,14 @@ function attack() {
     local profile_path="${PROFILE_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}"
     local csv_path="${CSV_PATH_BASE}/attack_${comp}_${num_traces}_${pois_algo}_${pois_nb}.csv"
 
-    # Safety-guard.
-    if [[ -f "${csv_path}" ]]; then
-        echo "[!] SKIP: Attack: File exists: ${csv_path}"
-        return 0
-    fi
-    echo "INFO: Process: ${csv_path}"
-
     if [[ "$init_mode" == 1 ]]; then
+        # Safety-guard.
+        if [[ -f "${csv_path}" ]]; then
+            echo "[!] SKIP: Attack: File exists: ${csv_path}"
+            return 0
+        fi
+        echo "INFO: Process: ${csv_path}"
+
         # Initialize directories.
         mkdir -p "${CSV_PATH_BASE}"
         # Write CSV header.
