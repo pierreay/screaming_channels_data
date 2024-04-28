@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -u
 
 # * Environment
 
@@ -6,43 +6,34 @@ env="$(realpath $(dirname $0))/env.sh"
 echo "INFO: Source file: $env"
 source "$env"
 
-# * Variables
-
-# ** Configuration for the used profiles
-
-# Dataset path.
-if [[ -z $DATASET_PATH ]]; then
-    echo "ERROR: DATASET_PATH is unset!"
+# Safety-guard.
+if [[ -z $ENV_FLAG ]]; then
+    echo "ERROR: Environment can't been sourced!"
     exit 1
 fi
 
+# * Variables
+
+# ** Profile configuration
+
 # List of parameters for the used profiles.
-COMP_LIST=(amp phr)
-NUM_TRACES_LIST=(4000 8000 16000)
-POIS_ALGO_LIST=(r)
-POIS_NB_LIST=(1)
+readonly COMP_LIST=(AMPLITUDE)
+readonly NUM_TRACES_LIST=(4000 16000)
+readonly POIS_ALGO_LIST=(r)
+readonly POIS_NB_LIST=(1 2)
 
 # Delimiters.
-START_POINT=0
-END_POINT=0
-
-# Should we use an external profile?
-PROFILE_EXTERNAL=1
-PROFILE_EXTERNAL_PATH_BASE="${REPO_DATASET_PATH}/poc/240422_custom_firmware_highdist_2lna_highgain/profile"
+readonly PROFILE_LENGTH=400
+readonly START_POINT=300
+readonly END_POINT=$((START_POINT + PROFILE_LENGTH))
 
 # ** Internals
 
-# Path of dataset used for the attack.
-ATTACK_SET="${DATASET_PATH}/attack"
-
-# Base path used to fetch the created profile.
-PROFILE_PATH_BASE="${DATASET_PATH}/profile"
-
-# Base path used to store the attack csv.
-CSV_PATH_BASE="${DATASET_PATH}/csv"
-
-# Base path used to store the attack plots.
-PLOT_PATH_BASE="${DATASET_PATH}/plots"
+# Paths.
+readonly DATASET="${DATASET_PATH}/avg"
+readonly PROFILE_PATH_BASE="${DATASET}/profiles"
+readonly CSV_PATH_BASE="${DATASET_PATH}/csv"
+readonly PLOT_PATH_BASE="${DATASET_PATH}/plots"
 
 # Path of script directory.
 SCRIPT_WD="$(dirname $(realpath $0))"
@@ -51,34 +42,30 @@ SCRIPT_WD="$(dirname $(realpath $0))"
 
 function attack() {
     # Get parameters.
-    comp=$1
-    num_traces=$2
-    pois_algo=$3
-    pois_nb=$4
-    i_start=$5
-    i_step=$6
-    i_end=$(( $7 - 1 ))
-    init_mode=$8 # [1 = Initialize CSV ; 0 = Append to CSV]
+    local comp="${1}"
+    local num_traces="${2}"
+    local pois_algo="${3}"
+    local pois_nb="${4}"
+    local i_start="${5}"
+    local i_step="${6}"
+    local i_end=$(( $7 - 1 ))
+    local init_mode="${8}" # [1 = Initialize CSV ; 0 = Append to CSV]
     # Set parameters.
-    if [[ ${PROFILE_EXTERNAL} -eq 0 ]]; then
-        profile_path=${PROFILE_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}
-    else
-        profile_path=${PROFILE_EXTERNAL_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}
+    local profile_path="${PROFILE_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}"
+    local csv_path="${CSV_PATH_BASE}/attack_${comp}_${num_traces}_${pois_algo}_${pois_nb}.csv"
+
+    # Safety-guard.
+    if [[ -f "${csv_path}" ]]; then
+        echo "[!] SKIP: Attack: File exists: ${csv_path}"
+        return 0
     fi
-    csv_path=${CSV_PATH_BASE}/attack_${comp}_${num_traces}_${pois_algo}_${pois_nb}.csv
+    echo "INFO: Process: ${csv_path}"
 
     if [[ "$init_mode" == 1 ]]; then
-        # Safety-guard.
-        if [[ -f "${csv_path}" ]]; then
-            echo "[!] SKIP: Attack: File exists: ${csv_path}"
-            return 0
-        fi
-        echo "INFO: Process: ${csv_path}"
-
         # Initialize directories.
-        mkdir -p $CSV_PATH_BASE
+        mkdir -p "${CSV_PATH_BASE}"
         # Write CSV header.
-        echo "trace_nb;correct_bytes;log2(key_rank)" | tee "${csv_path}"
+        echo "trace_nb;log2(key_rank);correct_bytes" | tee "${csv_path}"
     fi
     
     # Iteration over number of traces.
@@ -89,8 +76,8 @@ function attack() {
         # Attack and extract:
         # 1) The key rank
         # 2) The correct number of bytes.
-        sc-attack --no-plot --norm --data-path $ATTACK_SET --start-point $START_POINT --end-point $END_POINT --num-traces $num_traces_attack --comp $comp \
-                  attack $profile_path --attack-algo pcc --variable p_xor_k --align --fs $FS 2>/dev/null \
+        "${SC_SRC}"/attack.py --no-log --no-plot --norm --dataset-path "${DATASET}" --start-point "${START_POINT}" --end-point "${END_POINT}" --num-traces "${num_traces_attack}" --no-bruteforce \
+               attack-recombined --comptype "${comp}" --attack-algo pcc --profile "${profile_path}" --num-pois "${pois_nb}" --poi-spacing 1 --variable p_xor_k --align 2>/dev/null \
             | grep -E 'actual rounded|CORRECT' \
             | cut -f 2 -d ':' \
             | tr -d ' ' \
@@ -112,10 +99,10 @@ for comp in "${COMP_LIST[@]}"; do
         for pois_algo in "${POIS_ALGO_LIST[@]}"; do
             for pois_nb in "${POIS_NB_LIST[@]}"; do
                 # [START ; STEP ; END ; INIT_MODE]
-                attack $comp $num_traces $pois_algo $pois_nb 10 10 500 1
-                attack $comp $num_traces $pois_algo $pois_nb 500 30 1000 0
-                attack $comp $num_traces $pois_algo $pois_nb 1000 60 2000 0
-                attack $comp $num_traces $pois_algo $pois_nb 2000 200 10000 0
+                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 10 5 500 1
+                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 500 25 1000 0
+                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 1000 50 2000 0
+                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 2000 100 16000 0
             done
         done
     done
