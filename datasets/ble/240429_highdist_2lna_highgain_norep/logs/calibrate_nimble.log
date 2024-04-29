@@ -1,0 +1,161 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_ble/src
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+INFO: Found nRF at: /dev/ttyACM1
+INFO: Found HCI at: 00:19:0E:19:79:D8
+INFO: Shutdown YKush switch...
+DONE!
+SKIP: Flash firmware: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/bin/nimble.hex
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-29 23:42:40,340] [442103] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+INFO: Radio killed!
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-29 23:42:42,712] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.__init__()
+[2024-04-29 23:42:42,712] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDR.__init__(fs=8000000.0,freq=2533000000.0,idx=0,enabled=True,duration=2.0,dir=/tmp
+,gain=70)
+[INFO] [UHD] linux; GNU C++ version 11.2.0; Boost_107400; UHD_4.1.0.5-3
+[INFO] [b200_impl.cpp:422] [B200] Detected Device: B200mini
+[INFO] [B200] Detected Device: B200mini
+[INFO] [b200_impl.cpp:469] [B200] Operating over USB 3.
+[INFO] [B200] Operating over USB 3.
+[INFO] [b200_impl.cpp:620] [B200] Initialize CODEC control...
+[INFO] [B200] Initialize CODEC control...
+[INFO] [b200_impl.cpp:689] [B200] Initialize Radio control...
+[INFO] [B200] Initialize Radio control...
+[INFO] [b200_impl.cpp:1100] [B200] Performing register loopback test...
+[INFO] [B200] Performing register loopback test...
+[INFO] [b200_impl.cpp:1109] [B200] Register loopback test passed
+[INFO] [B200] Register loopback test passed
+[INFO] [b200_impl.cpp:816] [B200] Setting master clock rate selection to 'automatic'.
+[INFO] [B200] Setting master clock rate selection to 'automatic'.
+[INFO] [b200_impl.cpp:1150] [B200] Asking for clock rate 16.000000 MHz...
+[INFO] [B200] Asking for clock rate 16.000000 MHz...
+[INFO] [b200_impl.cpp:1163] [B200] Actually got clock rate 16.000000 MHz.
+[INFO] [B200] Actually got clock rate 16.000000 MHz.
+[INFO] [b200_impl.cpp:1150] [B200] Asking for clock rate 32.000000 MHz...
+[INFO] [B200] Asking for clock rate 32.000000 MHz...
+[INFO] [b200_impl.cpp:1163] [B200] Actually got clock rate 32.000000 MHz.
+[INFO] [B200] Actually got clock rate 32.000000 MHz.
+[2024-04-29 23:42:44,637] [442164] [MainThread] [soapysdr] DEBUG - Allocate 2^24 dtype-elements in memory for RX buffer...
+[2024-04-29 23:42:45,454] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.register(idx=0)
+[2024-04-29 23:42:45,454] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.open()
+[2024-04-29 23:42:45,454] [442164] [MainThread] [soapysdr] INFO  - initialize streams for radio #0
+[2024-04-29 23:42:45,455] [442164] [MainThread] [soapysdr] DEBUG - re-initialization
+[2024-04-29 23:42:45,455] [442164] [MainThread] [soapysdr] INFO  - SDR process #442164 ready for listening!
+/tmp/config.toml: accept_snr_min=4.0
+/tmp/config.toml: more_data_bit=1
+/tmp/config.toml: hop_interval=15
+/tmp/config.toml: procedure_interleaving=false
+/tmp/config.toml: ll_enc_req_conn_event=5
+/tmp/config.toml: trg_bp_low=[1.0e6]
+/tmp/config.toml: trg_bp_high=[1.9e6]
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-29 23:42:46,748] [442257] [MainThread] [dataset] INFO  - Dataset loaded from '/tmp/dataset.pyc'
+[2024-04-29 23:42:46,748] [442257] [MainThread] [soapysdr] INFO  - Initialize a SoapySDR client... (enabled=True)
+[2024-04-29 23:42:46,748] [442257] [MainThread] [device] INFO  - Instantiate Central using dongle on UART0
+[2024-04-29 23:42:46,776] [442257] [MainThread] [device] INFO  - Instantiate Central using dongle on HCI0
+[2024-04-29 23:42:46,892] [442257] [MainThread] [device] INFO  - Spoof bluetooth address: 00:19:0E:19:79:D8
+[2024-04-29 23:42:46,898] [442257] [MainThread] [device] INFO  - Configure device for recording index #0
+[2024-04-29 23:42:46,898] [442257] [MainThread] [device] INFO  - Pair with target device...
+[2024-04-29 23:42:46,898] [442257] [MainThread] [device] DEBUG - Connect...
+[2024-04-29 23:42:47,004] [442257] [MainThread] [device] DEBUG - Pair...
+set_encryption True 9a8227895c4078e3b8ea2f149158110f 2215804300000000 4caae75a56fc4d3dabc142bd86b80bd4 0 0
+HCI devices cannot send control PDU.
+Marked as encrypted
+CryptographicDatabase()
+CryptographicDatabase(
+CryptographicMaterial(address = 00:19:0e:19:79:d8, authenticated = no, ltk = LTK('e89e4214413d7e44bd55d02667bde785' - 128 bits / rand = adc3539b801b6fe8 / edi
+v = 0x575d)),
+CryptographicMaterial(address = c2:3e:54:84:5c:4c, authenticated = no, ltk = LTK('748f32a27f6b7fdcb0dd8582b6421253' - 128 bits / rand = e9698890eb9ed633 / edi
+v = 0x5b83))
+)
+[2024-04-29 23:42:49,590] [442257] [MainThread] [device] DEBUG - Pairing successfull!
+[2024-04-29 23:42:49,590] [442257] [MainThread] [device] DEBUG - CryptographicMaterial(address = c2:3e:54:84:5c:4c, authenticated = no, ltk = LTK('748f32a27f6
+b7fdcb0dd8582b6421253' - 128 bits / rand = e9698890eb9ed633 / ediv = 0x5b83))
+[2024-04-29 23:42:49,590] [442257] [MainThread] [device] DEBUG - Disconnect...
+[2024-04-29 23:42:49,694] [442257] [MainThread] [device] INFO  - Pairing done!
+[2024-04-29 23:42:49,695] [442257] [MainThread] [device] DEBUG - Generated SKDM=0xb16270d4f092ea86
+[2024-04-29 23:42:49,695] [442257] [MainThread] [device] DEBUG - Start preparing WHAD's sequences...
+[2024-04-29 23:42:49,695] [442257] [MainThread] [device] INFO  - Connection event for starting the recording: 1
+[2024-04-29 23:42:49,703] [442257] [MainThread] [device] INFO  - Connection event for sending the LL_ENC_REQ request: 5
+[2024-04-29 23:42:49,712] [442257] [MainThread] [device] DEBUG - central.prepare(LL_ENC_REQ[rand=0xe9698890eb9ed633, ediv=0x5b83, skdm=0xb16270d4f092ea86, ivm
+=0x0])
+[2024-04-29 23:42:49,731] [442257] [MainThread] [device] INFO  - Connect to target device...
+[2024-04-29 23:42:49,731] [442257] [MainThread] [device] DEBUG - Connection parameters: address=C2:3E:54:84:5C:4C, random=False, hop_interval=15, channel_map=
+0x300, timeout=20
+[2024-04-29 23:42:49,842] [442257] [MainThread] [device] DEBUG - WHAD's central is connected to target device!
+[2024-04-29 23:42:49,843] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO <- record
+[2024-04-29 23:42:49,843] [442164] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO at /tmp/soapysdr.fifo
+[2024-04-29 23:42:49,844] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO -> record
+[2024-04-29 23:42:49,844] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).enter
+[2024-04-29 23:42:49,844] [442164] [MainThread] [soapysdr] INFO  - Radio #0 start recording for 2.0s...
+[2024-04-29 23:42:49,844] [442164] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+O[2024-04-29 23:42:49,847] [442164] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-29 23:42:49,847] [442164] [MainThread] [soapysdr] DEBUG - Start SoapySDR readStream()...
+[2024-04-29 23:42:49,888] [442257] [Thread-2] [device] DEBUG - Save the received LL_ENC_RSP packet!
+[2024-04-29 23:42:49,943] [442257] [MainThread] [soapysdr] DEBUG - [client] Waiting for: record
+[2024-04-29 23:42:51,902] [442164] [MainThread] [soapysdr] INFO  - Radio #0 finished recording!
+[2024-04-29 23:42:51,902] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.record(duration=None).exit
+[2024-04-29 23:42:51,902] [442164] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-29 23:42:51,902] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:record
+[2024-04-29 23:42:51,903] [442257] [MainThread] [soapysdr] DEBUG - [client] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-29 23:42:51,903] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:record
+[2024-04-29 23:42:51,903] [442257] [MainThread] [soapysdr] DEBUG - [client] Wait completed!
+[2024-04-29 23:42:51,903] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO <- accept
+[2024-04-29 23:42:51,903] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO -> accept
+[2024-04-29 23:42:51,903] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.accept()
+[2024-04-29 23:42:51,903] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDR(idx=0).accept()
+[2024-04-29 23:42:52,003] [442257] [MainThread] [device] INFO  - Disconnect from the target device
+[2024-04-29 23:42:52,009] [442257] [MainThread] [device] DEBUG - Received SKDS=0x5c1455e5fb0d378a
+[2024-04-29 23:42:52,009] [442257] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN ks index #0: 0x748f32a27f6b7fdcb0dd8582b6421253 / [116 143  50 1
+62 127 107 127 220 176 221 133 130 182  66  18  83]
+[2024-04-29 23:42:52,010] [442257] [MainThread] [dataset] DEBUG - Set subset SubsetType.TRAIN pt index #0: 0x5c1455e5fb0d378ab16270d4f092ea86 / [ 92  20  85 2
+29 251  13  55 138 177  98 112 212 240 146 234 134]
+[2024-04-29 23:42:52,010] [442257] [MainThread] [device] DEBUG - Stop and close UART0 dongle...
+[2024-04-29 23:42:53,025] [442257] [MainThread] [device] DEBUG - Stop and close HCI dongle...
+[2024-04-29 23:42:53,695] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO <- save
+[2024-04-29 23:42:53,795] [442257] [MainThread] [soapysdr] DEBUG - [client] Waiting for: save
+[2024-04-29 23:42:53,795] [442257] [MainThread] [soapysdr] DEBUG - [client] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-29 23:42:53,795] [442164] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-29 23:42:53,796] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:accept
+[2024-04-29 23:42:53,796] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO -> save
+[2024-04-29 23:42:53,796] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:accept
+[2024-04-29 23:42:53,796] [442164] [MainThread] [soapysdr] DEBUG - MySoapySDRs.save(dir=None)
+[2024-04-29 23:42:53,796] [442164] [MainThread] [soapysdr] INFO  - save recording of radio #0 into directory /tmp
+[2024-04-29 23:42:53,826] [442164] [MainThread] [soapysdr] DEBUG - re-initialization
+[2024-04-29 23:42:53,827] [442164] [MainThread] [soapysdr] DEBUG - [server] Opened FIFO_CLIENT at /tmp/soapysdr_client.fifo
+[2024-04-29 23:42:53,827] [442164] [MainThread] [soapysdr] DEBUG - [server] FIFO_CLIENT <- ack:save
+[2024-04-29 23:42:53,827] [442257] [MainThread] [soapysdr] DEBUG - [client] FIFO_CLIENT -> ack:save
+[2024-04-29 23:42:53,827] [442257] [MainThread] [soapysdr] DEBUG - [client] Wait completed!
+[2024-04-29 23:42:53,828] [442257] [MainThread] [dataset] INFO  - Dataset saved to '/tmp/dataset.pyc'
+INFO: ret=0?
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:471: CryptographyDeprecationWarning: Blowfish has been deprecated
+  cipher=algorithms.Blowfish,
+/home/drac/.local/lib/python3.10/site-packages/scapy/layers/ipsec.py:485: CryptographyDeprecationWarning: CAST5 has been deprecated
+  cipher=algorithms.CAST5,
+[2024-04-29 23:42:55,205] [442505] [MainThread] [radio] INFO  - Extract RAW trace using ID #0
+[2024-04-29 23:42:55,205] [442505] [MainThread] [radio] DEBUG - Configuration: 1_aes_ff_antenna_8msps
+[2024-04-29 23:42:55,205] [442505] [MainThread] [radio] DEBUG - Peak search prominence=0.4
+[2024-04-29 23:42:55,205] [442505] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+[2024-04-29 23:42:55,540] [442505] [MainThread] [radio] DEBUG - name=trigger
+- bandpass_low=1.00e+06
+- bandpass_high=1.90e+06
+- lowpass=1.00e+04
+[2024-04-29 23:42:55,646] [442505] [MainThread] [radio] INFO  - Number of detected peaks=1
+[2024-04-29 23:42:55,649] [442505] [MainThread] [radio] INFO  - Peak: Position=1.95% ; SNR=4.0 ; Avg=11496
+[2024-04-29 23:42:55,649] [442505] [MainThread] [radio] WARNING - Peak is located at recording's boundaries, bad connection event?
+[2024-04-29 23:42:55,649] [442505] [MainThread] [load] INFO  - Load RAW trace from /tmp/raw_0_0.npy
+qt.qpa.xcb: XKeyboard extension not present on the X server
+[2024-04-29 23:45:06,627] [442505] [MainThread] [radio] INFO  - ignore overwrite for extracted signal(s)
+INFO: ret=0
+INFO: Radio killed!
+
