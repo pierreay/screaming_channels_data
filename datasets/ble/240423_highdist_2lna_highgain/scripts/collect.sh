@@ -91,9 +91,11 @@ fi
 
 # ** Post-processing
 
+# *** Averaging
+
 function average_subset() {
     subset="$1"
-    force="$2"
+    force="--force"
     flag_path="${ENVRC_DATASET_AVG_PATH}/.average_${subset}_done"
     if [[ -f "$flag_path" ]]; then
         echo "SKIP: Averaging: File exists: $flag_path"
@@ -105,6 +107,25 @@ function average_subset() {
 
 if [[ ${AES_REPETITIONS} -eq 1 ]]; then
     mkdir -p ${ENVRC_DATASET_AVG_PATH}
-    average_subset train --no-force
-    average_subset attack --force
+    average_subset train
+    average_subset attack
+fi
+
+# *** Extracting
+
+function extract_subset() {
+    subset="$1"
+    force="--force"
+    flag_path="${ENVRC_DATASET_EXT_PATH}/.extract_${subset}_done"
+    if [[ -f "$flag_path" ]]; then
+        echo "SKIP: Averaging: File exists: $flag_path"
+    else
+        (cd $SC_SRC && ./dataset.py --loglevel INFO extract --nb-aes 300 ${ENVRC_DATASET_RAW_PATH} ${ENVRC_DATASET_EXT_PATH} ${subset} --template 1 --idx 1 --no-plot --stop -1 ${force} --jobs -1 --window 0)
+        touch "${flag_path}"
+    fi    
+}
+
+if [[ ${AES_REPETITIONS} -eq 1 ]]; then
+    mkdir -p ${ENVRC_DATASET_EXT_PATH}
+    extract_subset attack
 fi
