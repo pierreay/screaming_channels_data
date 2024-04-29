@@ -27,11 +27,15 @@ readonly PROFILE_LENGTH=400
 readonly START_POINT=300
 readonly END_POINT=$((START_POINT + PROFILE_LENGTH))
 
+# ** Attack configuration
+
+# Paths.
+readonly METASET_LIST=(avg ext)
+
 # ** Internals
 
 # Paths.
-readonly DATASET="${DATASET_PATH}/avg"
-readonly PROFILE_PATH_BASE="${DATASET}/profiles"
+readonly PROFILE_PATH_BASE="${DATASET_PATH}/avg/profiles"
 readonly CSV_PATH_BASE="${DATASET_PATH}/csv"
 readonly PLOT_PATH_BASE="${DATASET_PATH}/plots"
 
@@ -42,17 +46,19 @@ SCRIPT_WD="$(dirname $(realpath $0))"
 
 function attack() {
     # Get parameters.
-    local comp="${1}"
-    local num_traces="${2}"
-    local pois_algo="${3}"
-    local pois_nb="${4}"
-    local i_start="${5}"
-    local i_step="${6}"
-    local i_end=$(( $7 - 1 ))
-    local init_mode="${8}" # [1 = Initialize CSV ; 0 = Append to CSV]
+    local metaset="${1}"
+    local comp="${2}"
+    local num_traces="${3}"
+    local pois_algo="${4}"
+    local pois_nb="${5}"
+    local i_start="${6}"
+    local i_step="${7}"
+    local i_end=$(( $8 - 1 ))
+    local init_mode="${9}" # [1 = Initialize CSV ; 0 = Append to CSV]
     # Set parameters.
+    local metaset_path="${DATASET_PATH}/${metaset}"
     local profile_path="${PROFILE_PATH_BASE}/${comp}_${num_traces}_${pois_algo}_${pois_nb}"
-    local csv_path="${CSV_PATH_BASE}/attack_${comp}_${num_traces}_${pois_algo}_${pois_nb}.csv"
+    local csv_path="${CSV_PATH_BASE}/attack_${metaset}_${comp}_${num_traces}_${pois_algo}_${pois_nb}.csv"
 
     if [[ "$init_mode" == 1 ]]; then
         # Safety-guard.
@@ -76,7 +82,7 @@ function attack() {
         # Attack and extract:
         # 1) The key rank
         # 2) The correct number of bytes.
-        "${SC_SRC}"/attack.py --no-log --no-plot --norm --dataset-path "${DATASET}" --start-point "${START_POINT}" --end-point "${END_POINT}" --num-traces "${num_traces_attack}" --no-bruteforce \
+        "${SC_SRC}"/attack.py --no-log --no-plot --norm --dataset-path "${metaset_path}" --start-point "${START_POINT}" --end-point "${END_POINT}" --num-traces "${num_traces_attack}" --no-bruteforce \
                attack-recombined --comptype "${comp}" --attack-algo pcc --profile "${profile_path}" --num-pois "${pois_nb}" --poi-spacing 1 --variable p_xor_k --align 2>/dev/null \
             | grep -E 'actual rounded|CORRECT' \
             | cut -f 2 -d ':' \
@@ -94,15 +100,18 @@ function attack() {
 
 # ** CSV
 
-for comp in "${COMP_LIST[@]}"; do
-    for num_traces in "${NUM_TRACES_LIST[@]}"; do
-        for pois_algo in "${POIS_ALGO_LIST[@]}"; do
-            for pois_nb in "${POIS_NB_LIST[@]}"; do
-                # [START ; STEP ; END ; INIT_MODE]
-                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 10 5 500 1
-                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 500 25 1000 0
-                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 1000 50 2000 0
-                attack "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 2000 100 16000 0
+for metaset in "${METASET_LIST[@]}"; do
+    for comp in "${COMP_LIST[@]}"; do
+        for num_traces in "${NUM_TRACES_LIST[@]}"; do
+            for pois_algo in "${POIS_ALGO_LIST[@]}"; do
+                for pois_nb in "${POIS_NB_LIST[@]}"; do
+                    # [START ; STEP ; END ; INIT_MODE]
+                    # NOTE: 9 hours-long
+                    attack "${metaset}" "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 10 5 500 1
+                    attack "${metaset}" "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 500 25 1000 0
+                    attack "${metaset}" "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 1000 50 2000 0
+                    attack "${metaset}" "${comp}" "${num_traces}" "${pois_algo}" "${pois_nb}" 2000 100 16000 0
+                done
             done
         done
     done
