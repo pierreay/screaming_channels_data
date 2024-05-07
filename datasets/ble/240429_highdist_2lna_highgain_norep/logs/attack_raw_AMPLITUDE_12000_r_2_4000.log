@@ -1,0 +1,53 @@
+[2024-05-07 14:45:20,940] [1535268] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep
+/raw/dataset.pyc'
+[2024-05-07 14:45:20,940] [1535268] [MainThread] [load] INFO  - Loading traces...
+[2024-05-07 14:45:20,941] [1535268] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4000/4000 [00:00<00:00, 66030.71it/s]
+[2024-05-07 14:45:21,002] [1535268] [MainThread] [load] INFO  - Done!
+[2024-05-07 14:45:21,023] [1535268] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgai
+n_norep/raw/profiles/AMPLITUDE_12000_r_2
+[2024-05-07 14:45:21,064] [1535268] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4000/4000 [00:01<00:00, 3562.69it/s]
+[2024-05-07 14:45:22,190] [1535268] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4000/4000 [00:01<00:00, 3376.46it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   af   e0   63   9c   aa   2a   3a   4a   f6   50   1a   58   7d   86   a6   41
+Known Key:        ad   ef   6d   92   a8   29   32   40   f4   56   17   52   79   8d   a6   46
+PGE:             008  012  012  009  015  001  006  002  012  015  006  002  006  029  000  018
+HD:              001  004  003  003  001  002  001  002  001  002  003  002  001  003  000  003
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    1    0
+CORRECT BYTES: 1
+PGE MEAN:      9
+PGE MEDIAN:    8
+PGE MAX:       29
+HD SUM:        32
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^68.79934412
+actual rounded: 2^70.01900667
+max: 2^70.94881097
+time enum: 0.130427 seconds
+
+
+

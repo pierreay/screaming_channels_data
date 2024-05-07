@@ -1,0 +1,79 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_bleDéjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_200.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_700.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_2500.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_4000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_10000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_1_16000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_200.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_700.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_2500.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_4000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_10000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_4000_r_2_16000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_200.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_700.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_2500.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_4000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_10000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_1_16000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_200.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_700.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_2500.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_4000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_10000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/logs/attack_avg_AMPLITUDE_16000_r_2_16000.log
+[2024-04-29 21:51:10,281] [377789] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_hi
+ghgain/ext/dataset.pyc'
+[2024-04-29 21:51:10,281] [377789] [MainThread] [load] INFO  - Loading traces...
+[2024-04-29 21:51:10,282] [377789] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 9516.29it/s]
+[2024-04-29 21:51:10,303] [377789] [MainThread] [load] INFO  - Done!
+[2024-04-29 21:51:10,304] [377789] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_
+2lna_highgain/avg/profiles/AMPLITUDE_4000_r_1
+[2024-04-29 21:51:10,393] [377789] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 4065.25it/s]
+[2024-04-29 21:51:10,443] [377789] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 3992.92it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   77   45   35   75   2d   37   75   11   04   e2   4e   b5   e0   8a   4e   80
+Known Key:        69   7f   e3   59   fd   f7   95   1f   ec   4d   72   9b   ee   ab   51   96
+PGE:             019  053  140  020  030  024  215  018  059  115  079  033  008  009  003  007
+HD:              004  004  005  003  003  002  003  003  004  006  004  004  003  002  005  003
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 0
+PGE MEAN:      52
+PGE MEDIAN:    27
+PGE MAX:       215
+HD SUM:        58
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^110.4331946
+actual rounded: 2^110.6289668
+max: 2^110.7845375
+time enum: 0.127858 seconds
+
+
+

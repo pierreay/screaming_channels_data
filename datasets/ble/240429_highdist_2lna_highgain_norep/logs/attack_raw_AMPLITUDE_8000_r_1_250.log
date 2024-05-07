@@ -1,0 +1,56 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_ble
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+[2024-05-07 11:48:47,041] [1334971] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep
+/raw/dataset.pyc'
+[2024-05-07 11:48:47,041] [1334971] [MainThread] [load] INFO  - Loading traces...
+[2024-05-07 11:48:47,042] [1334971] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 69947.03it/s]
+[2024-05-07 11:48:47,046] [1334971] [MainThread] [load] INFO  - Done!
+[2024-05-07 11:48:47,047] [1334971] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgai
+n_norep/raw/profiles/AMPLITUDE_8000_r_1
+[2024-05-07 11:48:47,077] [1334971] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 3743.95it/s]
+[2024-05-07 11:48:47,144] [1334971] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 3785.14it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   a2   e6   6f   99   ae   17   32   5a   f4   50   35   57   71   8c   a9   4b
+Known Key:        ad   ef   6d   92   a8   29   32   40   f4   56   17   52   79   8d   a6   46
+PGE:             039  004  014  010  010  055  000  047  000  003  018  005  019  007  010  007
+HD:              004  002  001  003  002  005  000  003  000  002  002  002  001  001  004  003
+SUCCESS:           0    0    0    0    0    0    1    0    1    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      15
+PGE MEDIAN:    10
+PGE MAX:       55
+HD SUM:        35
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^79.15380386
+actual rounded: 2^79.73500108
+max: 2^80.19014258
+time enum: 0.190318 seconds
+
+
+
