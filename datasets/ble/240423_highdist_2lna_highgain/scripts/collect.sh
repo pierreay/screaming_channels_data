@@ -127,5 +127,6 @@ function extract_subset() {
 
 if [[ ${AES_REPETITIONS} -eq 1 ]]; then
     mkdir -p ${ENVRC_DATASET_EXT_PATH}
+    extract_subset train
     extract_subset attack
 fi

@@ -27,7 +27,8 @@ EP=$(( SP + PROFILE_LENGTH ))
 
 # ** Internals
 
-DATASET="${DATASET_PATH}/avg"
+# DATASET="${DATASET_PATH}/avg"
+DATASET="${DATASET_PATH}/ext"
 
 # * Functions
 
