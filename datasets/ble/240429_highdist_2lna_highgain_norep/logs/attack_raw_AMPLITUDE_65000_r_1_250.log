@@ -1,0 +1,70 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_ble
+Déjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_1_250.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_1_2000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_1_8000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_1_40000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_2_250.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_2_2000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_2_8000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_8000_r_2_40000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_1_250.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_1_2000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_1_8000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_1_40000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_2_250.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_2_2000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_2_8000.log
+SKIP: Attack: File exists: /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/logs/attack_raw_AMPLITUDE_12000_r_2_40000.log
+[2024-05-14 13:22:57,963] [1301536] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/dataset.pyc'
+[2024-05-14 13:22:57,963] [1301536] [MainThread] [load] INFO  - Loading traces...
+[2024-05-14 13:22:57,963] [1301536] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 4228.52it/s]
+[2024-05-14 13:22:58,023] [1301536] [MainThread] [load] INFO  - Done!
+[2024-05-14 13:22:58,024] [1301536] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/profiles/AMPLITUDE_65000_r_1
+[2024-05-14 13:22:58,055] [1301536] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 3751.59it/s]
+[2024-05-14 13:22:58,122] [1301536] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:00<00:00, 3762.64it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   a1   ed   67   96   a1   25   35   4f   f6   67   11   5a   79   80   a6   4b
+Known Key:        ad   ef   6d   92   a8   29   32   40   f4   56   17   52   79   8d   a6   46
+PGE:             021  025  005  009  011  006  002  002  006  005  027  012  000  009  000  020
+HD:              002  001  002  001  002  002  003  004  001  003  002  001  000  003  000  003
+SUCCESS:           0    0    0    0    0    0    0    0    0    0    0    0    1    0    1    0
+CORRECT BYTES: 2
+PGE MEAN:      10
+PGE MEDIAN:    7
+PGE MAX:       27
+HD SUM:        30
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^71.51422358
+actual rounded: 2^72.39977072
+max: 2^73.08065644
+time enum: 0.130722 seconds
+
+
+

@@ -1,0 +1,78 @@
+[2024-05-14 15:07:23,021] [1331077] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/dataset.pyc'
+[2024-05-14 15:07:23,021] [1331077] [MainThread] [load] INFO  - Loading traces...
+[2024-05-14 15:07:23,021] [1331077] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:00<00:00, 64639.43it/s]
+[2024-05-14 15:07:23,641] [1331077] [MainThread] [load] INFO  - Done!
+[2024-05-14 15:07:23,852] [1331077] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/profiles/AMPLITUDE_65000_r_1
+[2024-05-14 15:07:24,040] [1331077] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:10<00:00, 3830.30it/s]
+[2024-05-14 15:07:34,507] [1331077] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:10<00:00, 3841.74it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+[2024-05-14 15:13:02,472] [1331077] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/dataset.pyc'
+[2024-05-14 15:13:02,473] [1331077] [MainThread] [load] INFO  - Loading traces...
+[2024-05-14 15:13:02,473] [1331077] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:00<00:00, 60550.21it/s]
+[2024-05-14 15:13:03,135] [1331077] [MainThread] [load] INFO  - Done!
+[2024-05-14 15:13:03,341] [1331077] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240429_highdist_2lna_highgain_norep/raw/profiles/PHASE_ROT_65000_r_1
+[2024-05-14 15:13:08,834] [1331077] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:10<00:00, 3823.79it/s]
+[2024-05-14 15:13:19,318] [1331077] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 40000/40000 [00:10<00:00, 3874.49it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   a6   ec   6c   92   aa   29   3a   43   fc   5a   12   5c   7f   88   a0   4d
+Known Key:        ad   ef   6d   92   a8   29   32   40   f4   56   17   52   79   8d   a6   46
+PGE:             003  007  002  000  012  000  007  015  003  007  006  009  012  004  008  008
+HD:              003  002  001  000  001  000  001  002  001  002  002  003  002  002  002  003
+SUCCESS:           0    0    0    1    0    1    0    0    0    0    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      6
+PGE MEDIAN:    7
+PGE MAX:       15
+HD SUM:        27
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^59.38464729
+actual rounded: 2^62.25547045
+max: 2^63.41445932
+time enum: 1.45555 seconds
+
+
+
