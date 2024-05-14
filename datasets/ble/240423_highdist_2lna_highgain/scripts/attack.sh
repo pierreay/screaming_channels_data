@@ -38,7 +38,8 @@ readonly METASET_LIST=(avg ext)
 # ** Internals
 
 readonly LOG_PATH_BASE="${DATASET_PATH}/logs"
-readonly PROFILE_PATH_BASE="${DATASET_PATH}/avg/profiles"
+readonly PROFILE_METASET="avg"
+readonly PROFILE_PATH_BASE="${DATASET_PATH}/${PROFILE_METASET}/profiles"
 
 TMUX_PANE_CAPTURE=""
 
@@ -58,7 +59,7 @@ function attack() {
     if [[ "${comp}" == "RECOMBIN" ]]; then
         profile_path="${PROFILE_PATH_BASE}/"'{}'"_${num_traces}_${pois_algo}_${pois_nb}"
     fi
-    local log_path="${LOG_PATH_BASE}/attack_${metaset}_${comp}_${num_traces}_${pois_algo}_${pois_nb}_${num_traces_attack}.log"
+    local log_path="${LOG_PATH_BASE}/${PROFILE_METASET}/attack_${metaset}_${comp}_${num_traces}_${pois_algo}_${pois_nb}_${num_traces_attack}.log"
     local bruteforce="--no-bruteforce"
 
     # Safety-guard.
