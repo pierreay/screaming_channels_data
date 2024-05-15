@@ -1,0 +1,53 @@
+INFO: Checkout main -> /home/drac/git/screaming_channels_bleDéjà sur 'main'
+Votre branche est à jour avec 'origin/main'.
+[2024-05-14 15:42:46,281] [1349532] [MainThread] [dataset] INFO  - Dataset loaded from '/home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/avg/dataset.pyc'
+[2024-05-14 15:42:46,281] [1349532] [MainThread] [load] INFO  - Loading traces...
+[2024-05-14 15:42:46,281] [1349532] [MainThread] [load] WARNING - No loaded NF traces!
+Load FF traces: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 9317.57it/s]
+[2024-05-14 15:42:46,304] [1349532] [MainThread] [load] INFO  - Done!
+[2024-05-14 15:42:46,305] [1349532] [MainThread] [attack] INFO  - Load the forced profile from /home/drac/mnt/sc_nvme_ssd/dataset/datasets/ble/240423_highdist_2lna_highgain/ext/profiles/AMPLITUDE_16000_r_1
+[2024-05-14 15:42:46,393] [1349532] [MainThread] [attack] INFO  - Align attack traces with themselves...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 4038.07it/s]
+[2024-05-14 15:42:46,443] [1349532] [MainThread] [attack] INFO  - Align attack traces with the profile...
+Align: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 200/200 [00:00<00:00, 3975.62it/s]
+
+Subkey  0
+Subkey  1
+Subkey  2
+Subkey  3
+Subkey  4
+Subkey  5
+Subkey  6
+Subkey  7
+Subkey  8
+Subkey  9
+Subkey 10
+Subkey 11
+Subkey 12
+Subkey 13
+Subkey 14
+Subkey 15
+Best Key Guess:   6b   da   71   5a   fd   f3   96   17   e6   4d   7d   91   ef   47   ff   97
+Known Key:        69   7f   e3   59   fd   f7   95   1f   ec   4d   72   9b   ee   ab   51   96
+PGE:             001  234  004  001  000  006  006  043  012  000  009  003  004  003  020  001
+HD:              001  004  003  002  000  001  002  001  002  000  004  002  001  005  005  001
+SUCCESS:           0    0    0    0    1    0    0    0    0    1    0    0    0    0    0    0
+CORRECT BYTES: 2
+PGE MEAN:      21
+PGE MEDIAN:    4
+PGE MAX:       234
+HD SUM:        34
+
+Starting key ranking using HEL
+results rank estimation
+nb_bins = 512
+merge = 2
+Starting preprocessing
+Clearing memory
+min: 2^73.27275735
+actual rounded: 2^73.81671933
+max: 2^74.24825089
+time enum: 0.128655 seconds
+
+
+
