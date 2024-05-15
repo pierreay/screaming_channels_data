@@ -38,7 +38,7 @@ readonly METASET_LIST=(avg ext)
 # ** Internals
 
 readonly LOG_PATH_BASE="${DATASET_PATH}/logs"
-readonly PROFILE_METASET="avg"
+readonly PROFILE_METASET="avg" # [ "avg" | "ext" ]
 readonly PROFILE_PATH_BASE="${DATASET_PATH}/${PROFILE_METASET}/profiles"
 
 TMUX_PANE_CAPTURE=""
