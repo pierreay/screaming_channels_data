@@ -1,0 +1,30 @@
+{
+    "firmware": {
+        "mode": "tinyaes",
+        "fixed_key": false,
+        "modulate": true
+    },
+    "collection": {
+        "channel": 20,
+        "hackrf_gain": 0,
+        "hackrf_gain_if": 35,
+        "hackrf_gain_bb": 39,
+        "plutosdr_gain": 35,
+        "usrp_gain": 40,
+        "target_freq": 2.512e9,
+        "sampling_rate": 8e6,
+        "num_points": 16000,
+        "num_traces_per_point": 500,
+        "num_traces_per_point_keep": 300,
+        "bandpass_lower": 2.10e6,
+        "bandpass_upper": 2.30e6,
+        "lowpass_freq": 3e3,
+        "drop_start": 2e-1,
+        "trigger_rising": true,
+        "trigger_offset": 150e-6,
+        "trigger_threshold": 0e3,
+        "signal_length": 200e-6,
+        "template_name": "/home/drac/mnt/sc_nvme_ssd/dataset/experiments/2024-05-15_profile-icache-on/train/template.npy",
+        "min_correlation": 5e18
+    }
+}
