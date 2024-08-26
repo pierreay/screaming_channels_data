@@ -17,7 +17,7 @@ fi
 # ** Profile configuration
 
 # List of parameters for the used profiles.
-readonly COMP_LIST=(AMPLITUDE) # AMPLITUDE PHASE_ROT RECOMBIN
+readonly COMP_LIST=(AMPLITUDE) # AMPLITUDE
 readonly NUM_TRACES_LIST=(4000 16000)
 readonly POIS_ALGO_LIST=(r)
 readonly POIS_NB_LIST=(1 2)
