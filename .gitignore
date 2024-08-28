@@ -5,3 +5,5 @@ tmp_*
 **/attack*/*.npy
 **/key_.txt
 **/pt_.txt
+# Exclude Emacs files.
+.projectile
